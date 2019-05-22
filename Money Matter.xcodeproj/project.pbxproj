@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE22EE8322951EC4006EB604 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = DE22EE8222951EC4006EB604 /* add.png */; };
 		DE30880D2292D3B40051A3E1 /* usa.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3088092292D3B40051A3E1 /* usa.png */; };
-		DE30880E2292D3B40051A3E1 /* add.gif in Resources */ = {isa = PBXBuildFile; fileRef = DE30880A2292D3B40051A3E1 /* add.gif */; };
 		DE30880F2292D3B40051A3E1 /* india.png in Resources */ = {isa = PBXBuildFile; fileRef = DE30880B2292D3B40051A3E1 /* india.png */; };
 		DE3088102292D3B40051A3E1 /* aus.png in Resources */ = {isa = PBXBuildFile; fileRef = DE30880C2292D3B40051A3E1 /* aus.png */; };
 		DEC8675C2291538700F2B9D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8675B2291538700F2B9D7 /* AppDelegate.swift */; };
@@ -38,8 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE22EE8222951EC4006EB604 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = Pictures/add.png; sourceTree = SOURCE_ROOT; };
 		DE3088092292D3B40051A3E1 /* usa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = usa.png; path = Pictures/usa.png; sourceTree = SOURCE_ROOT; };
-		DE30880A2292D3B40051A3E1 /* add.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = add.gif; path = Pictures/add.gif; sourceTree = SOURCE_ROOT; };
 		DE30880B2292D3B40051A3E1 /* india.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = india.png; path = Pictures/india.png; sourceTree = SOURCE_ROOT; };
 		DE30880C2292D3B40051A3E1 /* aus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = aus.png; path = Pictures/aus.png; sourceTree = SOURCE_ROOT; };
 		DEC867582291538700F2B9D7 /* Money Matter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money Matter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,7 +85,7 @@
 		DE3088082292D3980051A3E1 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				DE30880A2292D3B40051A3E1 /* add.gif */,
+				DE22EE8222951EC4006EB604 /* add.png */,
 				DE30880C2292D3B40051A3E1 /* aus.png */,
 				DE30880B2292D3B40051A3E1 /* india.png */,
 				DE3088092292D3B40051A3E1 /* usa.png */,
@@ -249,7 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE30880E2292D3B40051A3E1 /* add.gif in Resources */,
+				DE22EE8322951EC4006EB604 /* add.png in Resources */,
 				DEC867662291538800F2B9D7 /* LaunchScreen.storyboard in Resources */,
 				DEC867632291538800F2B9D7 /* Assets.xcassets in Resources */,
 				DEC867612291538700F2B9D7 /* Main.storyboard in Resources */,
