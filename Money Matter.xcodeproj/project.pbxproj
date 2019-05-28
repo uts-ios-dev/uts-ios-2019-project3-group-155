@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE0AC709229B94AD0009D006 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC708229B94AD0009D006 /* LoginViewController.swift */; };
 		DE22EE8322951EC4006EB604 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = DE22EE8222951EC4006EB604 /* add.png */; };
 		DE30880D2292D3B40051A3E1 /* usa.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3088092292D3B40051A3E1 /* usa.png */; };
 		DE30880F2292D3B40051A3E1 /* india.png in Resources */ = {isa = PBXBuildFile; fileRef = DE30880B2292D3B40051A3E1 /* india.png */; };
@@ -18,6 +19,7 @@
 		DEC867662291538800F2B9D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC867642291538800F2B9D7 /* LaunchScreen.storyboard */; };
 		DEC867712291538900F2B9D7 /* Money_MatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC867702291538900F2B9D7 /* Money_MatterTests.swift */; };
 		DEC8677C2291538900F2B9D7 /* Money_MatterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8677B2291538900F2B9D7 /* Money_MatterUITests.swift */; };
+		DEFD90A5229A8A1100A68D6D /* LoadInitialValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD90A4229A8A1100A68D6D /* LoadInitialValues.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE0AC708229B94AD0009D006 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DE22EE8222951EC4006EB604 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = Pictures/add.png; sourceTree = SOURCE_ROOT; };
 		DE3088092292D3B40051A3E1 /* usa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = usa.png; path = Pictures/usa.png; sourceTree = SOURCE_ROOT; };
 		DE30880B2292D3B40051A3E1 /* india.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = india.png; path = Pictures/india.png; sourceTree = SOURCE_ROOT; };
@@ -55,6 +58,7 @@
 		DEC867772291538900F2B9D7 /* Money MatterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Money MatterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC8677B2291538900F2B9D7 /* Money_MatterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money_MatterUITests.swift; sourceTree = "<group>"; };
 		DEC8677D2291538900F2B9D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEFD90A4229A8A1100A68D6D /* LoadInitialValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadInitialValues.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +122,9 @@
 			isa = PBXGroup;
 			children = (
 				DEC8675B2291538700F2B9D7 /* AppDelegate.swift */,
+				DEFD90A4229A8A1100A68D6D /* LoadInitialValues.swift */,
 				DEC8675D2291538700F2B9D7 /* ViewController.swift */,
+				DE0AC708229B94AD0009D006 /* LoginViewController.swift */,
 				DEC8675F2291538700F2B9D7 /* Main.storyboard */,
 				DEC867622291538800F2B9D7 /* Assets.xcassets */,
 				DEC867642291538800F2B9D7 /* LaunchScreen.storyboard */,
@@ -280,8 +286,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE0AC709229B94AD0009D006 /* LoginViewController.swift in Sources */,
 				DEC8675E2291538700F2B9D7 /* ViewController.swift in Sources */,
 				DEC8675C2291538700F2B9D7 /* AppDelegate.swift in Sources */,
+				DEFD90A5229A8A1100A68D6D /* LoadInitialValues.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

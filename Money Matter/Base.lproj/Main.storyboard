@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bLm-Us-aP8">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--WalletHome-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Money_Matter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="wallethome" title="WalletHome" id="BYZ-38-t0r" customClass="ViewController" customModule="Money_Matter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,11 +189,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6d-bj-CNl" userLabel="changePercent1">
-                                <rect key="frame" x="275" y="245" width="55" height="25"/>
+                                <rect key="frame" x="273" y="245" width="57" height="25"/>
                                 <color key="backgroundColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="3nY-Ua-lpj"/>
-                                    <constraint firstAttribute="width" constant="55" id="waP-SP-HSR"/>
+                                    <constraint firstAttribute="width" constant="57" id="waP-SP-HSR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <state key="normal">
@@ -201,10 +201,10 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2R-xx-bsx" userLabel="changePercent2">
-                                <rect key="frame" x="275" y="435" width="55" height="25"/>
+                                <rect key="frame" x="273" y="435" width="57" height="25"/>
                                 <color key="backgroundColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="55" id="ZDj-Na-Sn8"/>
+                                    <constraint firstAttribute="width" constant="57" id="ZDj-Na-Sn8"/>
                                     <constraint firstAttribute="height" constant="25" id="uk1-FY-Ycq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -213,10 +213,10 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcV-or-zx5" userLabel="changePercent3">
-                                <rect key="frame" x="275" y="626.66666666666663" width="55" height="25"/>
+                                <rect key="frame" x="273" y="626.66666666666663" width="57" height="25"/>
                                 <color key="backgroundColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="55" id="8nc-Oj-A2l"/>
+                                    <constraint firstAttribute="width" constant="57" id="8nc-Oj-A2l"/>
                                     <constraint firstAttribute="height" constant="25" id="F4T-hG-GNR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -258,6 +258,13 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="OxQ-hV-4n0">
+                                <rect key="frame" x="157.66666666666666" y="307.66666666666669" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Glh-K2-FvK"/>
+                                    <constraint firstAttribute="height" constant="60" id="uyx-KT-1EG"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -277,6 +284,7 @@
                             <constraint firstItem="gg8-9R-0kw" firstAttribute="top" secondItem="6GM-B3-VGy" secondAttribute="bottom" constant="10" id="IF7-9Q-7zh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kra-7j-y4f" secondAttribute="trailing" constant="45" id="JAL-al-2eb"/>
                             <constraint firstItem="WeE-hY-iGz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="Jez-gP-1s2"/>
+                            <constraint firstItem="OxQ-hV-4n0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jpl-VZ-xXE"/>
                             <constraint firstItem="5zf-fS-IZC" firstAttribute="leading" secondItem="WZ4-CU-Sdb" secondAttribute="leading" id="Ksw-EO-AbT"/>
                             <constraint firstAttribute="trailing" secondItem="brr-hR-CCt" secondAttribute="trailing" constant="45" id="LLB-7I-w7p"/>
                             <constraint firstItem="6GM-B3-VGy" firstAttribute="top" secondItem="uhn-XA-joG" secondAttribute="bottom" constant="38" id="Nzn-4e-yIY"/>
@@ -293,6 +301,7 @@
                             <constraint firstItem="6z4-M2-dvJ" firstAttribute="trailing" secondItem="urR-wM-NH4" secondAttribute="trailing" id="aqa-gq-5kh"/>
                             <constraint firstItem="uhn-XA-joG" firstAttribute="top" secondItem="kHf-fe-21z" secondAttribute="bottom" constant="10" id="atS-9b-ONp"/>
                             <constraint firstItem="kHf-fe-21z" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="c6l-IK-Dea"/>
+                            <constraint firstItem="OxQ-hV-4n0" firstAttribute="centerY" secondItem="3aI-eb-U7i" secondAttribute="bottom" id="dOo-7s-zlZ"/>
                             <constraint firstItem="Kra-7j-y4f" firstAttribute="centerY" secondItem="kHf-fe-21z" secondAttribute="centerY" id="fJd-jG-uwu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BnT-tv-pwJ" secondAttribute="trailing" constant="45" id="fUZ-w3-xL9"/>
                             <constraint firstItem="rbu-uG-HpJ" firstAttribute="leading" secondItem="kHf-fe-21z" secondAttribute="leading" id="gWf-Br-Reh"/>
@@ -340,6 +349,7 @@
                         <outlet property="done1" destination="urR-wM-NH4" id="Myz-k1-2C9"/>
                         <outlet property="done2" destination="rbu-uG-HpJ" id="a8C-rK-e66"/>
                         <outlet property="done3" destination="95o-a0-W7Y" id="WfB-hO-GW8"/>
+                        <outlet property="mainActivityIndicator" destination="OxQ-hV-4n0" id="Oe3-c9-GXV"/>
                         <outlet property="stackView1" destination="5zf-fS-IZC" id="LbB-fl-NxZ"/>
                         <outlet property="stackView2" destination="SKn-ib-8st" id="Etp-eh-51r"/>
                         <outlet property="stackView3" destination="Mv0-EW-LOX" id="fKx-57-237"/>
@@ -347,7 +357,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.00492610837438"/>
+            <point key="canvasLocation" x="1570" y="128"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="fEH-uT-xxu">
+            <objects>
+                <viewController title="Login View Controller" id="bLm-Us-aP8" customClass="LoginViewController" customModule="Money_Matter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tIe-cK-a1K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DM-MW-0uV">
+                                <rect key="frame" x="141" y="391" width="93" height="30"/>
+                                <state key="normal" title="Click to login "/>
+                                <connections>
+                                    <action selector="touchID:" destination="bLm-Us-aP8" eventType="touchUpInside" id="AiR-sP-kDE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5DM-MW-0uV" firstAttribute="centerY" secondItem="tIe-cK-a1K" secondAttribute="centerY" id="0vO-yI-xGF"/>
+                            <constraint firstItem="5DM-MW-0uV" firstAttribute="centerX" secondItem="tIe-cK-a1K" secondAttribute="centerX" id="oBc-0b-JJP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aWK-8k-UZ5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LCH-h2-zrC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="801" y="128"/>
         </scene>
     </scenes>
     <resources>
