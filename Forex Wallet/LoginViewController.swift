@@ -13,13 +13,22 @@ class LoginViewController: UIViewController {
 
    
     
-    @IBOutlet weak var homeButton2: UIButton!
+
+    @IBAction func CurrencyConvertor(_ sender: Any) {
+        self.displayActivityIndicator(true)
+        usleep(100000)
+        DispatchQueue.main.async {
+            
+            let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "CurrencyConvertor") as! CurrencyConvertor
+            self.present(newViewController, animated: true, completion: nil)
+        }
+    }
+    
     
     @IBAction func myCurrenciesButton(_ sender: Any) {
-        self.displayActivityIndicator(true)
-       
+       self.displayActivityIndicator(true)
        usleep(100000)
-        DispatchQueue.main.async {
+       DispatchQueue.main.async {
            
             let newViewController = self.storyboard?.instantiateViewController(withIdentifier: "wallethome") as! ViewController
             self.present(newViewController, animated: true, completion: nil)

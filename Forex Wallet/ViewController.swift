@@ -22,6 +22,11 @@ struct userCurrencyData: Codable {
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    @IBAction func dropDownArrow(_ sender: Any) {
+        baseCurrencyPicker.isHidden=false
+    }
+    @IBOutlet weak var baseCurrencyHeading: UILabel!
+    @IBOutlet weak var changeHeading: UILabel!
     var currentCurrencyName = ""
     var currentCurrencyValue: Float = 0.000
     var prevCurrencyName = ""
@@ -270,13 +275,27 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
-    var baseCurrencyData: [(currency: String, image: UIImage?)] = [("Select Base Currency",UIImage(named: "add.png")),("INR",UIImage(named: "india.png")),("AUD",UIImage(named: "aus.png")),("USD",UIImage(named:"usa.png")),("---",UIImage(named: "add.png")),]
+    var baseCurrencyData: [(currency: String, image: UIImage?)] = [("Select",UIImage(named: "add.png")),("INR",UIImage(named: "india.png")),("AUD",UIImage(named: "aus.png")),("USD",UIImage(named:"usa.png")),("---",UIImage(named: "add.png")),]
     
    var currencyData: [(currency: String, image: UIImage?)] = [/*("Remove",UIImage(named: "add.png")),*/("Select",UIImage(named: "add.png")),("INR",UIImage(named: "india.png")),("AUD",UIImage(named: "aus.png")),("USD",UIImage(named:"usa.png"))]
     
     var currencyDataForUserDefaults: [String:UIImage?] = [/*"Remove": UIImage(named: "add.png"),*/"Select":UIImage(named: "add.png"),"INR":UIImage(named: "india.png"),"AUD":UIImage(named: "aus.png"),"USD":UIImage(named:"usa.png")]
     
-
+    
+   
+    func drawLine(_ x1: CGFloat,_ y1:CGFloat,_ x2:CGFloat,_ y2:CGFloat){
+        let linePath = UIBezierPath()
+        let line = CAShapeLayer()
+     
+        linePath.move(to: CGPoint(x: x1, y: y1))
+        linePath.addLine(to: CGPoint(x: x2, y:y2))
+        line.path = linePath.cgPath
+        line.strokeColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        line.lineWidth = 1
+        line.lineJoin = CAShapeLayerLineJoin.round
+        self.view.layer.addSublayer(line)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.9489398599, green: 0.949072659, blue: 0.948897779, alpha: 1)
@@ -284,7 +303,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         toolBar.sizeToFit()
         baseCurrency.inputAccessoryView = toolBar
         viewsInitialiser()
-       
+        baseCurrency.borderStyle = .none
+        drawLine(self.view.frame.minX+29,baseCurrencyHeading.frame.minY-5,self.view.frame.maxX-28,changeHeading.frame.minY-5)
+        //drawLine(self.view.frame.minX+28,currencyLabel1.frame.maxY+10,self.view.frame.maxX-25,currencyLabel1.frame.maxY+10)
+        //drawLine(self.view.frame.minX+28,currencyLabel2.frame.maxY+10,self.view.frame.maxX-25,currencyLabel2.frame.maxY+10)
+  
         self.loadUserData(){
                 (success9) in
                 if (success9){
@@ -323,6 +346,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         baseCurrencyPicker.tag = 4
         baseCurrency.inputView = baseCurrencyPicker
     }
+    
+    
     
     func loadInitialValues(){
        
@@ -418,7 +443,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func setTime(_ timeStamp: UILabel){
         timeStamp.isHidden = false
-        timeStamp.text = " " + DateFormatter.localizedString(from: NSDate() as Date, dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.medium) + " "
+        timeStamp.text = DateFormatter.localizedString(from: NSDate() as Date, dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.medium)
     }
     
     func fetchLiveData(_ base: String,_ currencyLabel: UILabel,_ currentValue: UILabel?,_ changePercent:UIButton?,_ activityIndicator: UIActivityIndicatorView, _ stackView: UIStackView?){
