@@ -17,8 +17,8 @@
 		DEC867612291538700F2B9D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC8675F2291538700F2B9D7 /* Main.storyboard */; };
 		DEC867632291538800F2B9D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC867622291538800F2B9D7 /* Assets.xcassets */; };
 		DEC867662291538800F2B9D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC867642291538800F2B9D7 /* LaunchScreen.storyboard */; };
-		DEC867712291538900F2B9D7 /* Money_MatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC867702291538900F2B9D7 /* Money_MatterTests.swift */; };
-		DEC8677C2291538900F2B9D7 /* Money_MatterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8677B2291538900F2B9D7 /* Money_MatterUITests.swift */; };
+		DEC867712291538900F2B9D7 /* Forex_Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC867702291538900F2B9D7 /* Forex_Wallet.swift */; };
+		DEC8677C2291538900F2B9D7 /* Forex_Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8677B2291538900F2B9D7 /* Forex_Wallet.swift */; };
 		DEFD90A5229A8A1100A68D6D /* LoadInitialValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD90A4229A8A1100A68D6D /* LoadInitialValues.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,18 +45,18 @@
 		DE3088092292D3B40051A3E1 /* usa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = usa.png; path = Pictures/usa.png; sourceTree = SOURCE_ROOT; };
 		DE30880B2292D3B40051A3E1 /* india.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = india.png; path = Pictures/india.png; sourceTree = SOURCE_ROOT; };
 		DE30880C2292D3B40051A3E1 /* aus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = aus.png; path = Pictures/aus.png; sourceTree = SOURCE_ROOT; };
-		DEC867582291538700F2B9D7 /* Money Matter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money Matter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEC867582291538700F2B9D7 /* Forex Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Forex Wallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC8675B2291538700F2B9D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC8675D2291538700F2B9D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DEC867602291538700F2B9D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DEC867622291538800F2B9D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEC867652291538800F2B9D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEC867672291538900F2B9D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DEC8676C2291538900F2B9D7 /* Money MatterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Money MatterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DEC867702291538900F2B9D7 /* Money_MatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money_MatterTests.swift; sourceTree = "<group>"; };
+		DEC8676C2291538900F2B9D7 /* Forex WalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Forex WalletTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEC867702291538900F2B9D7 /* Forex_Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forex_Wallet.swift; sourceTree = "<group>"; };
 		DEC867722291538900F2B9D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DEC867772291538900F2B9D7 /* Money MatterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Money MatterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DEC8677B2291538900F2B9D7 /* Money_MatterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money_MatterUITests.swift; sourceTree = "<group>"; };
+		DEC867772291538900F2B9D7 /* Forex WalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Forex WalletUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEC8677B2291538900F2B9D7 /* Forex_Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forex_Wallet.swift; sourceTree = "<group>"; };
 		DEC8677D2291538900F2B9D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEFD90A4229A8A1100A68D6D /* LoadInitialValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadInitialValues.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,9 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				DE3088082292D3980051A3E1 /* Assets */,
-				DEC8675A2291538700F2B9D7 /* Money Matter */,
-				DEC8676F2291538900F2B9D7 /* Money MatterTests */,
-				DEC8677A2291538900F2B9D7 /* Money MatterUITests */,
+				DEC8675A2291538700F2B9D7 /* Forex Wallet */,
+				DEC8676F2291538900F2B9D7 /* Forex WalletTests */,
+				DEC8677A2291538900F2B9D7 /* Forex WalletUITests */,
 				DEC867592291538700F2B9D7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -111,14 +111,14 @@
 		DEC867592291538700F2B9D7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DEC867582291538700F2B9D7 /* Money Matter.app */,
-				DEC8676C2291538900F2B9D7 /* Money MatterTests.xctest */,
-				DEC867772291538900F2B9D7 /* Money MatterUITests.xctest */,
+				DEC867582291538700F2B9D7 /* Forex Wallet.app */,
+				DEC8676C2291538900F2B9D7 /* Forex WalletTests.xctest */,
+				DEC867772291538900F2B9D7 /* Forex WalletUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DEC8675A2291538700F2B9D7 /* Money Matter */ = {
+		DEC8675A2291538700F2B9D7 /* Forex Wallet */ = {
 			isa = PBXGroup;
 			children = (
 				DEC8675B2291538700F2B9D7 /* AppDelegate.swift */,
@@ -130,33 +130,33 @@
 				DEC867642291538800F2B9D7 /* LaunchScreen.storyboard */,
 				DEC867672291538900F2B9D7 /* Info.plist */,
 			);
-			path = "Money Matter";
+			path = "Forex Wallet";
 			sourceTree = "<group>";
 		};
-		DEC8676F2291538900F2B9D7 /* Money MatterTests */ = {
+		DEC8676F2291538900F2B9D7 /* Forex WalletTests */ = {
 			isa = PBXGroup;
 			children = (
-				DEC867702291538900F2B9D7 /* Money_MatterTests.swift */,
+				DEC867702291538900F2B9D7 /* Forex_Wallet.swift */,
 				DEC867722291538900F2B9D7 /* Info.plist */,
 			);
-			path = "Money MatterTests";
+			path = "Forex WalletTests";
 			sourceTree = "<group>";
 		};
-		DEC8677A2291538900F2B9D7 /* Money MatterUITests */ = {
+		DEC8677A2291538900F2B9D7 /* Forex WalletUITests */ = {
 			isa = PBXGroup;
 			children = (
-				DEC8677B2291538900F2B9D7 /* Money_MatterUITests.swift */,
+				DEC8677B2291538900F2B9D7 /* Forex_Wallet.swift */,
 				DEC8677D2291538900F2B9D7 /* Info.plist */,
 			);
-			path = "Money MatterUITests";
+			path = "Forex WalletUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DEC867572291538700F2B9D7 /* Money Matter */ = {
+		DEC867572291538700F2B9D7 /* Forex Wallet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DEC867802291538900F2B9D7 /* Build configuration list for PBXNativeTarget "Money Matter" */;
+			buildConfigurationList = DEC867802291538900F2B9D7 /* Build configuration list for PBXNativeTarget "Forex Wallet" */;
 			buildPhases = (
 				DEC867542291538700F2B9D7 /* Sources */,
 				DEC867552291538700F2B9D7 /* Frameworks */,
@@ -166,14 +166,14 @@
 			);
 			dependencies = (
 			);
-			name = "Money Matter";
+			name = "Forex Wallet";
 			productName = "Money Matter";
-			productReference = DEC867582291538700F2B9D7 /* Money Matter.app */;
+			productReference = DEC867582291538700F2B9D7 /* Forex Wallet.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DEC8676B2291538900F2B9D7 /* Money MatterTests */ = {
+		DEC8676B2291538900F2B9D7 /* Forex WalletTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DEC867832291538900F2B9D7 /* Build configuration list for PBXNativeTarget "Money MatterTests" */;
+			buildConfigurationList = DEC867832291538900F2B9D7 /* Build configuration list for PBXNativeTarget "Forex WalletTests" */;
 			buildPhases = (
 				DEC867682291538900F2B9D7 /* Sources */,
 				DEC867692291538900F2B9D7 /* Frameworks */,
@@ -184,14 +184,14 @@
 			dependencies = (
 				DEC8676E2291538900F2B9D7 /* PBXTargetDependency */,
 			);
-			name = "Money MatterTests";
+			name = "Forex WalletTests";
 			productName = "Money MatterTests";
-			productReference = DEC8676C2291538900F2B9D7 /* Money MatterTests.xctest */;
+			productReference = DEC8676C2291538900F2B9D7 /* Forex WalletTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DEC867762291538900F2B9D7 /* Money MatterUITests */ = {
+		DEC867762291538900F2B9D7 /* Forex WalletUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DEC867862291538900F2B9D7 /* Build configuration list for PBXNativeTarget "Money MatterUITests" */;
+			buildConfigurationList = DEC867862291538900F2B9D7 /* Build configuration list for PBXNativeTarget "Forex WalletUITests" */;
 			buildPhases = (
 				DEC867732291538900F2B9D7 /* Sources */,
 				DEC867742291538900F2B9D7 /* Frameworks */,
@@ -202,9 +202,9 @@
 			dependencies = (
 				DEC867792291538900F2B9D7 /* PBXTargetDependency */,
 			);
-			name = "Money MatterUITests";
+			name = "Forex WalletUITests";
 			productName = "Money MatterUITests";
-			productReference = DEC867772291538900F2B9D7 /* Money MatterUITests.xctest */;
+			productReference = DEC867772291538900F2B9D7 /* Forex WalletUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -230,7 +230,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DEC867532291538700F2B9D7 /* Build configuration list for PBXProject "Money Matter" */;
+			buildConfigurationList = DEC867532291538700F2B9D7 /* Build configuration list for PBXProject "Forex Wallet" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -243,9 +243,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DEC867572291538700F2B9D7 /* Money Matter */,
-				DEC8676B2291538900F2B9D7 /* Money MatterTests */,
-				DEC867762291538900F2B9D7 /* Money MatterUITests */,
+				DEC867572291538700F2B9D7 /* Forex Wallet */,
+				DEC8676B2291538900F2B9D7 /* Forex WalletTests */,
+				DEC867762291538900F2B9D7 /* Forex WalletUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -297,7 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEC867712291538900F2B9D7 /* Money_MatterTests.swift in Sources */,
+				DEC867712291538900F2B9D7 /* Forex_Wallet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEC8677C2291538900F2B9D7 /* Money_MatterUITests.swift in Sources */,
+				DEC8677C2291538900F2B9D7 /* Forex_Wallet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,12 +314,12 @@
 /* Begin PBXTargetDependency section */
 		DEC8676E2291538900F2B9D7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DEC867572291538700F2B9D7 /* Money Matter */;
+			target = DEC867572291538700F2B9D7 /* Forex Wallet */;
 			targetProxy = DEC8676D2291538900F2B9D7 /* PBXContainerItemProxy */;
 		};
 		DEC867792291538900F2B9D7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DEC867572291538700F2B9D7 /* Money Matter */;
+			target = DEC867572291538700F2B9D7 /* Forex Wallet */;
 			targetProxy = DEC867782291538900F2B9D7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -465,12 +465,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Money Matter/Info.plist";
+				INFOPLIST_FILE = "Forex Wallet/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "-3148059.Money-Matter";
+				PRODUCT_BUNDLE_IDENTIFIER = "-3148059.Forex-Wallet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -482,12 +482,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Money Matter/Info.plist";
+				INFOPLIST_FILE = "Forex Wallet/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "-3148059.Money-Matter";
+				PRODUCT_BUNDLE_IDENTIFIER = "-3148059.Forex-Wallet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -510,7 +510,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Money Matter.app/Money Matter";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Forex Wallet.app/Forex Wallet";
 			};
 			name = Debug;
 		};
@@ -530,7 +530,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Money Matter.app/Money Matter";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Forex Wallet.app/Forex Wallet";
 			};
 			name = Release;
 		};
@@ -575,7 +575,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DEC867532291538700F2B9D7 /* Build configuration list for PBXProject "Money Matter" */ = {
+		DEC867532291538700F2B9D7 /* Build configuration list for PBXProject "Forex Wallet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DEC8677E2291538900F2B9D7 /* Debug */,
@@ -584,7 +584,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DEC867802291538900F2B9D7 /* Build configuration list for PBXNativeTarget "Money Matter" */ = {
+		DEC867802291538900F2B9D7 /* Build configuration list for PBXNativeTarget "Forex Wallet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DEC867812291538900F2B9D7 /* Debug */,
@@ -593,7 +593,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DEC867832291538900F2B9D7 /* Build configuration list for PBXNativeTarget "Money MatterTests" */ = {
+		DEC867832291538900F2B9D7 /* Build configuration list for PBXNativeTarget "Forex WalletTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DEC867842291538900F2B9D7 /* Debug */,
@@ -602,7 +602,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DEC867862291538900F2B9D7 /* Build configuration list for PBXNativeTarget "Money MatterUITests" */ = {
+		DEC867862291538900F2B9D7 /* Build configuration list for PBXNativeTarget "Forex WalletUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DEC867872291538900F2B9D7 /* Debug */,
