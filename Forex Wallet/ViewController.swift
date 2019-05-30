@@ -40,6 +40,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var selected1: Bool = false
     var selected2: Bool = false
     var selected3: Bool = false
+    var baseSelected: Bool = true
     var picker1Operatored = false
     var picker2Operatored = false
     var picker3Operatored = false
@@ -76,7 +77,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBAction func done1Pressed(_ sender: Any) {
         if (picker1Operatored){
             picker1Operatored=false
-        if (selected1){
+        if (selected1) && (baseSelected){
            // timeStamp1.text = Date()
             
             setTime(timeStamp1)
@@ -154,7 +155,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBAction func done2Pressed(_ sender: Any) {
         if (picker2Operatored){
          picker2Operatored=false
-        if (selected2){
+        if (selected2) && (baseSelected){
             currencyPicker2.isHidden = true
             deHighlightCurrencyButtons(currencyButton2)
             let userData2: [userCurrencyData] = [
@@ -227,7 +228,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBAction func done3Pressed(_ sender: Any) {
         if (picker3Operatored){
             picker3Operatored=false
-        if (selected3){
+        if (selected3) && (baseSelected){
             currencyPicker3.isHidden = true
             deHighlightCurrencyButtons(currencyButton3)
                 let userData3: [userCurrencyData] = [
@@ -275,11 +276,201 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
-    var baseCurrencyData: [(currency: String, image: UIImage?)] = [("Select",UIImage(named: "add.png")),("INR",UIImage(named: "india.png")),("AUD",UIImage(named: "aus.png")),("USD",UIImage(named:"usa.png")),("---",UIImage(named: "add.png")),]
+    var baseCurrencyData: [(currency: String, image: UIImage?)] = [("Select",UIImage(named: "add.png")),
+                                                                   ("AED",UIImage(named: "abkhazia.png")),
+                                                                   ("AFN",UIImage(named: "afghanistan.png")),
+                                                                   ("ALL",UIImage(named: "aland-islands.png")),
+                                                                   ("AMD",UIImage(named: "albania.png")),
+                                                                   ("ANG",UIImage(named: "algeria.png")),
+                                                                   ("AOA",UIImage(named: "american-samoa.png")),
+                                                                   ("ARS",UIImage(named: "andorra.png")),
+                                                                   ("AUD",UIImage(named: "aus.png")),
+                                                                   ("AWG",UIImage(named: "angola.png")),
+                                                                   ("INR",UIImage(named: "india.png")),
+                                                                   ("AZN",UIImage(named: "antigua-and-barbuda.png")),
+                                                                   ("BAM",UIImage(named: "bahamas.png")),
+                                                                   ("BBD",UIImage(named: "bahrain.png")),
+                                                                   ("BDT",UIImage(named: "balearic-islands.png")),
+                                                                   ("BGN",UIImage(named: "bangladesh.png")),
+                                                                  // ("BHD",UIImage(named: "bhd.png")),
+                                                                   //("BIF",UIImage(named: "bif.png")),
+                                                                   
+                                                                   
+        /*("BMD",UIImage(named: "BMD.png")),
+        ("BND",UIImage(named: "bhd.png")),
+        ("BOB",UIImage(named: "bhd.png")),
+        ("BRL",UIImage(named: "bhd.png")),
+        ("BSD",UIImage(named: "bhd.png")),
+        ("BTC",UIImage(named: "bhd.png")),
+        ("BTN",UIImage(named: "bhd.png")),
+        ("BWP",UIImage(named: "bhd.png")),
+        ("BYN",UIImage(named: "bhd.png")),
+        ("BYR",UIImage(named: "bhd.png")),
+        ("BZD",UIImage(named: "bhd.png")),
+        ("CAD",UIImage(named: "bhd.png")),
+        ("CDF",UIImage(named: "bhd.png")),
+        ("CHF",UIImage(named: "bhd.png")),
+        ("CLF",UIImage(named: "bhd.png")),
+        ("CLP",UIImage(named: "bhd.png")),
+        ("CNY",UIImage(named: "bhd.png")),
+        ("COP",UIImage(named: "bhd.png")),
+        ("CRC",UIImage(named: "bhd.png")),
+        ("CUC",UIImage(named: "bhd.png")),
+        ("CUP",UIImage(named: "bhd.png")),
+        ("CVE",UIImage(named: "bhd.png")),
+        ("CZK",UIImage(named: "bhd.png")),
+        ("DJF",UIImage(named: "bhd.png")),
+        ("DKK",UIImage(named: "bhd.png")),
+        ("DOP",UIImage(named: "bhd.png")),
+        ("DZD",UIImage(named: "bhd.png")),
+        ("EGP",UIImage(named: "bhd.png")),
+        ("ERN",UIImage(named: "bhd.png")),
+        ("ETB",UIImage(named: "bhd.png")),
+        ("EUR",UIImage(named: "bhd.png")),
+        ("FJD",UIImage(named: "bhd.png")),
+        ("FKP",UIImage(named: "bhd.png")),
+        ("GBP",UIImage(named: "bhd.png")),
+        ("GEL",UIImage(named: "bhd.png")),
+        ("GGP",UIImage(named: "bhd.png")),
+        ("GHS",UIImage(named: "bhd.png")),
+        ("GIP",UIImage(named: "bhd.png")),
+        ("GMD",UIImage(named: "bhd.png")),
+        ("GNF",UIImage(named: "bhd.png")),
+        ("GTQ",UIImage(named: "bhd.png")),
+        ("GYD",UIImage(named: "bhd.png")),
+        ("HKD",UIImage(named: "bhd.png")),
+        ("HNL",UIImage(named: "bhd.png")),
+        ("HRK",UIImage(named: "bhd.png")),
+        ("HTG",UIImage(named: "bhd.png")),
+        ("HUF",UIImage(named: "bhd.png")),
+        ("IDR",UIImage(named: "bhd.png")),
+        ("ILS",UIImage(named: "bhd.png")),
+        ("IMP",UIImage(named: "bhd.png")),
+        ("INR",UIImage(named: "bhd.png")),
+        ("IQD",UIImage(named: "bhd.png")),
+        ("IRR",UIImage(named: "bhd.png")),
+        ("ISK",UIImage(named: "bhd.png")),
+        ("JEP",UIImage(named: "bhd.png")),
+        ("JMD",UIImage(named: "bhd.png")),
+        ("JOD",UIImage(named: "bhd.png")),
+        ("JPY",UIImage(named: "bhd.png")),
+        ("KES",UIImage(named: "bhd.png")),
+        ("KGS",UIImage(named: "bhd.png")),
+        ("KHR",UIImage(named: "bhd.png")),
+        ("KMF",UIImage(named: "bhd.png")),
+        ("KPW",UIImage(named: "bhd.png")),
+        ("KRW",UIImage(named: "bhd.png")),
+        ("KWD",UIImage(named: "bhd.png")),
+        ("KYD",UIImage(named: "bhd.png")),
+        ("KZT",UIImage(named: "bhd.png")),
+        ("LAK",UIImage(named: "bhd.png")),
+        ("LBP",UIImage(named: "bhd.png")),
+        ("LKR",UIImage(named: "bhd.png")),
+        ("LRD",UIImage(named: "bhd.png")),
+        ("LSL",UIImage(named: "bhd.png")),
+        ("LTL",UIImage(named: "bhd.png")),
+        ("LVL",UIImage(named: "bhd.png")),
+        ("LYD",UIImage(named: "bhd.png")),
+        ("MAD",UIImage(named: "bhd.png")),
+        ("MDL",UIImage(named: "bhd.png")),
+        ("MGA",UIImage(named: "bhd.png")),
+        ("MKD",UIImage(named: "bhd.png")),
+        ("MMK",UIImage(named: "bhd.png")),
+        ("MNT",UIImage(named: "bhd.png")),
+        ("MOP",UIImage(named: "bhd.png")),
+        ("MRO",UIImage(named: "bhd.png")),
+        ("MUR",UIImage(named: "bhd.png")),
+        ("MVR",UIImage(named: "bhd.png")),
+        ("MWK",UIImage(named: "bhd.png")),
+        ("MXN",UIImage(named: "bhd.png")),
+        ("MYR",UIImage(named: "bhd.png")),
+        ("MZN",UIImage(named: "bhd.png")),
+        ("NAD",UIImage(named: "bhd.png")),
+        ("NGN",UIImage(named: "bhd.png")),
+        ("NIO",UIImage(named: "bhd.png")),
+        ("NOK",UIImage(named: "bhd.png")),
+        ("NPR",UIImage(named: "bhd.png")),
+        ("NZD",UIImage(named: "bhd.png")),
+        ("OMR",UIImage(named: "bhd.png")),
+        ("PAB",UIImage(named: "bhd.png")),
+        ("PEN",UIImage(named: "bhd.png")),
+        ("PGK",UIImage(named: "bhd.png")),
+        ("PHP",UIImage(named: "bhd.png")),
+        ("PKR",UIImage(named: "bhd.png")),
+        ("PLN",UIImage(named: "bhd.png")),
+        ("PYG",UIImage(named: "bhd.png")),
+        ("QAR",UIImage(named: "bhd.png")),
+        ("RON",UIImage(named: "bhd.png")),
+        ("RSD",UIImage(named: "bhd.png")),
+        ("RUB",UIImage(named: "bhd.png")),
+        ("RWF",UIImage(named: "bhd.png")),
+        ("SAR",UIImage(named: "bhd.png")),
+        ("SBD",UIImage(named: "bhd.png")),
+        ("SCR",UIImage(named: "bhd.png")),
+        ("SDG",UIImage(named: "bhd.png")),
+        ("SEK",UIImage(named: "bhd.png")),
+        ("SGD",UIImage(named: "bhd.png")),
+        ("SHP",UIImage(named: "bhd.png")),
+        ("SLL",UIImage(named: "bhd.png")),
+        ("SOS",UIImage(named: "bhd.png")),
+        ("SRD",UIImage(named: "bhd.png")),
+        ("STD",UIImage(named: "bhd.png")),
+        ("SVC",UIImage(named: "bhd.png")),
+        ("SYP",UIImage(named: "bhd.png")),
+        ("SZL",UIImage(named: "bhd.png")),
+        ("THB",UIImage(named: "bhd.png")),
+        ("TJS",UIImage(named: "bhd.png")),
+        ("TMT",UIImage(named: "bhd.png")),
+        ("TND",UIImage(named: "bhd.png")),
+        ("TOP",UIImage(named: "bhd.png")),
+        ("TRY",UIImage(named: "bhd.png")),
+        ("TTD",UIImage(named: "bhd.png")),
+        ("TWD",UIImage(named: "bhd.png")),
+        ("TZS",UIImage(named: "bhd.png")),
+        ("UAH",UIImage(named: "bhd.png")),
+        ("UGX",UIImage(named: "bhd.png")),
+        ("USD",UIImage(named: "bhd.png")),
+        ("UYU",UIImage(named: "bhd.png")),
+        ("UZS",UIImage(named: "bhd.png")),
+        ("VEF",UIImage(named: "bhd.png")),
+        ("VND",UIImage(named: "bhd.png")),
+        ("VUV",UIImage(named: "bhd.png")),
+        ("WST",UIImage(named: "bhd.png")),
+        ("XAF",UIImage(named: "bhd.png")),
+        ("XAG",UIImage(named: "bhd.png")),
+        ("XAU",UIImage(named: "bhd.png")),
+        ("XCD",UIImage(named: "bhd.png")),
+        ("XDR",UIImage(named: "bhd.png")),
+        ("XOF",UIImage(named: "bhd.png")),
+        ("XPF",UIImage(named: "bhd.png")),
+        ("YER",UIImage(named: "bhd.png")),
+        ("ZAR",UIImage(named: "bhd.png")),
+        ("ZMK",UIImage(named: "bhd.png")),
+        ("ZMW",UIImage(named: "bhd.png")),
+        ("ZWL",UIImage(named: "bhd.png")),*/
+        ("USD",UIImage(named: "bhd.png"))
+        ]
+            
     
-   var currencyData: [(currency: String, image: UIImage?)] = [/*("Remove",UIImage(named: "add.png")),*/("Select",UIImage(named: "add.png")),("INR",UIImage(named: "india.png")),("AUD",UIImage(named: "aus.png")),("USD",UIImage(named:"usa.png"))]
+    var currencyData: [(currency: String, image: UIImage?)] = [("Select",UIImage(named: "add.png")),
+        ("AED",UIImage(named: "abkhazia.png")),
+        ("AFN",UIImage(named: "afghanistan.png")),
+        ("ALL",UIImage(named: "aland-islands.png")),
+        ("AMD",UIImage(named: "albania.png")),
+        ("ANG",UIImage(named: "algeria.png")),
+        ("AOA",UIImage(named: "american-samoa.png")),
+        ("ARS",UIImage(named: "andorra.png")),
+        ("AUD",UIImage(named: "aus.png")),
+        ("AWG",UIImage(named: "angola.png")),
+        ("INR",UIImage(named: "india.png")),
+        ("AZN",UIImage(named: "antigua-and-barbuda.png")),
+        ("BAM",UIImage(named: "bahamas.png")),
+        ("BBD",UIImage(named: "bahrain.png")),
+        ("BDT",UIImage(named: "balearic-islands.png")),
+        ("BGN",UIImage(named: "bangladesh.png")),
+       ("USD",UIImage(named:"usa.png"))]
     
-    var currencyDataForUserDefaults: [String:UIImage?] = [/*"Remove": UIImage(named: "add.png"),*/"Select":UIImage(named: "add.png"),"INR":UIImage(named: "india.png"),"AUD":UIImage(named: "aus.png"),"USD":UIImage(named:"usa.png")]
+    var currencyDataForUserDefaults: [String:UIImage?] = ["Select":UIImage(named: "add.png"),"INR":UIImage(named: "india.png"),"AUD":UIImage(named: "aus.png"),"USD":UIImage(named:"usa.png"),"AED":UIImage(named: "aus.png"),"AFN":UIImage(named: "aus.png"),"ALL":UIImage(named: "aus.png"),"AMD":UIImage(named: "aus.png"),"ANG":UIImage(named: "aus.png"),"AOA":UIImage(named: "aus.png"),"ARS":UIImage(named: "aus.png"),"AWG":UIImage(named: "aus.png"),"AZN":UIImage(named: "aus.png"),"BHD":UIImage(named: "aus.png")]
     
     
    
@@ -305,8 +496,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         viewsInitialiser()
         baseCurrency.borderStyle = .none
         drawLine(self.view.frame.minX+29,baseCurrencyHeading.frame.minY-5,self.view.frame.maxX-28,changeHeading.frame.minY-5)
-        //drawLine(self.view.frame.minX+28,currencyLabel1.frame.maxY+10,self.view.frame.maxX-25,currencyLabel1.frame.maxY+10)
-        //drawLine(self.view.frame.minX+28,currencyLabel2.frame.maxY+10,self.view.frame.maxX-25,currencyLabel2.frame.maxY+10)
+        drawLine(self.view.frame.minX+29,baseCurrencyHeading.frame.maxY+5,self.view.frame.maxX-28,changeHeading.frame.maxY+5)
+     
   
         self.loadUserData(){
                 (success9) in
@@ -339,7 +530,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }else{
              baseCurrencyPicker.selectRow(0, inComponent: 0, animated: true)
         }
-        
         enableCurrencyButtons()
         baseCurrencyPicker.delegate=self
         baseCurrencyPicker.dataSource=self
@@ -534,8 +724,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
            
         }
         else if pickerView.tag == 4{
-           
+            
             baseCurrency.text = baseCurrencyData[row].currency
+            if baseCurrency.text == "Select"{
+                baseSelected = false
+                
+            }
+            else{
+                baseSelected = true
+            }
+            
             
         }
         else{

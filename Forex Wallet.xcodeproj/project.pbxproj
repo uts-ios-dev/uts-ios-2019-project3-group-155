@@ -22,6 +22,267 @@
 		DEC867662291538800F2B9D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC867642291538800F2B9D7 /* LaunchScreen.storyboard */; };
 		DEC867712291538900F2B9D7 /* Forex_Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC867702291538900F2B9D7 /* Forex_Wallet.swift */; };
 		DEC8677C2291538900F2B9D7 /* Forex_Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8677B2291538900F2B9D7 /* Forex_Wallet.swift */; };
+		DEF6CB68229FB99F00459E98 /* slovenia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA61229FB99000459E98 /* slovenia.png */; };
+		DEF6CB69229FB99F00459E98 /* france.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA62229FB99000459E98 /* france.png */; };
+		DEF6CB6A229FB99F00459E98 /* algeria.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA63229FB99000459E98 /* algeria.png */; };
+		DEF6CB6B229FB99F00459E98 /* nauru.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA64229FB99000459E98 /* nauru.png */; };
+		DEF6CB6C229FB99F00459E98 /* republic-of-macedonia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA65229FB99000459E98 /* republic-of-macedonia.png */; };
+		DEF6CB6D229FB99F00459E98 /* england.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA66229FB99000459E98 /* england.png */; };
+		DEF6CB6E229FB99F00459E98 /* norfolk-island.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA67229FB99000459E98 /* norfolk-island.png */; };
+		DEF6CB6F229FB99F00459E98 /* curacao.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA68229FB99000459E98 /* curacao.png */; };
+		DEF6CB70229FB99F00459E98 /* antigua-and-barbuda.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA69229FB99000459E98 /* antigua-and-barbuda.png */; };
+		DEF6CB71229FB99F00459E98 /* hawaii.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA6A229FB99000459E98 /* hawaii.png */; };
+		DEF6CB72229FB99F00459E98 /* south-korea.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA6B229FB99000459E98 /* south-korea.png */; };
+		DEF6CB73229FB99F00459E98 /* tunisia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA6C229FB99000459E98 /* tunisia.png */; };
+		DEF6CB74229FB99F00459E98 /* bahamas.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA6D229FB99000459E98 /* bahamas.png */; };
+		DEF6CB75229FB99F00459E98 /* mozambique.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA6E229FB99000459E98 /* mozambique.png */; };
+		DEF6CB76229FB99F00459E98 /* maldives.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA6F229FB99000459E98 /* maldives.png */; };
+		DEF6CB77229FB99F00459E98 /* rapa-nui.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA70229FB99000459E98 /* rapa-nui.png */; };
+		DEF6CB78229FB99F00459E98 /* swaziland.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA71229FB99000459E98 /* swaziland.png */; };
+		DEF6CB79229FB99F00459E98 /* brunei.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA72229FB99000459E98 /* brunei.png */; };
+		DEF6CB7A229FB99F00459E98 /* kiribati.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA73229FB99000459E98 /* kiribati.png */; };
+		DEF6CB7B229FB99F00459E98 /* sint-eustatius.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA74229FB99000459E98 /* sint-eustatius.png */; };
+		DEF6CB7C229FB99F00459E98 /* united-kingdom.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA75229FB99000459E98 /* united-kingdom.png */; };
+		DEF6CB7D229FB99F00459E98 /* estonia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA76229FB99100459E98 /* estonia.png */; };
+		DEF6CB7E229FB99F00459E98 /* bulgaria.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA77229FB99100459E98 /* bulgaria.png */; };
+		DEF6CB7F229FB99F00459E98 /* andorra.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA78229FB99100459E98 /* andorra.png */; };
+		DEF6CB80229FB99F00459E98 /* seychelles.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA79229FB99100459E98 /* seychelles.png */; };
+		DEF6CB81229FB99F00459E98 /* japan.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA7A229FB99100459E98 /* japan.png */; };
+		DEF6CB82229FB99F00459E98 /* fiji.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA7B229FB99100459E98 /* fiji.png */; };
+		DEF6CB83229FB99F00459E98 /* oman.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA7C229FB99100459E98 /* oman.png */; };
+		DEF6CB84229FB99F00459E98 /* republic-of-poland.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA7D229FB99100459E98 /* republic-of-poland.png */; };
+		DEF6CB85229FB99F00459E98 /* tuvalu.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA7E229FB99100459E98 /* tuvalu.png */; };
+		DEF6CB86229FB99F00459E98 /* laos.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA7F229FB99100459E98 /* laos.png */; };
+		DEF6CB87229FB99F00459E98 /* united-nations.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA80229FB99100459E98 /* united-nations.png */; };
+		DEF6CB88229FB99F00459E98 /* british-columbia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA81229FB99100459E98 /* british-columbia.png */; };
+		DEF6CB89229FB99F00459E98 /* anguilla.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA82229FB99100459E98 /* anguilla.png */; };
+		DEF6CB8A229FB99F00459E98 /* ukraine.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA83229FB99100459E98 /* ukraine.png */; };
+		DEF6CB8B229FB99F00459E98 /* liechtenstein.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA84229FB99100459E98 /* liechtenstein.png */; };
+		DEF6CB8C229FB99F00459E98 /* norway.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA85229FB99100459E98 /* norway.png */; };
+		DEF6CB8D229FB99F00459E98 /* burundi.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA86229FB99100459E98 /* burundi.png */; };
+		DEF6CB8E229FB99F00459E98 /* mauritius.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA87229FB99100459E98 /* mauritius.png */; };
+		DEF6CB8F229FB99F00459E98 /* abkhazia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA88229FB99200459E98 /* abkhazia.png */; };
+		DEF6CB90229FB99F00459E98 /* honduras.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA89229FB99200459E98 /* honduras.png */; };
+		DEF6CB91229FB99F00459E98 /* st-barts.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA8A229FB99200459E98 /* st-barts.png */; };
+		DEF6CB92229FB99F00459E98 /* bolivia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA8B229FB99200459E98 /* bolivia.png */; };
+		DEF6CB93229FB99F00459E98 /* guinea.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA8C229FB99200459E98 /* guinea.png */; };
+		DEF6CB94229FB99F00459E98 /* spain.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA8D229FB99200459E98 /* spain.png */; };
+		DEF6CB95229FB99F00459E98 /* cayman-islands.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA8E229FB99200459E98 /* cayman-islands.png */; };
+		DEF6CB96229FB99F00459E98 /* bangladesh.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA8F229FB99200459E98 /* bangladesh.png */; };
+		DEF6CB97229FB99F00459E98 /* mali.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA90229FB99200459E98 /* mali.png */; };
+		DEF6CB98229FB99F00459E98 /* hungary.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA91229FB99200459E98 /* hungary.png */; };
+		DEF6CB99229FB99F00459E98 /* canary-islands.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA92229FB99200459E98 /* canary-islands.png */; };
+		DEF6CB9A229FB99F00459E98 /* saba-island.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA93229FB99200459E98 /* saba-island.png */; };
+		DEF6CB9B229FB99F00459E98 /* finland.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA94229FB99200459E98 /* finland.png */; };
+		DEF6CB9C229FB99F00459E98 /* falkland-islands.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA95229FB99200459E98 /* falkland-islands.png */; };
+		DEF6CB9D229FB99F00459E98 /* moldova.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA96229FB99200459E98 /* moldova.png */; };
+		DEF6CB9E229FB99F00459E98 /* armenia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA97229FB99200459E98 /* armenia.png */; };
+		DEF6CB9F229FB99F00459E98 /* salvador.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA98229FB99200459E98 /* salvador.png */; };
+		DEF6CBA0229FB99F00459E98 /* peru.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA99229FB99200459E98 /* peru.png */; };
+		DEF6CBA1229FB99F00459E98 /* st-lucia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA9A229FB99300459E98 /* st-lucia.png */; };
+		DEF6CBA2229FB99F00459E98 /* wales.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA9B229FB99300459E98 /* wales.png */; };
+		DEF6CBA3229FB99F00459E98 /* guatemala.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA9C229FB99300459E98 /* guatemala.png */; };
+		DEF6CBA4229FB99F00459E98 /* turks-and-caicos.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA9D229FB99300459E98 /* turks-and-caicos.png */; };
+		DEF6CBA5229FB99F00459E98 /* kazakhstan.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA9E229FB99300459E98 /* kazakhstan.png */; };
+		DEF6CBA6229FB99F00459E98 /* benin.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CA9F229FB99300459E98 /* benin.png */; };
+		DEF6CBA7229FB99F00459E98 /* bhutan.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAA0229FB99300459E98 /* bhutan.png */; };
+		DEF6CBA8229FB99F00459E98 /* north-korea.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAA1229FB99300459E98 /* north-korea.png */; };
+		DEF6CBA9229FB99F00459E98 /* ghana.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAA2229FB99300459E98 /* ghana.png */; };
+		DEF6CBAA229FB99F00459E98 /* greenland.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAA3229FB99300459E98 /* greenland.png */; };
+		DEF6CBAB229FB99F00459E98 /* san-marino.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAA4229FB99300459E98 /* san-marino.png */; };
+		DEF6CBAC229FB99F00459E98 /* singapore.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAA5229FB99300459E98 /* singapore.png */; };
+		DEF6CBAD229FB99F00459E98 /* malaysia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAA6229FB99300459E98 /* malaysia.png */; };
+		DEF6CBAE229FB99F00459E98 /* european-union.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAA7229FB99300459E98 /* european-union.png */; };
+		DEF6CBAF229FB99F00459E98 /* djibouti.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAA8229FB99300459E98 /* djibouti.png */; };
+		DEF6CBB0229FB99F00459E98 /* cocos-island.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAA9229FB99300459E98 /* cocos-island.png */; };
+		DEF6CBB1229FB99F00459E98 /* bahrain.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAAA229FB99300459E98 /* bahrain.png */; };
+		DEF6CBB2229FB99F00459E98 /* iraq.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAAB229FB99300459E98 /* iraq.png */; };
+		DEF6CBB3229FB99F00459E98 /* albania.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAAC229FB99400459E98 /* albania.png */; };
+		DEF6CBB4229FB99F00459E98 /* samoa.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAAD229FB99400459E98 /* samoa.png */; };
+		DEF6CBB5229FB99F00459E98 /* united-arab-emirates.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAAE229FB99400459E98 /* united-arab-emirates.png */; };
+		DEF6CBB6229FB99F00459E98 /* malawi.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAAF229FB99400459E98 /* malawi.png */; };
+		DEF6CBB7229FB99F00459E98 /* angola.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAB0229FB99400459E98 /* angola.png */; };
+		DEF6CBB8229FB99F00459E98 /* morocco.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAB1229FB99400459E98 /* morocco.png */; };
+		DEF6CBB9229FB99F00459E98 /* micronesia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAB2229FB99400459E98 /* micronesia.png */; };
+		DEF6CBBA229FB99F00459E98 /* virgin-islands.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAB3229FB99400459E98 /* virgin-islands.png */; };
+		DEF6CBBB229FB99F00459E98 /* brazil.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAB4229FB99400459E98 /* brazil.png */; };
+		DEF6CBBC229FB99F00459E98 /* central-african-republic.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAB5229FB99400459E98 /* central-african-republic.png */; };
+		DEF6CBBD229FB99F00459E98 /* aruba.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAB6229FB99400459E98 /* aruba.png */; };
+		DEF6CBBE229FB99F00459E98 /* jamaica.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAB7229FB99400459E98 /* jamaica.png */; };
+		DEF6CBBF229FB99F00459E98 /* uruguay.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAB8229FB99400459E98 /* uruguay.png */; };
+		DEF6CBC0229FB99F00459E98 /* iceland.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAB9229FB99400459E98 /* iceland.png */; };
+		DEF6CBC1229FB99F00459E98 /* faroe-islands.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CABA229FB99400459E98 /* faroe-islands.png */; };
+		DEF6CBC2229FB99F00459E98 /* tanzania.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CABB229FB99400459E98 /* tanzania.png */; };
+		DEF6CBC3229FB99F00459E98 /* american-samoa.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CABC229FB99400459E98 /* american-samoa.png */; };
+		DEF6CBC4229FB99F00459E98 /* vietnam.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CABD229FB99400459E98 /* vietnam.png */; };
+		DEF6CBC5229FB99F00459E98 /* egypt.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CABE229FB99500459E98 /* egypt.png */; };
+		DEF6CBC6229FB99F00459E98 /* azores-islands.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CABF229FB99500459E98 /* azores-islands.png */; };
+		DEF6CBC7229FB99F00459E98 /* iran.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAC0229FB99500459E98 /* iran.png */; };
+		DEF6CBC8229FB99F00459E98 /* canada.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAC1229FB99500459E98 /* canada.png */; };
+		DEF6CBC9229FB99F00459E98 /* gambia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAC2229FB99500459E98 /* gambia.png */; };
+		DEF6CBCA229FB99F00459E98 /* philippines.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAC3229FB99500459E98 /* philippines.png */; };
+		DEF6CBCB229FB99F00459E98 /* nicaragua.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAC4229FB99500459E98 /* nicaragua.png */; };
+		DEF6CBCC229FB99F00459E98 /* rwanda.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAC5229FB99500459E98 /* rwanda.png */; };
+		DEF6CBCD229FB99F00459E98 /* south-sudan.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAC6229FB99500459E98 /* south-sudan.png */; };
+		DEF6CBCE229FB99F00459E98 /* pitcairn-islands.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAC7229FB99500459E98 /* pitcairn-islands.png */; };
+		DEF6CBCF229FB99F00459E98 /* balearic-islands.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAC8229FB99500459E98 /* balearic-islands.png */; };
+		DEF6CBD0229FB99F00459E98 /* solomon-islands.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAC9229FB99500459E98 /* solomon-islands.png */; };
+		DEF6CBD1229FB99F00459E98 /* puerto-rico.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CACA229FB99500459E98 /* puerto-rico.png */; };
+		DEF6CBD2229FB99F00459E98 /* chile.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CACB229FB99500459E98 /* chile.png */; };
+		DEF6CBD3229FB99F00459E98 /* martinique.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CACC229FB99500459E98 /* martinique.png */; };
+		DEF6CBD4229FB99F00459E98 /* guinea-bissau.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CACD229FB99500459E98 /* guinea-bissau.png */; };
+		DEF6CBD5229FB99F00459E98 /* luxembourg.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CACE229FB99500459E98 /* luxembourg.png */; };
+		DEF6CBD6229FB99F00459E98 /* georgia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CACF229FB99500459E98 /* georgia.png */; };
+		DEF6CBD7229FB99F00459E98 /* ceuta.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAD0229FB99600459E98 /* ceuta.png */; };
+		DEF6CBD8229FB99F00459E98 /* isle-of-man.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAD1229FB99600459E98 /* isle-of-man.png */; };
+		DEF6CBD9229FB99F00459E98 /* vanuatu.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAD2229FB99600459E98 /* vanuatu.png */; };
+		DEF6CBDA229FB99F00459E98 /* bosnia-and-herzegovina.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAD3229FB99600459E98 /* bosnia-and-herzegovina.png */; };
+		DEF6CBDB229FB99F00459E98 /* greece.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAD4229FB99600459E98 /* greece.png */; };
+		DEF6CBDC229FB99F00459E98 /* australia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAD5229FB99600459E98 /* australia.png */; };
+		DEF6CBDD229FB99F00459E98 /* ecuador.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAD6229FB99600459E98 /* ecuador.png */; };
+		DEF6CBDE229FB99F00459E98 /* south-africa.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAD7229FB99600459E98 /* south-africa.png */; };
+		DEF6CBDF229FB99F00459E98 /* belize.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAD8229FB99600459E98 /* belize.png */; };
+		DEF6CBE0229FB99F00459E98 /* uganda.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAD9229FB99600459E98 /* uganda.png */; };
+		DEF6CBE1229FB99F00459E98 /* papua-new-guinea.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CADA229FB99600459E98 /* papua-new-guinea.png */; };
+		DEF6CBE2229FB99F00459E98 /* turkmenistan.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CADB229FB99600459E98 /* turkmenistan.png */; };
+		DEF6CBE3229FB99F00459E98 /* montenegro.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CADC229FB99600459E98 /* montenegro.png */; };
+		DEF6CBE4229FB99F00459E98 /* niger.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CADD229FB99600459E98 /* niger.png */; };
+		DEF6CBE5229FB99F00459E98 /* haiti.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CADE229FB99600459E98 /* haiti.png */; };
+		DEF6CBE6229FB99F00459E98 /* saudi-arabia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CADF229FB99600459E98 /* saudi-arabia.png */; };
+		DEF6CBE7229FB99F00459E98 /* china.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAE0229FB99600459E98 /* china.png */; };
+		DEF6CBE8229FB99F00459E98 /* vatican-city.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAE1229FB99600459E98 /* vatican-city.png */; };
+		DEF6CBE9229FB99F00459E98 /* lithuania.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAE2229FB99700459E98 /* lithuania.png */; };
+		DEF6CBEA229FB99F00459E98 /* sudan.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAE3229FB99700459E98 /* sudan.png */; };
+		DEF6CBEB229FB99F00459E98 /* eritrea.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAE4229FB99700459E98 /* eritrea.png */; };
+		DEF6CBEC229FB99F00459E98 /* sint-maarten.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAE5229FB99700459E98 /* sint-maarten.png */; };
+		DEF6CBED229FB99F00459E98 /* syria.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAE6229FB99700459E98 /* syria.png */; };
+		DEF6CBEE229FB99F00459E98 /* gibraltar.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAE7229FB99700459E98 /* gibraltar.png */; };
+		DEF6CBEF229FB99F00459E98 /* sardinia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAE8229FB99700459E98 /* sardinia.png */; };
+		DEF6CBF0229FB99F00459E98 /* indonesia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAE9229FB99700459E98 /* indonesia.png */; };
+		DEF6CBF1229FB99F00459E98 /* thailand.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAEA229FB99700459E98 /* thailand.png */; };
+		DEF6CBF2229FB99F00459E98 /* belgium.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAEB229FB99700459E98 /* belgium.png */; };
+		DEF6CBF3229FB99F00459E98 /* namibia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAEC229FB99700459E98 /* namibia.png */; };
+		DEF6CBF4229FB99F00459E98 /* dominican-republic.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAED229FB99700459E98 /* dominican-republic.png */; };
+		DEF6CBF5229FB99F00459E98 /* pakistan.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAEE229FB99700459E98 /* pakistan.png */; };
+		DEF6CBF6229FB99F00459E98 /* israel.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAEF229FB99700459E98 /* israel.png */; };
+		DEF6CBF7229FB99F00459E98 /* marshall-island.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAF0229FB99700459E98 /* marshall-island.png */; };
+		DEF6CBF8229FB99F00459E98 /* basque-country.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAF1229FB99700459E98 /* basque-country.png */; };
+		DEF6CBF9229FB99F00459E98 /* russia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAF2229FB99700459E98 /* russia.png */; };
+		DEF6CBFA229FB99F00459E98 /* serbia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAF3229FB99800459E98 /* serbia.png */; };
+		DEF6CBFC229FB99F00459E98 /* cape-verde.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAF5229FB99800459E98 /* cape-verde.png */; };
+		DEF6CBFD229FB99F00459E98 /* equatorial-guinea.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAF6229FB99800459E98 /* equatorial-guinea.png */; };
+		DEF6CBFE229FB99F00459E98 /* macao.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAF7229FB99800459E98 /* macao.png */; };
+		DEF6CBFF229FB99F00459E98 /* east-timor.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAF8229FB99800459E98 /* east-timor.png */; };
+		DEF6CC00229FB99F00459E98 /* cuba.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAF9229FB99800459E98 /* cuba.png */; };
+		DEF6CC01229FB99F00459E98 /* nigeria.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAFA229FB99800459E98 /* nigeria.png */; };
+		DEF6CC02229FB99F00459E98 /* cambodia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAFB229FB99800459E98 /* cambodia.png */; };
+		DEF6CC03229FB99F00459E98 /* gabon.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAFC229FB99800459E98 /* gabon.png */; };
+		DEF6CC04229FB99F00459E98 /* senegal.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAFD229FB99800459E98 /* senegal.png */; };
+		DEF6CC05229FB99F00459E98 /* germany.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAFE229FB99800459E98 /* germany.png */; };
+		DEF6CC06229FB99F00459E98 /* ossetia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CAFF229FB99800459E98 /* ossetia.png */; };
+		DEF6CC07229FB99F00459E98 /* guernsey.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB00229FB99800459E98 /* guernsey.png */; };
+		DEF6CC08229FB99F00459E98 /* barbados.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB01229FB99800459E98 /* barbados.png */; };
+		DEF6CC09229FB99F00459E98 /* northen-cyprus.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB02229FB99800459E98 /* northen-cyprus.png */; };
+		DEF6CC0A229FB99F00459E98 /* ireland.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB03229FB99800459E98 /* ireland.png */; };
+		DEF6CC0B229FB99F00459E98 /* portugal.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB04229FB99900459E98 /* portugal.png */; };
+		DEF6CC0C229FB99F00459E98 /* slovakia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB05229FB99900459E98 /* slovakia.png */; };
+		DEF6CC0D229FB99F00459E98 /* lesotho.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB06229FB99900459E98 /* lesotho.png */; };
+		DEF6CC0E229FB99F00459E98 /* monaco.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB07229FB99900459E98 /* monaco.png */; };
+		DEF6CC0F229FB99F00459E98 /* mongolia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB08229FB99900459E98 /* mongolia.png */; };
+		DEF6CC10229FB99F00459E98 /* latvia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB09229FB99900459E98 /* latvia.png */; };
+		DEF6CC11229FB99F00459E98 /* new-zealand.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB0A229FB99900459E98 /* new-zealand.png */; };
+		DEF6CC12229FB99F00459E98 /* bhutan-1.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB0B229FB99900459E98 /* bhutan-1.png */; };
+		DEF6CC13229FB99F00459E98 /* belarus.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB0C229FB99900459E98 /* belarus.png */; };
+		DEF6CC14229FB99F00459E98 /* nepal.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB0D229FB99900459E98 /* nepal.png */; };
+		DEF6CC15229FB99F00459E98 /* colombia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB0E229FB99900459E98 /* colombia.png */; };
+		DEF6CC16229FB99F00459E98 /* kosovo.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB0F229FB99900459E98 /* kosovo.png */; };
+		DEF6CC17229FB99F00459E98 /* melilla.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB10229FB99900459E98 /* melilla.png */; };
+		DEF6CC18229FB99F00459E98 /* st-vincent-and-the-grenadines.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB11229FB99900459E98 /* st-vincent-and-the-grenadines.png */; };
+		DEF6CC19229FB99F00459E98 /* aland-islands.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB12229FB99900459E98 /* aland-islands.png */; };
+		DEF6CC1B229FB99F00459E98 /* ethiopia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB14229FB99900459E98 /* ethiopia.png */; };
+		DEF6CC1C229FB99F00459E98 /* paraguay.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB15229FB99A00459E98 /* paraguay.png */; };
+		DEF6CC1D229FB99F00459E98 /* italy.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB16229FB99A00459E98 /* italy.png */; };
+		DEF6CC1E229FB99F00459E98 /* british-virgin-islands.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB17229FB99A00459E98 /* british-virgin-islands.png */; };
+		DEF6CC1F229FB99F00459E98 /* venezuela.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB18229FB99A00459E98 /* venezuela.png */; };
+		DEF6CC20229FB99F00459E98 /* austria.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB19229FB99A00459E98 /* austria.png */; };
+		DEF6CC21229FB99F00459E98 /* sierra-leone.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB1A229FB99A00459E98 /* sierra-leone.png */; };
+		DEF6CC22229FB99F00459E98 /* netherlands.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB1B229FB99A00459E98 /* netherlands.png */; };
+		DEF6CC23229FB99F00459E98 /* republic-of-the-congo.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB1C229FB99A00459E98 /* republic-of-the-congo.png */; };
+		DEF6CC24229FB99F00459E98 /* switzerland.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB1D229FB99A00459E98 /* switzerland.png */; };
+		DEF6CC25229FB99F00459E98 /* malta.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB1E229FB99A00459E98 /* malta.png */; };
+		DEF6CC26229FB99F00459E98 /* scotland.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB1F229FB99A00459E98 /* scotland.png */; };
+		DEF6CC27229FB99F00459E98 /* montserrat.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB20229FB99A00459E98 /* montserrat.png */; };
+		DEF6CC28229FB99F00459E98 /* turkey.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB21229FB99A00459E98 /* turkey.png */; };
+		DEF6CC29229FB99F00459E98 /* qatar.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB22229FB99A00459E98 /* qatar.png */; };
+		DEF6CC2A229FB99F00459E98 /* denmark.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB23229FB99A00459E98 /* denmark.png */; };
+		DEF6CC2B229FB99F00459E98 /* sri-lanka.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB24229FB99A00459E98 /* sri-lanka.png */; };
+		DEF6CC2C229FB99F00459E98 /* mexico.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB25229FB99A00459E98 /* mexico.png */; };
+		DEF6CC2D229FB99F00459E98 /* panama.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB26229FB99B00459E98 /* panama.png */; };
+		DEF6CC2E229FB99F00459E98 /* cameroon.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB27229FB99B00459E98 /* cameroon.png */; };
+		DEF6CC2F229FB99F00459E98 /* tibet.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB28229FB99B00459E98 /* tibet.png */; };
+		DEF6CC30229FB99F00459E98 /* french-polynesia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB29229FB99B00459E98 /* french-polynesia.png */; };
+		DEF6CC31229FB99F00459E98 /* christmas-island.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB2A229FB99B00459E98 /* christmas-island.png */; };
+		DEF6CC32229FB99F00459E98 /* hong-kong.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB2B229FB99B00459E98 /* hong-kong.png */; };
+		DEF6CC33229FB99F00459E98 /* guyana.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB2C229FB99B00459E98 /* guyana.png */; };
+		DEF6CC34229FB99F00459E98 /* costa-rica.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB2D229FB99B00459E98 /* costa-rica.png */; };
+		DEF6CC35229FB99F00459E98 /* niue.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB2E229FB99B00459E98 /* niue.png */; };
+		DEF6CC36229FB99F00459E98 /* togo.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB2F229FB99B00459E98 /* togo.png */; };
+		DEF6CC37229FB99F00459E98 /* bermuda.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB30229FB99B00459E98 /* bermuda.png */; };
+		DEF6CC38229FB99F00459E98 /* argentina.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB31229FB99B00459E98 /* argentina.png */; };
+		DEF6CC39229FB99F00459E98 /* taiwan.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB32229FB99B00459E98 /* taiwan.png */; };
+		DEF6CC3A229FB99F00459E98 /* western-sahara.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB33229FB99B00459E98 /* western-sahara.png */; };
+		DEF6CC3B229FB99F00459E98 /* palau.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB34229FB99B00459E98 /* palau.png */; };
+		DEF6CC3C229FB99F00459E98 /* jersey.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB35229FB99B00459E98 /* jersey.png */; };
+		DEF6CC3D229FB99F00459E98 /* afghanistan.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB36229FB99B00459E98 /* afghanistan.png */; };
+		DEF6CC3E229FB99F00459E98 /* ivory-coast.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB37229FB99C00459E98 /* ivory-coast.png */; };
+		DEF6CC3F229FB99F00459E98 /* galapagos-islands.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB38229FB99C00459E98 /* galapagos-islands.png */; };
+		DEF6CC40229FB99F00459E98 /* northern-marianas-islands.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB39229FB99C00459E98 /* northern-marianas-islands.png */; };
+		DEF6CC41229FB99F00459E98 /* saint-kitts-and-nevis.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB3A229FB99C00459E98 /* saint-kitts-and-nevis.png */; };
+		DEF6CC42229FB99F00459E98 /* british-indian-ocean-territory.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB3B229FB99C00459E98 /* british-indian-ocean-territory.png */; };
+		DEF6CC43229FB99F00459E98 /* trinidad-and-tobago.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB3C229FB99C00459E98 /* trinidad-and-tobago.png */; };
+		DEF6CC44229FB99F00459E98 /* zimbabwe.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB3D229FB99C00459E98 /* zimbabwe.png */; };
+		DEF6CC45229FB99F00459E98 /* zambia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB3E229FB99C00459E98 /* zambia.png */; };
+		DEF6CC46229FB99F00459E98 /* guam.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB3F229FB99C00459E98 /* guam.png */; };
+		DEF6CC47229FB99F00459E98 /* tonga.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB40229FB99C00459E98 /* tonga.png */; };
+		DEF6CC48229FB99F00459E98 /* chad.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB41229FB99C00459E98 /* chad.png */; };
+		DEF6CC49229FB99F00459E98 /* bonaire.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB42229FB99C00459E98 /* bonaire.png */; };
+		DEF6CC4A229FB99F00459E98 /* tajikistan.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB43229FB99C00459E98 /* tajikistan.png */; };
+		DEF6CC4B229FB99F00459E98 /* nato.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB44229FB99C00459E98 /* nato.png */; };
+		DEF6CC4C229FB99F00459E98 /* kyrgyzstan.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB45229FB99C00459E98 /* kyrgyzstan.png */; };
+		DEF6CC4D229FB99F00459E98 /* dominica.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB46229FB99C00459E98 /* dominica.png */; };
+		DEF6CC4E229FB99F00459E98 /* orkney-islands.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB47229FB99C00459E98 /* orkney-islands.png */; };
+		DEF6CC4F229FB99F00459E98 /* madagascar.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB48229FB99D00459E98 /* madagascar.png */; };
+		DEF6CC50229FB99F00459E98 /* cyprus.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB49229FB99D00459E98 /* cyprus.png */; };
+		DEF6CC51229FB99F00459E98 /* romania.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB4A229FB99D00459E98 /* romania.png */; };
+		DEF6CC52229FB99F00459E98 /* somaliland.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB4B229FB99D00459E98 /* somaliland.png */; };
+		DEF6CC53229FB99F00459E98 /* libya.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB4C229FB99D00459E98 /* libya.png */; };
+		DEF6CC54229FB99F00459E98 /* kuwait.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB4D229FB99D00459E98 /* kuwait.png */; };
+		DEF6CC55229FB99F00459E98 /* tokelau.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB4E229FB99D00459E98 /* tokelau.png */; };
+		DEF6CC56229FB99F00459E98 /* mauritania.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB4F229FB99D00459E98 /* mauritania.png */; };
+		DEF6CC57229FB99F00459E98 /* sao-tome-and-principe.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB50229FB99D00459E98 /* sao-tome-and-principe.png */; };
+		DEF6CC58229FB99F00459E98 /* democratic-republic-of-congo.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB51229FB99D00459E98 /* democratic-republic-of-congo.png */; };
+		DEF6CC59229FB99F00459E98 /* azerbaijan.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB52229FB99D00459E98 /* azerbaijan.png */; };
+		DEF6CC5A229FB99F00459E98 /* botswana.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB53229FB99D00459E98 /* botswana.png */; };
+		DEF6CC5B229FB99F00459E98 /* transnistria.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB54229FB99D00459E98 /* transnistria.png */; };
+		DEF6CC5C229FB99F00459E98 /* yemen.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB55229FB99D00459E98 /* yemen.png */; };
+		DEF6CC5D229FB99F00459E98 /* jordan.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB56229FB99D00459E98 /* jordan.png */; };
+		DEF6CC5E229FB99F00459E98 /* madeira.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB57229FB99D00459E98 /* madeira.png */; };
+		DEF6CC5F229FB99F00459E98 /* liberia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB58229FB99E00459E98 /* liberia.png */; };
+		DEF6CC60229FB99F00459E98 /* sweden.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB59229FB99E00459E98 /* sweden.png */; };
+		DEF6CC61229FB99F00459E98 /* grenada.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB5A229FB99E00459E98 /* grenada.png */; };
+		DEF6CC62229FB99F00459E98 /* suriname.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB5B229FB99E00459E98 /* suriname.png */; };
+		DEF6CC63229FB99F00459E98 /* comoros.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB5C229FB99E00459E98 /* comoros.png */; };
+		DEF6CC64229FB99F00459E98 /* lebanon.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB5D229FB99E00459E98 /* lebanon.png */; };
+		DEF6CC65229FB99F00459E98 /* somalia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB5E229FB99E00459E98 /* somalia.png */; };
+		DEF6CC66229FB99F00459E98 /* cook-islands.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB5F229FB99E00459E98 /* cook-islands.png */; };
+		DEF6CC67229FB99F00459E98 /* myanmar.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB60229FB99E00459E98 /* myanmar.png */; };
+		DEF6CC68229FB99F00459E98 /* burkina-faso.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB61229FB99E00459E98 /* burkina-faso.png */; };
+		DEF6CC69229FB99F00459E98 /* palestine.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB62229FB99E00459E98 /* palestine.png */; };
+		DEF6CC6A229FB99F00459E98 /* croatia.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB63229FB99E00459E98 /* croatia.png */; };
+		DEF6CC6B229FB99F00459E98 /* uzbekistn.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB64229FB99E00459E98 /* uzbekistn.png */; };
+		DEF6CC6C229FB99F00459E98 /* corsica.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB65229FB99E00459E98 /* corsica.png */; };
+		DEF6CC6D229FB99F00459E98 /* kenya.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB66229FB99E00459E98 /* kenya.png */; };
+		DEF6CC6E229FB99F00459E98 /* czech-republic.png in Resources */ = {isa = PBXBuildFile; fileRef = DEF6CB67229FB99E00459E98 /* czech-republic.png */; };
 		DEFD90A5229A8A1100A68D6D /* LoadInitialValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD90A4229A8A1100A68D6D /* LoadInitialValues.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +325,267 @@
 		DEC867772291538900F2B9D7 /* Forex WalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Forex WalletUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC8677B2291538900F2B9D7 /* Forex_Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forex_Wallet.swift; sourceTree = "<group>"; };
 		DEC8677D2291538900F2B9D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEF6CA61229FB99000459E98 /* slovenia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = slovenia.png; path = Pictures/countries/slovenia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA62229FB99000459E98 /* france.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = france.png; path = Pictures/countries/france.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA63229FB99000459E98 /* algeria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = algeria.png; path = Pictures/countries/algeria.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA64229FB99000459E98 /* nauru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nauru.png; path = Pictures/countries/nauru.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA65229FB99000459E98 /* republic-of-macedonia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "republic-of-macedonia.png"; path = "Pictures/countries/republic-of-macedonia.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CA66229FB99000459E98 /* england.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = england.png; path = Pictures/countries/england.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA67229FB99000459E98 /* norfolk-island.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "norfolk-island.png"; path = "Pictures/countries/norfolk-island.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CA68229FB99000459E98 /* curacao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = curacao.png; path = Pictures/countries/curacao.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA69229FB99000459E98 /* antigua-and-barbuda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "antigua-and-barbuda.png"; path = "Pictures/countries/antigua-and-barbuda.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CA6A229FB99000459E98 /* hawaii.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hawaii.png; path = Pictures/countries/hawaii.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA6B229FB99000459E98 /* south-korea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "south-korea.png"; path = "Pictures/countries/south-korea.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CA6C229FB99000459E98 /* tunisia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tunisia.png; path = Pictures/countries/tunisia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA6D229FB99000459E98 /* bahamas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bahamas.png; path = Pictures/countries/bahamas.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA6E229FB99000459E98 /* mozambique.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mozambique.png; path = Pictures/countries/mozambique.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA6F229FB99000459E98 /* maldives.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = maldives.png; path = Pictures/countries/maldives.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA70229FB99000459E98 /* rapa-nui.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rapa-nui.png"; path = "Pictures/countries/rapa-nui.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CA71229FB99000459E98 /* swaziland.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = swaziland.png; path = Pictures/countries/swaziland.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA72229FB99000459E98 /* brunei.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = brunei.png; path = Pictures/countries/brunei.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA73229FB99000459E98 /* kiribati.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kiribati.png; path = Pictures/countries/kiribati.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA74229FB99000459E98 /* sint-eustatius.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sint-eustatius.png"; path = "Pictures/countries/sint-eustatius.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CA75229FB99000459E98 /* united-kingdom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "united-kingdom.png"; path = "Pictures/countries/united-kingdom.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CA76229FB99100459E98 /* estonia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = estonia.png; path = Pictures/countries/estonia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA77229FB99100459E98 /* bulgaria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bulgaria.png; path = Pictures/countries/bulgaria.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA78229FB99100459E98 /* andorra.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = andorra.png; path = Pictures/countries/andorra.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA79229FB99100459E98 /* seychelles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = seychelles.png; path = Pictures/countries/seychelles.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA7A229FB99100459E98 /* japan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = japan.png; path = Pictures/countries/japan.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA7B229FB99100459E98 /* fiji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fiji.png; path = Pictures/countries/fiji.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA7C229FB99100459E98 /* oman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = oman.png; path = Pictures/countries/oman.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA7D229FB99100459E98 /* republic-of-poland.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "republic-of-poland.png"; path = "Pictures/countries/republic-of-poland.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CA7E229FB99100459E98 /* tuvalu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tuvalu.png; path = Pictures/countries/tuvalu.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA7F229FB99100459E98 /* laos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = laos.png; path = Pictures/countries/laos.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA80229FB99100459E98 /* united-nations.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "united-nations.png"; path = "Pictures/countries/united-nations.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CA81229FB99100459E98 /* british-columbia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "british-columbia.png"; path = "Pictures/countries/british-columbia.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CA82229FB99100459E98 /* anguilla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = anguilla.png; path = Pictures/countries/anguilla.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA83229FB99100459E98 /* ukraine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ukraine.png; path = Pictures/countries/ukraine.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA84229FB99100459E98 /* liechtenstein.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = liechtenstein.png; path = Pictures/countries/liechtenstein.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA85229FB99100459E98 /* norway.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = norway.png; path = Pictures/countries/norway.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA86229FB99100459E98 /* burundi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = burundi.png; path = Pictures/countries/burundi.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA87229FB99100459E98 /* mauritius.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mauritius.png; path = Pictures/countries/mauritius.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA88229FB99200459E98 /* abkhazia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = abkhazia.png; path = Pictures/countries/abkhazia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA89229FB99200459E98 /* honduras.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = honduras.png; path = Pictures/countries/honduras.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA8A229FB99200459E98 /* st-barts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "st-barts.png"; path = "Pictures/countries/st-barts.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CA8B229FB99200459E98 /* bolivia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bolivia.png; path = Pictures/countries/bolivia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA8C229FB99200459E98 /* guinea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = guinea.png; path = Pictures/countries/guinea.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA8D229FB99200459E98 /* spain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spain.png; path = Pictures/countries/spain.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA8E229FB99200459E98 /* cayman-islands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cayman-islands.png"; path = "Pictures/countries/cayman-islands.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CA8F229FB99200459E98 /* bangladesh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bangladesh.png; path = Pictures/countries/bangladesh.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA90229FB99200459E98 /* mali.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mali.png; path = Pictures/countries/mali.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA91229FB99200459E98 /* hungary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hungary.png; path = Pictures/countries/hungary.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA92229FB99200459E98 /* canary-islands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "canary-islands.png"; path = "Pictures/countries/canary-islands.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CA93229FB99200459E98 /* saba-island.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "saba-island.png"; path = "Pictures/countries/saba-island.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CA94229FB99200459E98 /* finland.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = finland.png; path = Pictures/countries/finland.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA95229FB99200459E98 /* falkland-islands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "falkland-islands.png"; path = "Pictures/countries/falkland-islands.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CA96229FB99200459E98 /* moldova.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = moldova.png; path = Pictures/countries/moldova.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA97229FB99200459E98 /* armenia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = armenia.png; path = Pictures/countries/armenia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA98229FB99200459E98 /* salvador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = salvador.png; path = Pictures/countries/salvador.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA99229FB99200459E98 /* peru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = peru.png; path = Pictures/countries/peru.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA9A229FB99300459E98 /* st-lucia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "st-lucia.png"; path = "Pictures/countries/st-lucia.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CA9B229FB99300459E98 /* wales.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wales.png; path = Pictures/countries/wales.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA9C229FB99300459E98 /* guatemala.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = guatemala.png; path = Pictures/countries/guatemala.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA9D229FB99300459E98 /* turks-and-caicos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "turks-and-caicos.png"; path = "Pictures/countries/turks-and-caicos.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CA9E229FB99300459E98 /* kazakhstan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kazakhstan.png; path = Pictures/countries/kazakhstan.png; sourceTree = SOURCE_ROOT; };
+		DEF6CA9F229FB99300459E98 /* benin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = benin.png; path = Pictures/countries/benin.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAA0229FB99300459E98 /* bhutan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bhutan.png; path = Pictures/countries/bhutan.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAA1229FB99300459E98 /* north-korea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "north-korea.png"; path = "Pictures/countries/north-korea.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAA2229FB99300459E98 /* ghana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ghana.png; path = Pictures/countries/ghana.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAA3229FB99300459E98 /* greenland.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greenland.png; path = Pictures/countries/greenland.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAA4229FB99300459E98 /* san-marino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "san-marino.png"; path = "Pictures/countries/san-marino.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAA5229FB99300459E98 /* singapore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = singapore.png; path = Pictures/countries/singapore.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAA6229FB99300459E98 /* malaysia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = malaysia.png; path = Pictures/countries/malaysia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAA7229FB99300459E98 /* european-union.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "european-union.png"; path = "Pictures/countries/european-union.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAA8229FB99300459E98 /* djibouti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = djibouti.png; path = Pictures/countries/djibouti.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAA9229FB99300459E98 /* cocos-island.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cocos-island.png"; path = "Pictures/countries/cocos-island.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAAA229FB99300459E98 /* bahrain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bahrain.png; path = Pictures/countries/bahrain.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAAB229FB99300459E98 /* iraq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iraq.png; path = Pictures/countries/iraq.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAAC229FB99400459E98 /* albania.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = albania.png; path = Pictures/countries/albania.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAAD229FB99400459E98 /* samoa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = samoa.png; path = Pictures/countries/samoa.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAAE229FB99400459E98 /* united-arab-emirates.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "united-arab-emirates.png"; path = "Pictures/countries/united-arab-emirates.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAAF229FB99400459E98 /* malawi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = malawi.png; path = Pictures/countries/malawi.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAB0229FB99400459E98 /* angola.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = angola.png; path = Pictures/countries/angola.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAB1229FB99400459E98 /* morocco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = morocco.png; path = Pictures/countries/morocco.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAB2229FB99400459E98 /* micronesia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = micronesia.png; path = Pictures/countries/micronesia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAB3229FB99400459E98 /* virgin-islands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "virgin-islands.png"; path = "Pictures/countries/virgin-islands.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAB4229FB99400459E98 /* brazil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = brazil.png; path = Pictures/countries/brazil.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAB5229FB99400459E98 /* central-african-republic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "central-african-republic.png"; path = "Pictures/countries/central-african-republic.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAB6229FB99400459E98 /* aruba.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = aruba.png; path = Pictures/countries/aruba.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAB7229FB99400459E98 /* jamaica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jamaica.png; path = Pictures/countries/jamaica.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAB8229FB99400459E98 /* uruguay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = uruguay.png; path = Pictures/countries/uruguay.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAB9229FB99400459E98 /* iceland.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iceland.png; path = Pictures/countries/iceland.png; sourceTree = SOURCE_ROOT; };
+		DEF6CABA229FB99400459E98 /* faroe-islands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "faroe-islands.png"; path = "Pictures/countries/faroe-islands.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CABB229FB99400459E98 /* tanzania.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tanzania.png; path = Pictures/countries/tanzania.png; sourceTree = SOURCE_ROOT; };
+		DEF6CABC229FB99400459E98 /* american-samoa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "american-samoa.png"; path = "Pictures/countries/american-samoa.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CABD229FB99400459E98 /* vietnam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vietnam.png; path = Pictures/countries/vietnam.png; sourceTree = SOURCE_ROOT; };
+		DEF6CABE229FB99500459E98 /* egypt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = egypt.png; path = Pictures/countries/egypt.png; sourceTree = SOURCE_ROOT; };
+		DEF6CABF229FB99500459E98 /* azores-islands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "azores-islands.png"; path = "Pictures/countries/azores-islands.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAC0229FB99500459E98 /* iran.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iran.png; path = Pictures/countries/iran.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAC1229FB99500459E98 /* canada.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = canada.png; path = Pictures/countries/canada.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAC2229FB99500459E98 /* gambia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gambia.png; path = Pictures/countries/gambia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAC3229FB99500459E98 /* philippines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = philippines.png; path = Pictures/countries/philippines.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAC4229FB99500459E98 /* nicaragua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nicaragua.png; path = Pictures/countries/nicaragua.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAC5229FB99500459E98 /* rwanda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rwanda.png; path = Pictures/countries/rwanda.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAC6229FB99500459E98 /* south-sudan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "south-sudan.png"; path = "Pictures/countries/south-sudan.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAC7229FB99500459E98 /* pitcairn-islands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pitcairn-islands.png"; path = "Pictures/countries/pitcairn-islands.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAC8229FB99500459E98 /* balearic-islands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "balearic-islands.png"; path = "Pictures/countries/balearic-islands.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAC9229FB99500459E98 /* solomon-islands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "solomon-islands.png"; path = "Pictures/countries/solomon-islands.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CACA229FB99500459E98 /* puerto-rico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "puerto-rico.png"; path = "Pictures/countries/puerto-rico.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CACB229FB99500459E98 /* chile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chile.png; path = Pictures/countries/chile.png; sourceTree = SOURCE_ROOT; };
+		DEF6CACC229FB99500459E98 /* martinique.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = martinique.png; path = Pictures/countries/martinique.png; sourceTree = SOURCE_ROOT; };
+		DEF6CACD229FB99500459E98 /* guinea-bissau.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "guinea-bissau.png"; path = "Pictures/countries/guinea-bissau.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CACE229FB99500459E98 /* luxembourg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = luxembourg.png; path = Pictures/countries/luxembourg.png; sourceTree = SOURCE_ROOT; };
+		DEF6CACF229FB99500459E98 /* georgia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = georgia.png; path = Pictures/countries/georgia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAD0229FB99600459E98 /* ceuta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ceuta.png; path = Pictures/countries/ceuta.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAD1229FB99600459E98 /* isle-of-man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "isle-of-man.png"; path = "Pictures/countries/isle-of-man.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAD2229FB99600459E98 /* vanuatu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vanuatu.png; path = Pictures/countries/vanuatu.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAD3229FB99600459E98 /* bosnia-and-herzegovina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bosnia-and-herzegovina.png"; path = "Pictures/countries/bosnia-and-herzegovina.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAD4229FB99600459E98 /* greece.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greece.png; path = Pictures/countries/greece.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAD5229FB99600459E98 /* australia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = australia.png; path = Pictures/countries/australia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAD6229FB99600459E98 /* ecuador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ecuador.png; path = Pictures/countries/ecuador.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAD7229FB99600459E98 /* south-africa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "south-africa.png"; path = "Pictures/countries/south-africa.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAD8229FB99600459E98 /* belize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = belize.png; path = Pictures/countries/belize.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAD9229FB99600459E98 /* uganda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = uganda.png; path = Pictures/countries/uganda.png; sourceTree = SOURCE_ROOT; };
+		DEF6CADA229FB99600459E98 /* papua-new-guinea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "papua-new-guinea.png"; path = "Pictures/countries/papua-new-guinea.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CADB229FB99600459E98 /* turkmenistan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = turkmenistan.png; path = Pictures/countries/turkmenistan.png; sourceTree = SOURCE_ROOT; };
+		DEF6CADC229FB99600459E98 /* montenegro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = montenegro.png; path = Pictures/countries/montenegro.png; sourceTree = SOURCE_ROOT; };
+		DEF6CADD229FB99600459E98 /* niger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = niger.png; path = Pictures/countries/niger.png; sourceTree = SOURCE_ROOT; };
+		DEF6CADE229FB99600459E98 /* haiti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = haiti.png; path = Pictures/countries/haiti.png; sourceTree = SOURCE_ROOT; };
+		DEF6CADF229FB99600459E98 /* saudi-arabia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "saudi-arabia.png"; path = "Pictures/countries/saudi-arabia.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAE0229FB99600459E98 /* china.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = china.png; path = Pictures/countries/china.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAE1229FB99600459E98 /* vatican-city.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "vatican-city.png"; path = "Pictures/countries/vatican-city.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAE2229FB99700459E98 /* lithuania.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lithuania.png; path = Pictures/countries/lithuania.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAE3229FB99700459E98 /* sudan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sudan.png; path = Pictures/countries/sudan.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAE4229FB99700459E98 /* eritrea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eritrea.png; path = Pictures/countries/eritrea.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAE5229FB99700459E98 /* sint-maarten.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sint-maarten.png"; path = "Pictures/countries/sint-maarten.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAE6229FB99700459E98 /* syria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = syria.png; path = Pictures/countries/syria.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAE7229FB99700459E98 /* gibraltar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gibraltar.png; path = Pictures/countries/gibraltar.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAE8229FB99700459E98 /* sardinia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sardinia.png; path = Pictures/countries/sardinia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAE9229FB99700459E98 /* indonesia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = indonesia.png; path = Pictures/countries/indonesia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAEA229FB99700459E98 /* thailand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thailand.png; path = Pictures/countries/thailand.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAEB229FB99700459E98 /* belgium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = belgium.png; path = Pictures/countries/belgium.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAEC229FB99700459E98 /* namibia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = namibia.png; path = Pictures/countries/namibia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAED229FB99700459E98 /* dominican-republic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dominican-republic.png"; path = "Pictures/countries/dominican-republic.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAEE229FB99700459E98 /* pakistan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pakistan.png; path = Pictures/countries/pakistan.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAEF229FB99700459E98 /* israel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = israel.png; path = Pictures/countries/israel.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAF0229FB99700459E98 /* marshall-island.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "marshall-island.png"; path = "Pictures/countries/marshall-island.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAF1229FB99700459E98 /* basque-country.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "basque-country.png"; path = "Pictures/countries/basque-country.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAF2229FB99700459E98 /* russia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = russia.png; path = Pictures/countries/russia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAF3229FB99800459E98 /* serbia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = serbia.png; path = Pictures/countries/serbia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAF5229FB99800459E98 /* cape-verde.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cape-verde.png"; path = "Pictures/countries/cape-verde.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAF6229FB99800459E98 /* equatorial-guinea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "equatorial-guinea.png"; path = "Pictures/countries/equatorial-guinea.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAF7229FB99800459E98 /* macao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = macao.png; path = Pictures/countries/macao.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAF8229FB99800459E98 /* east-timor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "east-timor.png"; path = "Pictures/countries/east-timor.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CAF9229FB99800459E98 /* cuba.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cuba.png; path = Pictures/countries/cuba.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAFA229FB99800459E98 /* nigeria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nigeria.png; path = Pictures/countries/nigeria.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAFB229FB99800459E98 /* cambodia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cambodia.png; path = Pictures/countries/cambodia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAFC229FB99800459E98 /* gabon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gabon.png; path = Pictures/countries/gabon.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAFD229FB99800459E98 /* senegal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = senegal.png; path = Pictures/countries/senegal.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAFE229FB99800459E98 /* germany.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = germany.png; path = Pictures/countries/germany.png; sourceTree = SOURCE_ROOT; };
+		DEF6CAFF229FB99800459E98 /* ossetia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ossetia.png; path = Pictures/countries/ossetia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB00229FB99800459E98 /* guernsey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = guernsey.png; path = Pictures/countries/guernsey.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB01229FB99800459E98 /* barbados.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = barbados.png; path = Pictures/countries/barbados.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB02229FB99800459E98 /* northen-cyprus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "northen-cyprus.png"; path = "Pictures/countries/northen-cyprus.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB03229FB99800459E98 /* ireland.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ireland.png; path = Pictures/countries/ireland.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB04229FB99900459E98 /* portugal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = portugal.png; path = Pictures/countries/portugal.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB05229FB99900459E98 /* slovakia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = slovakia.png; path = Pictures/countries/slovakia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB06229FB99900459E98 /* lesotho.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lesotho.png; path = Pictures/countries/lesotho.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB07229FB99900459E98 /* monaco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = monaco.png; path = Pictures/countries/monaco.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB08229FB99900459E98 /* mongolia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mongolia.png; path = Pictures/countries/mongolia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB09229FB99900459E98 /* latvia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = latvia.png; path = Pictures/countries/latvia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB0A229FB99900459E98 /* new-zealand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "new-zealand.png"; path = "Pictures/countries/new-zealand.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB0B229FB99900459E98 /* bhutan-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bhutan-1.png"; path = "Pictures/countries/bhutan-1.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB0C229FB99900459E98 /* belarus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = belarus.png; path = Pictures/countries/belarus.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB0D229FB99900459E98 /* nepal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nepal.png; path = Pictures/countries/nepal.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB0E229FB99900459E98 /* colombia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = colombia.png; path = Pictures/countries/colombia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB0F229FB99900459E98 /* kosovo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kosovo.png; path = Pictures/countries/kosovo.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB10229FB99900459E98 /* melilla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = melilla.png; path = Pictures/countries/melilla.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB11229FB99900459E98 /* st-vincent-and-the-grenadines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "st-vincent-and-the-grenadines.png"; path = "Pictures/countries/st-vincent-and-the-grenadines.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB12229FB99900459E98 /* aland-islands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "aland-islands.png"; path = "Pictures/countries/aland-islands.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB14229FB99900459E98 /* ethiopia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ethiopia.png; path = Pictures/countries/ethiopia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB15229FB99A00459E98 /* paraguay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = paraguay.png; path = Pictures/countries/paraguay.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB16229FB99A00459E98 /* italy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = italy.png; path = Pictures/countries/italy.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB17229FB99A00459E98 /* british-virgin-islands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "british-virgin-islands.png"; path = "Pictures/countries/british-virgin-islands.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB18229FB99A00459E98 /* venezuela.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = venezuela.png; path = Pictures/countries/venezuela.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB19229FB99A00459E98 /* austria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = austria.png; path = Pictures/countries/austria.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB1A229FB99A00459E98 /* sierra-leone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sierra-leone.png"; path = "Pictures/countries/sierra-leone.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB1B229FB99A00459E98 /* netherlands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = netherlands.png; path = Pictures/countries/netherlands.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB1C229FB99A00459E98 /* republic-of-the-congo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "republic-of-the-congo.png"; path = "Pictures/countries/republic-of-the-congo.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB1D229FB99A00459E98 /* switzerland.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = switzerland.png; path = Pictures/countries/switzerland.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB1E229FB99A00459E98 /* malta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = malta.png; path = Pictures/countries/malta.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB1F229FB99A00459E98 /* scotland.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scotland.png; path = Pictures/countries/scotland.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB20229FB99A00459E98 /* montserrat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = montserrat.png; path = Pictures/countries/montserrat.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB21229FB99A00459E98 /* turkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = turkey.png; path = Pictures/countries/turkey.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB22229FB99A00459E98 /* qatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = qatar.png; path = Pictures/countries/qatar.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB23229FB99A00459E98 /* denmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = denmark.png; path = Pictures/countries/denmark.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB24229FB99A00459E98 /* sri-lanka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sri-lanka.png"; path = "Pictures/countries/sri-lanka.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB25229FB99A00459E98 /* mexico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mexico.png; path = Pictures/countries/mexico.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB26229FB99B00459E98 /* panama.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = panama.png; path = Pictures/countries/panama.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB27229FB99B00459E98 /* cameroon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cameroon.png; path = Pictures/countries/cameroon.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB28229FB99B00459E98 /* tibet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tibet.png; path = Pictures/countries/tibet.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB29229FB99B00459E98 /* french-polynesia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "french-polynesia.png"; path = "Pictures/countries/french-polynesia.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB2A229FB99B00459E98 /* christmas-island.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "christmas-island.png"; path = "Pictures/countries/christmas-island.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB2B229FB99B00459E98 /* hong-kong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hong-kong.png"; path = "Pictures/countries/hong-kong.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB2C229FB99B00459E98 /* guyana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = guyana.png; path = Pictures/countries/guyana.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB2D229FB99B00459E98 /* costa-rica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "costa-rica.png"; path = "Pictures/countries/costa-rica.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB2E229FB99B00459E98 /* niue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = niue.png; path = Pictures/countries/niue.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB2F229FB99B00459E98 /* togo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = togo.png; path = Pictures/countries/togo.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB30229FB99B00459E98 /* bermuda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bermuda.png; path = Pictures/countries/bermuda.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB31229FB99B00459E98 /* argentina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = argentina.png; path = Pictures/countries/argentina.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB32229FB99B00459E98 /* taiwan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = taiwan.png; path = Pictures/countries/taiwan.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB33229FB99B00459E98 /* western-sahara.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "western-sahara.png"; path = "Pictures/countries/western-sahara.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB34229FB99B00459E98 /* palau.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = palau.png; path = Pictures/countries/palau.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB35229FB99B00459E98 /* jersey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jersey.png; path = Pictures/countries/jersey.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB36229FB99B00459E98 /* afghanistan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = afghanistan.png; path = Pictures/countries/afghanistan.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB37229FB99C00459E98 /* ivory-coast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ivory-coast.png"; path = "Pictures/countries/ivory-coast.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB38229FB99C00459E98 /* galapagos-islands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "galapagos-islands.png"; path = "Pictures/countries/galapagos-islands.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB39229FB99C00459E98 /* northern-marianas-islands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "northern-marianas-islands.png"; path = "Pictures/countries/northern-marianas-islands.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB3A229FB99C00459E98 /* saint-kitts-and-nevis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "saint-kitts-and-nevis.png"; path = "Pictures/countries/saint-kitts-and-nevis.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB3B229FB99C00459E98 /* british-indian-ocean-territory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "british-indian-ocean-territory.png"; path = "Pictures/countries/british-indian-ocean-territory.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB3C229FB99C00459E98 /* trinidad-and-tobago.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "trinidad-and-tobago.png"; path = "Pictures/countries/trinidad-and-tobago.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB3D229FB99C00459E98 /* zimbabwe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zimbabwe.png; path = Pictures/countries/zimbabwe.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB3E229FB99C00459E98 /* zambia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zambia.png; path = Pictures/countries/zambia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB3F229FB99C00459E98 /* guam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = guam.png; path = Pictures/countries/guam.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB40229FB99C00459E98 /* tonga.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tonga.png; path = Pictures/countries/tonga.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB41229FB99C00459E98 /* chad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chad.png; path = Pictures/countries/chad.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB42229FB99C00459E98 /* bonaire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bonaire.png; path = Pictures/countries/bonaire.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB43229FB99C00459E98 /* tajikistan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tajikistan.png; path = Pictures/countries/tajikistan.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB44229FB99C00459E98 /* nato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nato.png; path = Pictures/countries/nato.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB45229FB99C00459E98 /* kyrgyzstan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kyrgyzstan.png; path = Pictures/countries/kyrgyzstan.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB46229FB99C00459E98 /* dominica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dominica.png; path = Pictures/countries/dominica.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB47229FB99C00459E98 /* orkney-islands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "orkney-islands.png"; path = "Pictures/countries/orkney-islands.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB48229FB99D00459E98 /* madagascar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = madagascar.png; path = Pictures/countries/madagascar.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB49229FB99D00459E98 /* cyprus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cyprus.png; path = Pictures/countries/cyprus.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB4A229FB99D00459E98 /* romania.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = romania.png; path = Pictures/countries/romania.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB4B229FB99D00459E98 /* somaliland.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = somaliland.png; path = Pictures/countries/somaliland.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB4C229FB99D00459E98 /* libya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = libya.png; path = Pictures/countries/libya.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB4D229FB99D00459E98 /* kuwait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kuwait.png; path = Pictures/countries/kuwait.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB4E229FB99D00459E98 /* tokelau.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tokelau.png; path = Pictures/countries/tokelau.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB4F229FB99D00459E98 /* mauritania.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mauritania.png; path = Pictures/countries/mauritania.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB50229FB99D00459E98 /* sao-tome-and-principe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sao-tome-and-principe.png"; path = "Pictures/countries/sao-tome-and-principe.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB51229FB99D00459E98 /* democratic-republic-of-congo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "democratic-republic-of-congo.png"; path = "Pictures/countries/democratic-republic-of-congo.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB52229FB99D00459E98 /* azerbaijan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = azerbaijan.png; path = Pictures/countries/azerbaijan.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB53229FB99D00459E98 /* botswana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = botswana.png; path = Pictures/countries/botswana.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB54229FB99D00459E98 /* transnistria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = transnistria.png; path = Pictures/countries/transnistria.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB55229FB99D00459E98 /* yemen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yemen.png; path = Pictures/countries/yemen.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB56229FB99D00459E98 /* jordan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jordan.png; path = Pictures/countries/jordan.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB57229FB99D00459E98 /* madeira.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = madeira.png; path = Pictures/countries/madeira.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB58229FB99E00459E98 /* liberia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = liberia.png; path = Pictures/countries/liberia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB59229FB99E00459E98 /* sweden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sweden.png; path = Pictures/countries/sweden.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB5A229FB99E00459E98 /* grenada.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grenada.png; path = Pictures/countries/grenada.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB5B229FB99E00459E98 /* suriname.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = suriname.png; path = Pictures/countries/suriname.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB5C229FB99E00459E98 /* comoros.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = comoros.png; path = Pictures/countries/comoros.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB5D229FB99E00459E98 /* lebanon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lebanon.png; path = Pictures/countries/lebanon.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB5E229FB99E00459E98 /* somalia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = somalia.png; path = Pictures/countries/somalia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB5F229FB99E00459E98 /* cook-islands.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "cook-islands.png"; path = "Pictures/countries/cook-islands.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB60229FB99E00459E98 /* myanmar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = myanmar.png; path = Pictures/countries/myanmar.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB61229FB99E00459E98 /* burkina-faso.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "burkina-faso.png"; path = "Pictures/countries/burkina-faso.png"; sourceTree = SOURCE_ROOT; };
+		DEF6CB62229FB99E00459E98 /* palestine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = palestine.png; path = Pictures/countries/palestine.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB63229FB99E00459E98 /* croatia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = croatia.png; path = Pictures/countries/croatia.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB64229FB99E00459E98 /* uzbekistn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = uzbekistn.png; path = Pictures/countries/uzbekistn.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB65229FB99E00459E98 /* corsica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = corsica.png; path = Pictures/countries/corsica.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB66229FB99E00459E98 /* kenya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kenya.png; path = Pictures/countries/kenya.png; sourceTree = SOURCE_ROOT; };
+		DEF6CB67229FB99E00459E98 /* czech-republic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "czech-republic.png"; path = "Pictures/countries/czech-republic.png"; sourceTree = SOURCE_ROOT; };
 		DEFD90A4229A8A1100A68D6D /* LoadInitialValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadInitialValues.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +617,267 @@
 		DE3088082292D3980051A3E1 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				DEF6CA88229FB99200459E98 /* abkhazia.png */,
+				DEF6CB36229FB99B00459E98 /* afghanistan.png */,
+				DEF6CB12229FB99900459E98 /* aland-islands.png */,
+				DEF6CAAC229FB99400459E98 /* albania.png */,
+				DEF6CA63229FB99000459E98 /* algeria.png */,
+				DEF6CABC229FB99400459E98 /* american-samoa.png */,
+				DEF6CA78229FB99100459E98 /* andorra.png */,
+				DEF6CAB0229FB99400459E98 /* angola.png */,
+				DEF6CA82229FB99100459E98 /* anguilla.png */,
+				DEF6CA69229FB99000459E98 /* antigua-and-barbuda.png */,
+				DEF6CB31229FB99B00459E98 /* argentina.png */,
+				DEF6CA97229FB99200459E98 /* armenia.png */,
+				DEF6CAB6229FB99400459E98 /* aruba.png */,
+				DEF6CAD5229FB99600459E98 /* australia.png */,
+				DEF6CB19229FB99A00459E98 /* austria.png */,
+				DEF6CB52229FB99D00459E98 /* azerbaijan.png */,
+				DEF6CABF229FB99500459E98 /* azores-islands.png */,
+				DEF6CA6D229FB99000459E98 /* bahamas.png */,
+				DEF6CAAA229FB99300459E98 /* bahrain.png */,
+				DEF6CAC8229FB99500459E98 /* balearic-islands.png */,
+				DEF6CA8F229FB99200459E98 /* bangladesh.png */,
+				DEF6CB01229FB99800459E98 /* barbados.png */,
+				DEF6CAF1229FB99700459E98 /* basque-country.png */,
+				DEF6CB0C229FB99900459E98 /* belarus.png */,
+				DEF6CAEB229FB99700459E98 /* belgium.png */,
+				DEF6CAD8229FB99600459E98 /* belize.png */,
+				DEF6CA9F229FB99300459E98 /* benin.png */,
+				DEF6CB30229FB99B00459E98 /* bermuda.png */,
+				DEF6CB0B229FB99900459E98 /* bhutan-1.png */,
+				DEF6CAA0229FB99300459E98 /* bhutan.png */,
+				DEF6CA8B229FB99200459E98 /* bolivia.png */,
+				DEF6CB42229FB99C00459E98 /* bonaire.png */,
+				DEF6CAD3229FB99600459E98 /* bosnia-and-herzegovina.png */,
+				DEF6CB53229FB99D00459E98 /* botswana.png */,
+				DEF6CAB4229FB99400459E98 /* brazil.png */,
+				DEF6CA81229FB99100459E98 /* british-columbia.png */,
+				DEF6CB3B229FB99C00459E98 /* british-indian-ocean-territory.png */,
+				DEF6CB17229FB99A00459E98 /* british-virgin-islands.png */,
+				DEF6CA72229FB99000459E98 /* brunei.png */,
+				DEF6CA77229FB99100459E98 /* bulgaria.png */,
+				DEF6CB61229FB99E00459E98 /* burkina-faso.png */,
+				DEF6CA86229FB99100459E98 /* burundi.png */,
+				DEF6CAFB229FB99800459E98 /* cambodia.png */,
+				DEF6CB27229FB99B00459E98 /* cameroon.png */,
+				DEF6CAC1229FB99500459E98 /* canada.png */,
+				DEF6CA92229FB99200459E98 /* canary-islands.png */,
+				DEF6CAF5229FB99800459E98 /* cape-verde.png */,
+				DEF6CA8E229FB99200459E98 /* cayman-islands.png */,
+				DEF6CAB5229FB99400459E98 /* central-african-republic.png */,
+				DEF6CAD0229FB99600459E98 /* ceuta.png */,
+				DEF6CB41229FB99C00459E98 /* chad.png */,
+				DEF6CACB229FB99500459E98 /* chile.png */,
+				DEF6CAE0229FB99600459E98 /* china.png */,
+				DEF6CB2A229FB99B00459E98 /* christmas-island.png */,
+				DEF6CAA9229FB99300459E98 /* cocos-island.png */,
+				DEF6CB0E229FB99900459E98 /* colombia.png */,
+				DEF6CB5C229FB99E00459E98 /* comoros.png */,
+				DEF6CB5F229FB99E00459E98 /* cook-islands.png */,
+				DEF6CB65229FB99E00459E98 /* corsica.png */,
+				DEF6CB2D229FB99B00459E98 /* costa-rica.png */,
+				DEF6CB63229FB99E00459E98 /* croatia.png */,
+				DEF6CAF9229FB99800459E98 /* cuba.png */,
+				DEF6CA68229FB99000459E98 /* curacao.png */,
+				DEF6CB49229FB99D00459E98 /* cyprus.png */,
+				DEF6CB67229FB99E00459E98 /* czech-republic.png */,
+				DEF6CB51229FB99D00459E98 /* democratic-republic-of-congo.png */,
+				DEF6CB23229FB99A00459E98 /* denmark.png */,
+				DEF6CAA8229FB99300459E98 /* djibouti.png */,
+				DEF6CB46229FB99C00459E98 /* dominica.png */,
+				DEF6CAED229FB99700459E98 /* dominican-republic.png */,
+				DEF6CAF8229FB99800459E98 /* east-timor.png */,
+				DEF6CAD6229FB99600459E98 /* ecuador.png */,
+				DEF6CABE229FB99500459E98 /* egypt.png */,
+				DEF6CA66229FB99000459E98 /* england.png */,
+				DEF6CAF6229FB99800459E98 /* equatorial-guinea.png */,
+				DEF6CAE4229FB99700459E98 /* eritrea.png */,
+				DEF6CA76229FB99100459E98 /* estonia.png */,
+				DEF6CB14229FB99900459E98 /* ethiopia.png */,
+				DEF6CAA7229FB99300459E98 /* european-union.png */,
+				DEF6CA95229FB99200459E98 /* falkland-islands.png */,
+				DEF6CABA229FB99400459E98 /* faroe-islands.png */,
+				DEF6CA7B229FB99100459E98 /* fiji.png */,
+				DEF6CA94229FB99200459E98 /* finland.png */,
+				DEF6CA62229FB99000459E98 /* france.png */,
+				DEF6CB29229FB99B00459E98 /* french-polynesia.png */,
+				DEF6CAFC229FB99800459E98 /* gabon.png */,
+				DEF6CB38229FB99C00459E98 /* galapagos-islands.png */,
+				DEF6CAC2229FB99500459E98 /* gambia.png */,
+				DEF6CACF229FB99500459E98 /* georgia.png */,
+				DEF6CAFE229FB99800459E98 /* germany.png */,
+				DEF6CAA2229FB99300459E98 /* ghana.png */,
+				DEF6CAE7229FB99700459E98 /* gibraltar.png */,
+				DEF6CAD4229FB99600459E98 /* greece.png */,
+				DEF6CAA3229FB99300459E98 /* greenland.png */,
+				DEF6CB5A229FB99E00459E98 /* grenada.png */,
+				DEF6CB3F229FB99C00459E98 /* guam.png */,
+				DEF6CA9C229FB99300459E98 /* guatemala.png */,
+				DEF6CB00229FB99800459E98 /* guernsey.png */,
+				DEF6CACD229FB99500459E98 /* guinea-bissau.png */,
+				DEF6CA8C229FB99200459E98 /* guinea.png */,
+				DEF6CB2C229FB99B00459E98 /* guyana.png */,
+				DEF6CADE229FB99600459E98 /* haiti.png */,
+				DEF6CA6A229FB99000459E98 /* hawaii.png */,
+				DEF6CA89229FB99200459E98 /* honduras.png */,
+				DEF6CB2B229FB99B00459E98 /* hong-kong.png */,
+				DEF6CA91229FB99200459E98 /* hungary.png */,
+				DEF6CAB9229FB99400459E98 /* iceland.png */,
+				DEF6CAE9229FB99700459E98 /* indonesia.png */,
+				DEF6CAC0229FB99500459E98 /* iran.png */,
+				DEF6CAAB229FB99300459E98 /* iraq.png */,
+				DEF6CB03229FB99800459E98 /* ireland.png */,
+				DEF6CAD1229FB99600459E98 /* isle-of-man.png */,
+				DEF6CAEF229FB99700459E98 /* israel.png */,
+				DEF6CB16229FB99A00459E98 /* italy.png */,
+				DEF6CB37229FB99C00459E98 /* ivory-coast.png */,
+				DEF6CAB7229FB99400459E98 /* jamaica.png */,
+				DEF6CA7A229FB99100459E98 /* japan.png */,
+				DEF6CB35229FB99B00459E98 /* jersey.png */,
+				DEF6CB56229FB99D00459E98 /* jordan.png */,
+				DEF6CA9E229FB99300459E98 /* kazakhstan.png */,
+				DEF6CB66229FB99E00459E98 /* kenya.png */,
+				DEF6CA73229FB99000459E98 /* kiribati.png */,
+				DEF6CB0F229FB99900459E98 /* kosovo.png */,
+				DEF6CB4D229FB99D00459E98 /* kuwait.png */,
+				DEF6CB45229FB99C00459E98 /* kyrgyzstan.png */,
+				DEF6CA7F229FB99100459E98 /* laos.png */,
+				DEF6CB09229FB99900459E98 /* latvia.png */,
+				DEF6CB5D229FB99E00459E98 /* lebanon.png */,
+				DEF6CB06229FB99900459E98 /* lesotho.png */,
+				DEF6CB58229FB99E00459E98 /* liberia.png */,
+				DEF6CB4C229FB99D00459E98 /* libya.png */,
+				DEF6CA84229FB99100459E98 /* liechtenstein.png */,
+				DEF6CAE2229FB99700459E98 /* lithuania.png */,
+				DEF6CACE229FB99500459E98 /* luxembourg.png */,
+				DEF6CAF7229FB99800459E98 /* macao.png */,
+				DEF6CB48229FB99D00459E98 /* madagascar.png */,
+				DEF6CB57229FB99D00459E98 /* madeira.png */,
+				DEF6CAAF229FB99400459E98 /* malawi.png */,
+				DEF6CAA6229FB99300459E98 /* malaysia.png */,
+				DEF6CA6F229FB99000459E98 /* maldives.png */,
+				DEF6CA90229FB99200459E98 /* mali.png */,
+				DEF6CB1E229FB99A00459E98 /* malta.png */,
+				DEF6CAF0229FB99700459E98 /* marshall-island.png */,
+				DEF6CACC229FB99500459E98 /* martinique.png */,
+				DEF6CB4F229FB99D00459E98 /* mauritania.png */,
+				DEF6CA87229FB99100459E98 /* mauritius.png */,
+				DEF6CB10229FB99900459E98 /* melilla.png */,
+				DEF6CB25229FB99A00459E98 /* mexico.png */,
+				DEF6CAB2229FB99400459E98 /* micronesia.png */,
+				DEF6CA96229FB99200459E98 /* moldova.png */,
+				DEF6CB07229FB99900459E98 /* monaco.png */,
+				DEF6CB08229FB99900459E98 /* mongolia.png */,
+				DEF6CADC229FB99600459E98 /* montenegro.png */,
+				DEF6CB20229FB99A00459E98 /* montserrat.png */,
+				DEF6CAB1229FB99400459E98 /* morocco.png */,
+				DEF6CA6E229FB99000459E98 /* mozambique.png */,
+				DEF6CB60229FB99E00459E98 /* myanmar.png */,
+				DEF6CAEC229FB99700459E98 /* namibia.png */,
+				DEF6CB44229FB99C00459E98 /* nato.png */,
+				DEF6CA64229FB99000459E98 /* nauru.png */,
+				DEF6CB0D229FB99900459E98 /* nepal.png */,
+				DEF6CB1B229FB99A00459E98 /* netherlands.png */,
+				DEF6CB0A229FB99900459E98 /* new-zealand.png */,
+				DEF6CAC4229FB99500459E98 /* nicaragua.png */,
+				DEF6CADD229FB99600459E98 /* niger.png */,
+				DEF6CAFA229FB99800459E98 /* nigeria.png */,
+				DEF6CB2E229FB99B00459E98 /* niue.png */,
+				DEF6CA67229FB99000459E98 /* norfolk-island.png */,
+				DEF6CAA1229FB99300459E98 /* north-korea.png */,
+				DEF6CB02229FB99800459E98 /* northen-cyprus.png */,
+				DEF6CB39229FB99C00459E98 /* northern-marianas-islands.png */,
+				DEF6CA85229FB99100459E98 /* norway.png */,
+				DEF6CA7C229FB99100459E98 /* oman.png */,
+				DEF6CB47229FB99C00459E98 /* orkney-islands.png */,
+				DEF6CAFF229FB99800459E98 /* ossetia.png */,
+				DEF6CAEE229FB99700459E98 /* pakistan.png */,
+				DEF6CB34229FB99B00459E98 /* palau.png */,
+				DEF6CB62229FB99E00459E98 /* palestine.png */,
+				DEF6CB26229FB99B00459E98 /* panama.png */,
+				DEF6CADA229FB99600459E98 /* papua-new-guinea.png */,
+				DEF6CB15229FB99A00459E98 /* paraguay.png */,
+				DEF6CA99229FB99200459E98 /* peru.png */,
+				DEF6CAC3229FB99500459E98 /* philippines.png */,
+				DEF6CAC7229FB99500459E98 /* pitcairn-islands.png */,
+				DEF6CB04229FB99900459E98 /* portugal.png */,
+				DEF6CACA229FB99500459E98 /* puerto-rico.png */,
+				DEF6CB22229FB99A00459E98 /* qatar.png */,
+				DEF6CA70229FB99000459E98 /* rapa-nui.png */,
+				DEF6CA65229FB99000459E98 /* republic-of-macedonia.png */,
+				DEF6CA7D229FB99100459E98 /* republic-of-poland.png */,
+				DEF6CB1C229FB99A00459E98 /* republic-of-the-congo.png */,
+				DEF6CB4A229FB99D00459E98 /* romania.png */,
+				DEF6CAF2229FB99700459E98 /* russia.png */,
+				DEF6CAC5229FB99500459E98 /* rwanda.png */,
+				DEF6CA93229FB99200459E98 /* saba-island.png */,
+				DEF6CB3A229FB99C00459E98 /* saint-kitts-and-nevis.png */,
+				DEF6CA98229FB99200459E98 /* salvador.png */,
+				DEF6CAAD229FB99400459E98 /* samoa.png */,
+				DEF6CAA4229FB99300459E98 /* san-marino.png */,
+				DEF6CB50229FB99D00459E98 /* sao-tome-and-principe.png */,
+				DEF6CAE8229FB99700459E98 /* sardinia.png */,
+				DEF6CADF229FB99600459E98 /* saudi-arabia.png */,
+				DEF6CB1F229FB99A00459E98 /* scotland.png */,
+				DEF6CAFD229FB99800459E98 /* senegal.png */,
+				DEF6CAF3229FB99800459E98 /* serbia.png */,
+				DEF6CA79229FB99100459E98 /* seychelles.png */,
+				DEF6CB1A229FB99A00459E98 /* sierra-leone.png */,
+				DEF6CAA5229FB99300459E98 /* singapore.png */,
+				DEF6CA74229FB99000459E98 /* sint-eustatius.png */,
+				DEF6CAE5229FB99700459E98 /* sint-maarten.png */,
+				DEF6CB05229FB99900459E98 /* slovakia.png */,
+				DEF6CA61229FB99000459E98 /* slovenia.png */,
+				DEF6CAC9229FB99500459E98 /* solomon-islands.png */,
+				DEF6CB5E229FB99E00459E98 /* somalia.png */,
+				DEF6CB4B229FB99D00459E98 /* somaliland.png */,
+				DEF6CAD7229FB99600459E98 /* south-africa.png */,
+				DEF6CA6B229FB99000459E98 /* south-korea.png */,
+				DEF6CAC6229FB99500459E98 /* south-sudan.png */,
+				DEF6CA8D229FB99200459E98 /* spain.png */,
+				DEF6CB24229FB99A00459E98 /* sri-lanka.png */,
+				DEF6CA8A229FB99200459E98 /* st-barts.png */,
+				DEF6CA9A229FB99300459E98 /* st-lucia.png */,
+				DEF6CB11229FB99900459E98 /* st-vincent-and-the-grenadines.png */,
+				DEF6CAE3229FB99700459E98 /* sudan.png */,
+				DEF6CB5B229FB99E00459E98 /* suriname.png */,
+				DEF6CA71229FB99000459E98 /* swaziland.png */,
+				DEF6CB59229FB99E00459E98 /* sweden.png */,
+				DEF6CB1D229FB99A00459E98 /* switzerland.png */,
+				DEF6CAE6229FB99700459E98 /* syria.png */,
+				DEF6CB32229FB99B00459E98 /* taiwan.png */,
+				DEF6CB43229FB99C00459E98 /* tajikistan.png */,
+				DEF6CABB229FB99400459E98 /* tanzania.png */,
+				DEF6CAEA229FB99700459E98 /* thailand.png */,
+				DEF6CB28229FB99B00459E98 /* tibet.png */,
+				DEF6CB2F229FB99B00459E98 /* togo.png */,
+				DEF6CB4E229FB99D00459E98 /* tokelau.png */,
+				DEF6CB40229FB99C00459E98 /* tonga.png */,
+				DEF6CB54229FB99D00459E98 /* transnistria.png */,
+				DEF6CB3C229FB99C00459E98 /* trinidad-and-tobago.png */,
+				DEF6CA6C229FB99000459E98 /* tunisia.png */,
+				DEF6CB21229FB99A00459E98 /* turkey.png */,
+				DEF6CADB229FB99600459E98 /* turkmenistan.png */,
+				DEF6CA9D229FB99300459E98 /* turks-and-caicos.png */,
+				DEF6CA7E229FB99100459E98 /* tuvalu.png */,
+				DEF6CAD9229FB99600459E98 /* uganda.png */,
+				DEF6CA83229FB99100459E98 /* ukraine.png */,
+				DEF6CAAE229FB99400459E98 /* united-arab-emirates.png */,
+				DEF6CA75229FB99000459E98 /* united-kingdom.png */,
+				DEF6CA80229FB99100459E98 /* united-nations.png */,
+				DEF6CAB8229FB99400459E98 /* uruguay.png */,
+				DEF6CB64229FB99E00459E98 /* uzbekistn.png */,
+				DEF6CAD2229FB99600459E98 /* vanuatu.png */,
+				DEF6CAE1229FB99600459E98 /* vatican-city.png */,
+				DEF6CB18229FB99A00459E98 /* venezuela.png */,
+				DEF6CABD229FB99400459E98 /* vietnam.png */,
+				DEF6CAB3229FB99400459E98 /* virgin-islands.png */,
+				DEF6CA9B229FB99300459E98 /* wales.png */,
+				DEF6CB33229FB99B00459E98 /* western-sahara.png */,
+				DEF6CB55229FB99D00459E98 /* yemen.png */,
+				DEF6CB3E229FB99C00459E98 /* zambia.png */,
+				DEF6CB3D229FB99C00459E98 /* zimbabwe.png */,
 				DE012E60229ECA2F002FF558 /* arrow.png */,
 				DE012E5E229EC6DD002FF558 /* info.png */,
 				DE22EE8222951EC4006EB604 /* add.png */,
@@ -264,15 +1047,276 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEF6CBD8229FB99F00459E98 /* isle-of-man.png in Resources */,
+				DEF6CC15229FB99F00459E98 /* colombia.png in Resources */,
+				DEF6CC3E229FB99F00459E98 /* ivory-coast.png in Resources */,
+				DEF6CC51229FB99F00459E98 /* romania.png in Resources */,
+				DEF6CC5F229FB99F00459E98 /* liberia.png in Resources */,
+				DEF6CC22229FB99F00459E98 /* netherlands.png in Resources */,
+				DEF6CBA6229FB99F00459E98 /* benin.png in Resources */,
+				DEF6CC23229FB99F00459E98 /* republic-of-the-congo.png in Resources */,
+				DEF6CC5D229FB99F00459E98 /* jordan.png in Resources */,
+				DEF6CC1F229FB99F00459E98 /* venezuela.png in Resources */,
+				DEF6CC00229FB99F00459E98 /* cuba.png in Resources */,
+				DEF6CBA5229FB99F00459E98 /* kazakhstan.png in Resources */,
+				DEF6CC13229FB99F00459E98 /* belarus.png in Resources */,
+				DEF6CBE1229FB99F00459E98 /* papua-new-guinea.png in Resources */,
+				DEF6CBC1229FB99F00459E98 /* faroe-islands.png in Resources */,
+				DEF6CBD3229FB99F00459E98 /* martinique.png in Resources */,
+				DEF6CC32229FB99F00459E98 /* hong-kong.png in Resources */,
+				DEF6CBA1229FB99F00459E98 /* st-lucia.png in Resources */,
+				DEF6CBF2229FB99F00459E98 /* belgium.png in Resources */,
+				DEF6CB6F229FB99F00459E98 /* curacao.png in Resources */,
+				DEF6CBEE229FB99F00459E98 /* gibraltar.png in Resources */,
+				DEF6CB9F229FB99F00459E98 /* salvador.png in Resources */,
+				DEF6CBB5229FB99F00459E98 /* united-arab-emirates.png in Resources */,
+				DEF6CBB3229FB99F00459E98 /* albania.png in Resources */,
+				DEF6CB68229FB99F00459E98 /* slovenia.png in Resources */,
+				DEF6CBB6229FB99F00459E98 /* malawi.png in Resources */,
+				DEF6CBED229FB99F00459E98 /* syria.png in Resources */,
+				DEF6CBA3229FB99F00459E98 /* guatemala.png in Resources */,
+				DEF6CBE9229FB99F00459E98 /* lithuania.png in Resources */,
+				DEF6CC65229FB99F00459E98 /* somalia.png in Resources */,
+				DEF6CB71229FB99F00459E98 /* hawaii.png in Resources */,
+				DEF6CBFC229FB99F00459E98 /* cape-verde.png in Resources */,
+				DEF6CBB2229FB99F00459E98 /* iraq.png in Resources */,
+				DEF6CC17229FB99F00459E98 /* melilla.png in Resources */,
+				DEF6CC1E229FB99F00459E98 /* british-virgin-islands.png in Resources */,
+				DEF6CBD2229FB99F00459E98 /* chile.png in Resources */,
+				DEF6CB8E229FB99F00459E98 /* mauritius.png in Resources */,
+				DEF6CBEA229FB99F00459E98 /* sudan.png in Resources */,
+				DEF6CB83229FB99F00459E98 /* oman.png in Resources */,
+				DEF6CC0E229FB99F00459E98 /* monaco.png in Resources */,
+				DEF6CC27229FB99F00459E98 /* montserrat.png in Resources */,
+				DEF6CBC3229FB99F00459E98 /* american-samoa.png in Resources */,
+				DEF6CBB0229FB99F00459E98 /* cocos-island.png in Resources */,
+				DEF6CBBA229FB99F00459E98 /* virgin-islands.png in Resources */,
+				DEF6CB89229FB99F00459E98 /* anguilla.png in Resources */,
+				DEF6CC12229FB99F00459E98 /* bhutan-1.png in Resources */,
+				DEF6CB84229FB99F00459E98 /* republic-of-poland.png in Resources */,
+				DEF6CBF5229FB99F00459E98 /* pakistan.png in Resources */,
+				DEF6CBF7229FB99F00459E98 /* marshall-island.png in Resources */,
+				DEF6CC4F229FB99F00459E98 /* madagascar.png in Resources */,
 				DE22EE8322951EC4006EB604 /* add.png in Resources */,
+				DEF6CB73229FB99F00459E98 /* tunisia.png in Resources */,
+				DEF6CBC2229FB99F00459E98 /* tanzania.png in Resources */,
+				DEF6CB88229FB99F00459E98 /* british-columbia.png in Resources */,
+				DEF6CBEC229FB99F00459E98 /* sint-maarten.png in Resources */,
+				DEF6CBF3229FB99F00459E98 /* namibia.png in Resources */,
+				DEF6CC04229FB99F00459E98 /* senegal.png in Resources */,
+				DEF6CC1B229FB99F00459E98 /* ethiopia.png in Resources */,
+				DEF6CBE2229FB99F00459E98 /* turkmenistan.png in Resources */,
+				DEF6CC18229FB99F00459E98 /* st-vincent-and-the-grenadines.png in Resources */,
+				DEF6CC28229FB99F00459E98 /* turkey.png in Resources */,
+				DEF6CC6A229FB99F00459E98 /* croatia.png in Resources */,
+				DEF6CBA7229FB99F00459E98 /* bhutan.png in Resources */,
+				DEF6CC2B229FB99F00459E98 /* sri-lanka.png in Resources */,
+				DEF6CBDC229FB99F00459E98 /* australia.png in Resources */,
+				DEF6CC62229FB99F00459E98 /* suriname.png in Resources */,
+				DEF6CBDA229FB99F00459E98 /* bosnia-and-herzegovina.png in Resources */,
+				DEF6CC6B229FB99F00459E98 /* uzbekistn.png in Resources */,
+				DEF6CBCF229FB99F00459E98 /* balearic-islands.png in Resources */,
+				DEF6CBDB229FB99F00459E98 /* greece.png in Resources */,
+				DEF6CC58229FB99F00459E98 /* democratic-republic-of-congo.png in Resources */,
+				DEF6CBFA229FB99F00459E98 /* serbia.png in Resources */,
+				DEF6CBC9229FB99F00459E98 /* gambia.png in Resources */,
+				DEF6CB69229FB99F00459E98 /* france.png in Resources */,
+				DEF6CB7E229FB99F00459E98 /* bulgaria.png in Resources */,
+				DEF6CC59229FB99F00459E98 /* azerbaijan.png in Resources */,
+				DEF6CC34229FB99F00459E98 /* costa-rica.png in Resources */,
+				DEF6CC35229FB99F00459E98 /* niue.png in Resources */,
+				DEF6CC20229FB99F00459E98 /* austria.png in Resources */,
+				DEF6CC05229FB99F00459E98 /* germany.png in Resources */,
+				DEF6CBC0229FB99F00459E98 /* iceland.png in Resources */,
+				DEF6CBC6229FB99F00459E98 /* azores-islands.png in Resources */,
+				DEF6CBF0229FB99F00459E98 /* indonesia.png in Resources */,
+				DEF6CC57229FB99F00459E98 /* sao-tome-and-principe.png in Resources */,
+				DEF6CBFD229FB99F00459E98 /* equatorial-guinea.png in Resources */,
+				DEF6CBB1229FB99F00459E98 /* bahrain.png in Resources */,
+				DEF6CC5E229FB99F00459E98 /* madeira.png in Resources */,
+				DEF6CBD0229FB99F00459E98 /* solomon-islands.png in Resources */,
+				DEF6CC0C229FB99F00459E98 /* slovakia.png in Resources */,
+				DEF6CB9D229FB99F00459E98 /* moldova.png in Resources */,
+				DEF6CC2D229FB99F00459E98 /* panama.png in Resources */,
+				DEF6CC4A229FB99F00459E98 /* tajikistan.png in Resources */,
+				DEF6CC21229FB99F00459E98 /* sierra-leone.png in Resources */,
+				DEF6CB6B229FB99F00459E98 /* nauru.png in Resources */,
+				DEF6CBB9229FB99F00459E98 /* micronesia.png in Resources */,
+				DEF6CBF1229FB99F00459E98 /* thailand.png in Resources */,
+				DEF6CBFF229FB99F00459E98 /* east-timor.png in Resources */,
+				DEF6CC31229FB99F00459E98 /* christmas-island.png in Resources */,
+				DEF6CB6A229FB99F00459E98 /* algeria.png in Resources */,
 				DEC867662291538800F2B9D7 /* LaunchScreen.storyboard in Resources */,
+				DEF6CBE6229FB99F00459E98 /* saudi-arabia.png in Resources */,
+				DEF6CBB8229FB99F00459E98 /* morocco.png in Resources */,
+				DEF6CB95229FB99F00459E98 /* cayman-islands.png in Resources */,
+				DEF6CC1C229FB99F00459E98 /* paraguay.png in Resources */,
+				DEF6CC2A229FB99F00459E98 /* denmark.png in Resources */,
+				DEF6CB72229FB99F00459E98 /* south-korea.png in Resources */,
 				DEC867632291538800F2B9D7 /* Assets.xcassets in Resources */,
+				DEF6CC61229FB99F00459E98 /* grenada.png in Resources */,
+				DEF6CBB4229FB99F00459E98 /* samoa.png in Resources */,
+				DEF6CB6D229FB99F00459E98 /* england.png in Resources */,
+				DEF6CC55229FB99F00459E98 /* tokelau.png in Resources */,
+				DEF6CBBE229FB99F00459E98 /* jamaica.png in Resources */,
+				DEF6CB7C229FB99F00459E98 /* united-kingdom.png in Resources */,
+				DEF6CC02229FB99F00459E98 /* cambodia.png in Resources */,
+				DEF6CB94229FB99F00459E98 /* spain.png in Resources */,
+				DEF6CC2C229FB99F00459E98 /* mexico.png in Resources */,
+				DEF6CBCB229FB99F00459E98 /* nicaragua.png in Resources */,
+				DEF6CC6E229FB99F00459E98 /* czech-republic.png in Resources */,
+				DEF6CC52229FB99F00459E98 /* somaliland.png in Resources */,
+				DEF6CBA0229FB99F00459E98 /* peru.png in Resources */,
+				DEF6CC4E229FB99F00459E98 /* orkney-islands.png in Resources */,
+				DEF6CB8F229FB99F00459E98 /* abkhazia.png in Resources */,
+				DEF6CB77229FB99F00459E98 /* rapa-nui.png in Resources */,
+				DEF6CBD4229FB99F00459E98 /* guinea-bissau.png in Resources */,
+				DEF6CC50229FB99F00459E98 /* cyprus.png in Resources */,
+				DEF6CC24229FB99F00459E98 /* switzerland.png in Resources */,
+				DEF6CB6E229FB99F00459E98 /* norfolk-island.png in Resources */,
+				DEF6CBEF229FB99F00459E98 /* sardinia.png in Resources */,
+				DEF6CB98229FB99F00459E98 /* hungary.png in Resources */,
 				DEC867612291538700F2B9D7 /* Main.storyboard in Resources */,
+				DEF6CB9E229FB99F00459E98 /* armenia.png in Resources */,
+				DEF6CC5C229FB99F00459E98 /* yemen.png in Resources */,
+				DEF6CB70229FB99F00459E98 /* antigua-and-barbuda.png in Resources */,
+				DEF6CBD5229FB99F00459E98 /* luxembourg.png in Resources */,
+				DEF6CB96229FB99F00459E98 /* bangladesh.png in Resources */,
+				DEF6CB80229FB99F00459E98 /* seychelles.png in Resources */,
+				DEF6CC4D229FB99F00459E98 /* dominica.png in Resources */,
+				DEF6CC08229FB99F00459E98 /* barbados.png in Resources */,
+				DEF6CC63229FB99F00459E98 /* comoros.png in Resources */,
+				DEF6CC14229FB99F00459E98 /* nepal.png in Resources */,
+				DEF6CC0F229FB99F00459E98 /* mongolia.png in Resources */,
+				DEF6CC5B229FB99F00459E98 /* transnistria.png in Resources */,
+				DEF6CC6D229FB99F00459E98 /* kenya.png in Resources */,
+				DEF6CB6C229FB99F00459E98 /* republic-of-macedonia.png in Resources */,
+				DEF6CC03229FB99F00459E98 /* gabon.png in Resources */,
+				DEF6CC2F229FB99F00459E98 /* tibet.png in Resources */,
+				DEF6CC0B229FB99F00459E98 /* portugal.png in Resources */,
+				DEF6CC3D229FB99F00459E98 /* afghanistan.png in Resources */,
+				DEF6CC45229FB99F00459E98 /* zambia.png in Resources */,
+				DEF6CC53229FB99F00459E98 /* libya.png in Resources */,
 				DE012E61229ECA2F002FF558 /* arrow.png in Resources */,
+				DEF6CB87229FB99F00459E98 /* united-nations.png in Resources */,
+				DEF6CBF4229FB99F00459E98 /* dominican-republic.png in Resources */,
 				DE30880D2292D3B40051A3E1 /* usa.png in Resources */,
+				DEF6CC25229FB99F00459E98 /* malta.png in Resources */,
+				DEF6CC0A229FB99F00459E98 /* ireland.png in Resources */,
+				DEF6CBF6229FB99F00459E98 /* israel.png in Resources */,
+				DEF6CBCE229FB99F00459E98 /* pitcairn-islands.png in Resources */,
+				DEF6CBAE229FB99F00459E98 /* european-union.png in Resources */,
+				DEF6CC38229FB99F00459E98 /* argentina.png in Resources */,
 				DE3088102292D3B40051A3E1 /* aus.png in Resources */,
+				DEF6CBDE229FB99F00459E98 /* south-africa.png in Resources */,
+				DEF6CB81229FB99F00459E98 /* japan.png in Resources */,
+				DEF6CBC4229FB99F00459E98 /* vietnam.png in Resources */,
+				DEF6CB93229FB99F00459E98 /* guinea.png in Resources */,
+				DEF6CC01229FB99F00459E98 /* nigeria.png in Resources */,
+				DEF6CBBC229FB99F00459E98 /* central-african-republic.png in Resources */,
+				DEF6CBE5229FB99F00459E98 /* haiti.png in Resources */,
+				DEF6CB8C229FB99F00459E98 /* norway.png in Resources */,
+				DEF6CC3B229FB99F00459E98 /* palau.png in Resources */,
+				DEF6CB9A229FB99F00459E98 /* saba-island.png in Resources */,
+				DEF6CC43229FB99F00459E98 /* trinidad-and-tobago.png in Resources */,
+				DEF6CB9B229FB99F00459E98 /* finland.png in Resources */,
+				DEF6CBE4229FB99F00459E98 /* niger.png in Resources */,
+				DEF6CC64229FB99F00459E98 /* lebanon.png in Resources */,
+				DEF6CBD6229FB99F00459E98 /* georgia.png in Resources */,
+				DEF6CBD9229FB99F00459E98 /* vanuatu.png in Resources */,
+				DEF6CBD1229FB99F00459E98 /* puerto-rico.png in Resources */,
+				DEF6CB8A229FB99F00459E98 /* ukraine.png in Resources */,
+				DEF6CC48229FB99F00459E98 /* chad.png in Resources */,
+				DEF6CB91229FB99F00459E98 /* st-barts.png in Resources */,
+				DEF6CC1D229FB99F00459E98 /* italy.png in Resources */,
+				DEF6CBE8229FB99F00459E98 /* vatican-city.png in Resources */,
+				DEF6CC2E229FB99F00459E98 /* cameroon.png in Resources */,
+				DEF6CBD7229FB99F00459E98 /* ceuta.png in Resources */,
+				DEF6CB9C229FB99F00459E98 /* falkland-islands.png in Resources */,
+				DEF6CBCA229FB99F00459E98 /* philippines.png in Resources */,
+				DEF6CC67229FB99F00459E98 /* myanmar.png in Resources */,
+				DEF6CC10229FB99F00459E98 /* latvia.png in Resources */,
+				DEF6CBAD229FB99F00459E98 /* malaysia.png in Resources */,
+				DEF6CB86229FB99F00459E98 /* laos.png in Resources */,
+				DEF6CBDF229FB99F00459E98 /* belize.png in Resources */,
+				DEF6CBA4229FB99F00459E98 /* turks-and-caicos.png in Resources */,
+				DEF6CC60229FB99F00459E98 /* sweden.png in Resources */,
+				DEF6CB75229FB99F00459E98 /* mozambique.png in Resources */,
+				DEF6CB79229FB99F00459E98 /* brunei.png in Resources */,
+				DEF6CBAF229FB99F00459E98 /* djibouti.png in Resources */,
+				DEF6CC40229FB99F00459E98 /* northern-marianas-islands.png in Resources */,
+				DEF6CC41229FB99F00459E98 /* saint-kitts-and-nevis.png in Resources */,
+				DEF6CC36229FB99F00459E98 /* togo.png in Resources */,
+				DEF6CB85229FB99F00459E98 /* tuvalu.png in Resources */,
+				DEF6CBCC229FB99F00459E98 /* rwanda.png in Resources */,
+				DEF6CC6C229FB99F00459E98 /* corsica.png in Resources */,
+				DEF6CBAA229FB99F00459E98 /* greenland.png in Resources */,
+				DEF6CC69229FB99F00459E98 /* palestine.png in Resources */,
+				DEF6CBB7229FB99F00459E98 /* angola.png in Resources */,
+				DEF6CC33229FB99F00459E98 /* guyana.png in Resources */,
+				DEF6CBC5229FB99F00459E98 /* egypt.png in Resources */,
+				DEF6CB7A229FB99F00459E98 /* kiribati.png in Resources */,
+				DEF6CBA2229FB99F00459E98 /* wales.png in Resources */,
+				DEF6CC46229FB99F00459E98 /* guam.png in Resources */,
+				DEF6CBCD229FB99F00459E98 /* south-sudan.png in Resources */,
+				DEF6CC3F229FB99F00459E98 /* galapagos-islands.png in Resources */,
+				DEF6CC29229FB99F00459E98 /* qatar.png in Resources */,
+				DEF6CB76229FB99F00459E98 /* maldives.png in Resources */,
+				DEF6CB90229FB99F00459E98 /* honduras.png in Resources */,
+				DEF6CC3C229FB99F00459E98 /* jersey.png in Resources */,
+				DEF6CB74229FB99F00459E98 /* bahamas.png in Resources */,
+				DEF6CC19229FB99F00459E98 /* aland-islands.png in Resources */,
+				DEF6CBF9229FB99F00459E98 /* russia.png in Resources */,
+				DEF6CB8B229FB99F00459E98 /* liechtenstein.png in Resources */,
+				DEF6CC3A229FB99F00459E98 /* western-sahara.png in Resources */,
+				DEF6CBBB229FB99F00459E98 /* brazil.png in Resources */,
+				DEF6CB82229FB99F00459E98 /* fiji.png in Resources */,
+				DEF6CBBF229FB99F00459E98 /* uruguay.png in Resources */,
+				DEF6CBAC229FB99F00459E98 /* singapore.png in Resources */,
+				DEF6CB92229FB99F00459E98 /* bolivia.png in Resources */,
+				DEF6CBE3229FB99F00459E98 /* montenegro.png in Resources */,
+				DEF6CBA9229FB99F00459E98 /* ghana.png in Resources */,
+				DEF6CC07229FB99F00459E98 /* guernsey.png in Resources */,
+				DEF6CB7B229FB99F00459E98 /* sint-eustatius.png in Resources */,
+				DEF6CC0D229FB99F00459E98 /* lesotho.png in Resources */,
+				DEF6CB97229FB99F00459E98 /* mali.png in Resources */,
+				DEF6CC30229FB99F00459E98 /* french-polynesia.png in Resources */,
+				DEF6CC42229FB99F00459E98 /* british-indian-ocean-territory.png in Resources */,
+				DEF6CBA8229FB99F00459E98 /* north-korea.png in Resources */,
+				DEF6CB8D229FB99F00459E98 /* burundi.png in Resources */,
+				DEF6CC09229FB99F00459E98 /* northen-cyprus.png in Resources */,
+				DEF6CC5A229FB99F00459E98 /* botswana.png in Resources */,
+				DEF6CBAB229FB99F00459E98 /* san-marino.png in Resources */,
+				DEF6CC44229FB99F00459E98 /* zimbabwe.png in Resources */,
+				DEF6CC68229FB99F00459E98 /* burkina-faso.png in Resources */,
+				DEF6CB7D229FB99F00459E98 /* estonia.png in Resources */,
 				DE30880F2292D3B40051A3E1 /* india.png in Resources */,
+				DEF6CC4C229FB99F00459E98 /* kyrgyzstan.png in Resources */,
+				DEF6CC37229FB99F00459E98 /* bermuda.png in Resources */,
+				DEF6CC26229FB99F00459E98 /* scotland.png in Resources */,
+				DEF6CBE7229FB99F00459E98 /* china.png in Resources */,
+				DEF6CBE0229FB99F00459E98 /* uganda.png in Resources */,
+				DEF6CB7F229FB99F00459E98 /* andorra.png in Resources */,
+				DEF6CC49229FB99F00459E98 /* bonaire.png in Resources */,
+				DEF6CBDD229FB99F00459E98 /* ecuador.png in Resources */,
 				DE012E5F229EC6DD002FF558 /* info.png in Resources */,
+				DEF6CC47229FB99F00459E98 /* tonga.png in Resources */,
+				DEF6CBC7229FB99F00459E98 /* iran.png in Resources */,
+				DEF6CC16229FB99F00459E98 /* kosovo.png in Resources */,
+				DEF6CC66229FB99F00459E98 /* cook-islands.png in Resources */,
+				DEF6CBBD229FB99F00459E98 /* aruba.png in Resources */,
+				DEF6CC11229FB99F00459E98 /* new-zealand.png in Resources */,
+				DEF6CC54229FB99F00459E98 /* kuwait.png in Resources */,
+				DEF6CC39229FB99F00459E98 /* taiwan.png in Resources */,
+				DEF6CB78229FB99F00459E98 /* swaziland.png in Resources */,
+				DEF6CB99229FB99F00459E98 /* canary-islands.png in Resources */,
+				DEF6CBEB229FB99F00459E98 /* eritrea.png in Resources */,
+				DEF6CBFE229FB99F00459E98 /* macao.png in Resources */,
+				DEF6CC4B229FB99F00459E98 /* nato.png in Resources */,
+				DEF6CC56229FB99F00459E98 /* mauritania.png in Resources */,
+				DEF6CBC8229FB99F00459E98 /* canada.png in Resources */,
+				DEF6CC06229FB99F00459E98 /* ossetia.png in Resources */,
+				DEF6CBF8229FB99F00459E98 /* basque-country.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +1521,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DVP65GJ282;
 				INFOPLIST_FILE = "Forex Wallet/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -494,6 +1539,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DVP65GJ282;
 				INFOPLIST_FILE = "Forex Wallet/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
