@@ -35,7 +35,7 @@ extension UITextField {
 
 class CurrencyConvertor: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
    
-    
+    var today = Date()
 var currentCurrencyValue = Float(1)
 var previousCurrencyValue = Float(1)
 var percent = Float(0)
@@ -124,21 +124,86 @@ var convertedValue = Float(0)
                                                                ("INR",UIImage(named: "india.png")),
                                                                ("USD",UIImage(named:"usa.png")),
                                                                
-                                                               ("AED",UIImage(named: "abkhazia.png")),
-                                                               ("AFN",UIImage(named: "afghanistan.png")),
-                                                               ("ALL",UIImage(named: "aland-islands.png")),
-                                                               ("AMD",UIImage(named: "albania.png")),
-                                                               ("ANG",UIImage(named: "algeria.png")),
-                                                               ("AOA",UIImage(named: "american-samoa.png")),
-                                                               ("ARS",UIImage(named: "andorra.png")),
-                                                               ("AWG",UIImage(named: "angola.png")),
-                                                               ("AZN",UIImage(named: "antigua-and-barbuda.png")),
-                                                               ("BAM",UIImage(named: "bahamas.png")),
-                                                               ("BBD",UIImage(named: "bahrain.png")),
-                                                               ("BDT",UIImage(named: "balearic-islands.png")),
-                                                               ("BGN",UIImage(named: "bangladesh.png")),
-                                                               ("BHD",UIImage(named: "bhd.png")),
-                                                               ("BIF",UIImage(named: "bif.png"))]
+                                                               ("BND",UIImage(named: "brunei.png")),
+                                                               ("BOB",UIImage(named: "bolivia.png")),
+                                                               ("BRL",UIImage(named: "brazil.png")),
+                                                               ("BSD",UIImage(named: "bahamas.png")),
+                                                               ("BTC",UIImage(named: "bhutan.png")),
+                                                               ("BTN",UIImage(named: "bhutan-1.png")),
+                                                               ("BWP",UIImage(named: "botswana.png")),
+                                                               ("BYN",UIImage(named: "belarus.png")),
+                                                               ("BYR",UIImage(named: "belarus.png")),
+                                                               ("BZD",UIImage(named: "belize.png")),
+                                                               ("CAD",UIImage(named: "canada.png")),
+                                                               ("CDF",UIImage(named: "democratic-republic-of-congos.png")),
+                                                               ("CHF",UIImage(named: "switzerland.png")),
+                                                               ("CLF",UIImage(named: "chile.png")),
+                                                               ("CLP",UIImage(named: "chile.png")),
+                                                               ("CNY",UIImage(named: "china.png")),
+                                                               ("COP",UIImage(named: "colombia.png")),
+                                                               ("CRC",UIImage(named: "costa-rica.png")),
+                                                               ("CUC",UIImage(named: "cuba.png")),
+                                                               ("CUP",UIImage(named: "cuba.png")),
+                                                               ("CVE",UIImage(named: "cape-verde.png")),
+                                                               ("CZK",UIImage(named: "czech-republic.png")),
+                                                               ("DJF",UIImage(named: "djibouti.png")),
+                                                               ("DKK",UIImage(named: "denmark.png")),
+                                                               ("DOP",UIImage(named: "dominican-republic.png")),
+                                                               ("DZD",UIImage(named: "algeria.png")),
+                                                               ("EGP",UIImage(named: "egypt.png")),
+                                                               ("ERN",UIImage(named: "eritrea.png")),
+                                                               ("ETB",UIImage(named: "ethiopia.png")),
+                                                               ("EUR",UIImage(named: "European-union.png")),
+                                                               ("FJD",UIImage(named: "fiji.png")),
+                                                               ("FKP",UIImage(named: "falkland-islands.png")),
+                                                               ("GBP",UIImage(named: "united-kingdom.png")),
+                                                               ("GEL",UIImage(named: "georgia.png")),
+                                                               ("GGP",UIImage(named: "geurnsey.png")),
+                                                               ("GHS",UIImage(named: "ghana.png")),
+                                                               ("GIP",UIImage(named: "gibraltar.png")),
+                                                               ("GMD",UIImage(named: "gambia.png")),
+                                                               ("GNF",UIImage(named: "guinea.png")),
+                                                               ("GTQ",UIImage(named: "guatemala.png")),
+                                                               ("GYD",UIImage(named: "guyana.png")),
+                                                               ("HKD",UIImage(named: "hong-kong.png")),
+                                                               ("HNL",UIImage(named: "honduras.png")),
+                                                               ("HRK",UIImage(named: "croatia.png")),
+                                                               ("HTG",UIImage(named: "haiti.png")),
+                                                               ("HUF",UIImage(named: "hungary.png")),
+                                                               ("IDR",UIImage(named: "indonesia.png")),
+                                                               ("ILS",UIImage(named: "israel.png")),
+                                                               ("IMP",UIImage(named: "isle-of-man.png")),
+                                                               
+                                                               ("IQD",UIImage(named: "iraq.png")),
+                                                               ("IRR",UIImage(named: "iran.png")),
+                                                               ("ISK",UIImage(named: "iceland.png")),
+                                                               ("JEP",UIImage(named: "jersey.png")),
+                                                               ("JMD",UIImage(named: "jamaica.png")),
+                                                               ("JOD",UIImage(named: "jordan.png")),
+                                                               ("JPY",UIImage(named: "japan.png")),
+                                                               ("KES",UIImage(named: "kenya.png")),
+                                                               ("KGS",UIImage(named: "kyrgyzstan.png")),
+                                                               ("KHR",UIImage(named: "cambodia.png")),
+                                                               ("KMF",UIImage(named: "comoros.png")),
+                                                               ("KPW",UIImage(named: "north-korea.png")),
+                                                               ("KRW",UIImage(named: "south-korea.png")),
+                                                               ("KWD",UIImage(named: "kuwait.png")),
+                                                               ("KYD",UIImage(named: "cayman-islands.png")),
+                                                               ("KZT",UIImage(named: "kazakhstan.png")),
+                                                               ("LAK",UIImage(named: "laos.png")),
+                                                               ("LBP",UIImage(named: "lebanon.png")),
+                                                               ("LKR",UIImage(named: "sri-lanka.png")),
+                                                               ("LRD",UIImage(named: "liberia.png")),
+                                                               ("LSL",UIImage(named: "lesotho.png")),
+                                                               ("LTL",UIImage(named: "lithuania.png")),
+                                                               ("LVL",UIImage(named: "latvia.png")),
+                                                               ("LYD",UIImage(named: "libya.png")),
+                                                               ("MAD",UIImage(named: "morocco.png")),
+                                                               ("MDL",UIImage(named: "moldova.png")),
+                                                               ("MGA",UIImage(named: "madagascar.png")),
+                                                               ("MKD",UIImage(named: "republic-of-macedonia.png")),
+                                                               ("MMK",UIImage(named: "myanmar.png")),
+                                                               ("MNT",UIImage(named: "mongolia.png"))]
     
     
     
@@ -230,12 +295,14 @@ var convertedValue = Float(0)
         currencyField2.text = String(self.currentCurrencyValue)
     }
     
+    
     func fetchValue()
     {
-        let day = Calendar.current.date(byAdding: .day, value: 0, to: Date())
+        
+       // let day = Calendar.current.date(byAdding: .day, value: 0, to:Date)
         let dateFormatter = DateFormatter()
          dateFormatter.dateFormat = "yyyy-MM-dd"
-        let Date = dateFormatter.string(from: day!)
+        let Date = dateFormatter.string(from: today)
 
             let load1 = LoadCurrencyValues(base: self.currencyLabel1.text!, currencyLabel: self.currencyLabel2.text!, prevDate: Date )
             (self.currentCurrencyValue,self.previousCurrencyValue,self.percent) = load1.fetchLiveData()
