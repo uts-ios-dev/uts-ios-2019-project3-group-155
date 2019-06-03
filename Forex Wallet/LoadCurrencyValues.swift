@@ -1,5 +1,5 @@
 //
-//  loadInitialValues.swift
+//  LoadValues.swift
 //  Money Matter
 //
 //  Created by Aruna Sairam Manjunatha on 26/5/19.
@@ -7,8 +7,8 @@
 //
 
 import Foundation
-
-class LoadInitialValues{
+import UIKit
+class LoadCurrencyValues{
     
     var percent: Float = 0.0
     var prevCurrencyName: String = ""
@@ -17,17 +17,24 @@ class LoadInitialValues{
     var currentCurrencyValue: Float = 0.0
     var base: String
     var currencyLabel: String
-  
+    var prevDate: String
+   
     
-    init(base: String,currencyLabel: String) {
+    
+    
+    init(base: String,currencyLabel: String,prevDate: String) {
         self.base = base
         self.currencyLabel = currencyLabel
+        self.prevDate = prevDate
     }
+ 
     
-    
-    func fetchLiveData()->(Float,Float){
+    func fetchLiveData()->(Float,Float,Float){
         
-            self.fetchJasonOfYesterday(self.base,self.currencyLabel){ (success1) in
+        
+        
+      //  func startFetching(){
+            self.fetchJasonOfHistory(self.base,self.currencyLabel,self.prevDate){ (success1) in
                 if (success1){
                     self.fetchJasonOfToday(self.base,self.currencyLabel){ (success2) in
                         if (success2){
@@ -40,22 +47,23 @@ class LoadInitialValues{
                     }
                 }
             }
+       // }
        
+       //startFetching()
+        
       sleep(1)
-             return (self.currentCurrencyValue,self.percent)
+        
+      return (self.currentCurrencyValue,self.prevCurrencyValue,self.percent)
         
     }
     
-    func fetchJasonOfYesterday(_ base:String, _ curr:String,completion:@escaping (Bool) -> Void ){
+    
+    
+    func fetchJasonOfHistory(_ base:String, _ curr:String, _ pDate: String, completion:@escaping (Bool) -> Void ){
         var success1: Bool = false
-        let previousDay = Calendar.current.date(byAdding: .day, value: -1, to: Date())
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let yesterday = dateFormatter.string(from: previousDay!)
-        print(yesterday)
-        
-        let jsonURL = "https://apilayer.net/api/historical?access_key=7e4329ef9daa6adce5d7775a6719bcb4&date=\(yesterday)&source=\(base)&currencies=\(curr)"
-        
+        print("Base: \(base) Currency: \(curr) pDate: \(pDate)")
+        let jsonURL = "https://apilayer.net/api/historical?access_key=7e4329ef9daa6adce5d7775a6719bcb4&date=\(pDate)&source=\(base)&currencies=\(curr)"
+        print(jsonURL)
         guard let url = URL(string: jsonURL) else {
             return
         }
@@ -78,7 +86,7 @@ class LoadInitialValues{
                 success1 = true
                 completion(success1)
             } catch _{
-                print("Unable to fetch the data")
+                print("Unable to fetch yesterday's data")
             }
         }
         task.resume()
@@ -87,7 +95,7 @@ class LoadInitialValues{
     
     func fetchJasonOfToday(_ base: String,_ curr:String,completion: @escaping (Bool)->Void){
         var success2: Bool = false
-        
+          print("Base: \(base) Currency: \(curr)")
         let jsonURL = "https://apilayer.net/api/live?access_key=7e4329ef9daa6adce5d7775a6719bcb4&source=\(base)&currencies=\(curr)"
         
         guard let url = URL(string: jsonURL) else {
@@ -110,7 +118,7 @@ class LoadInitialValues{
                 success2 = true
                 completion(success2)
             } catch _{
-                print("Unable to fetch the data")
+                print("Unable to fetch today's data")
             }
         }
         task.resume()
@@ -120,6 +128,8 @@ class LoadInitialValues{
     func calculatePercent(completion:@escaping (Bool) -> Void ){
         var success3: Bool = false
             self.percent = ((self.currentCurrencyValue - self.prevCurrencyValue ) / self.prevCurrencyValue) * 100
+            print(self.currentCurrencyValue)
+            print(self.prevCurrencyValue)
             print("\(self.percent)%")
         success3 = true
         completion(success3)
