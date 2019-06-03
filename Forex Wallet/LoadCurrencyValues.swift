@@ -33,7 +33,7 @@ class LoadCurrencyValues{
         
         
         
-      //  func startFetching(){
+     
             self.fetchJasonOfHistory(self.base,self.currencyLabel,self.prevDate){ (success1) in
                 if (success1){
                     self.fetchJasonOfToday(self.base,self.currencyLabel){ (success2) in
@@ -47,11 +47,11 @@ class LoadCurrencyValues{
                     }
                 }
             }
-       // }
+      
        
-       //startFetching()
+       
         
-      sleep(1)
+      sleep(2)
         
       return (self.currentCurrencyValue,self.prevCurrencyValue,self.percent)
         

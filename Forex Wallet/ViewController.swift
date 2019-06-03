@@ -1096,8 +1096,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     var pValue1: Float = 0.0
                     var cPercent1: Float = 0.0
                     let loadCurrencyValue1 = LoadCurrencyValues(base: self.baseCurrency.text!, currencyLabel: self.currencyLabel1.text!, prevDate: self.date1)
-                    //(cValue1,pValue1,cPercent1) = loadCurrencyValue1.fetchLiveData()
-                    print(cValue1,pValue1,cPercent1)
+                   
+                   
                     while (cValue1 == 0 || pValue1 == 0){
                         (cValue1,pValue1,cPercent1) = loadCurrencyValue1.fetchLiveData()
                     }
@@ -1239,8 +1239,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     var pValue2: Float = 0.0
                     var cPercent2: Float = 0.0
                     let loadCurrencyValue2 = LoadCurrencyValues(base: self.baseCurrency.text!, currencyLabel: self.currencyLabel2.text!, prevDate: self.date2)
-                    //(cValue2,pValue2,cPercent2) = loadCurrencyValue2.fetchLiveData()
-                    print(cValue2,pValue2,cPercent2)
+                   
                     while (cValue2 == 0 || pValue2 == 0){
                         (cValue2,pValue2,cPercent2) = loadCurrencyValue2.fetchLiveData()
                     }
@@ -1378,8 +1377,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     var pValue3: Float = 0.0
                     var cPercent3: Float = 0.0
                     let loadCurrencyValue3 = LoadCurrencyValues(base: self.baseCurrency.text!, currencyLabel: self.currencyLabel3.text!, prevDate: self.date3)
-                   // (cValue3,pValue3,cPercent3) = loadCurrencyValue3.fetchLiveData()
-                    print(cValue3,pValue3,cPercent3)
+                  
                     while (cValue3 == 0 || pValue3 == 0){
                         (cValue3,pValue3,cPercent3) = loadCurrencyValue3.fetchLiveData()
                     }
