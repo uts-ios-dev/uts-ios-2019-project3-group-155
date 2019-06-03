@@ -20,52 +20,162 @@ struct userCurrencyData: Codable {
 }
 
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIGestureRecognizerDelegate{
     
     @IBAction func dropDownArrow(_ sender: Any) {
         baseCurrencyPicker.isHidden=false
     }
+    
+   let networkStatus = CheckNetwork()
+    
+    let previousDay = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+    let dateFormatter = DateFormatter()
+    var prevDate = ""
+    
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var baseCurrencyHeading: UILabel!
     @IBOutlet weak var changeHeading: UILabel!
-    var currentCurrencyName = ""
-    var currentCurrencyValue: Float = 0.000
-    var prevCurrencyName = ""
-    var prevCurrencyValue: Float = 0.000
+    
+    @IBOutlet weak var currentValue1: UILabel!
+    
+    @IBOutlet weak var currentValue2: UILabel!
+    
+    @IBOutlet weak var currentValue3: UILabel!
+ 
+    @IBOutlet weak var changeBaseButton: UITextField!
+    
+    
+    @IBOutlet weak var refresh: UIButton!
+    
+    @IBAction func refreshButton(_ sender: Any) {
+        refreshNow()
+    }
+    
+    
+    @IBOutlet weak var refreshActivityIndicator: UIActivityIndicatorView!
+    
+    var myText = UITextField()
     var percent: Float = 0.0
     var baseCurrencyPicker = UIPickerView()
     var toolBar = UIToolbar()
     var doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(doneClicked))
+    var cancelButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(cancelClicked))
     var base: String = ""
     var selected: Bool = false
     var selected1: Bool = false
     var selected2: Bool = false
     var selected3: Bool = false
-    var baseSelected: Bool = true
+  
     var picker1Operatored = false
     var picker2Operatored = false
     var picker3Operatored = false
     var baseValue1: String = ""
     var baseValue2: String = ""
     var baseValue3: String = ""
+    var date1: String = ""
+    var date2: String = ""
+    var date3: String = ""
+    var textFieldTag = 0
+    
+    let myDatePicker1 = UIDatePicker()
+    let myDatePicker2 = UIDatePicker()
+    let myDatePicker3 = UIDatePicker()
+   
+    @IBOutlet weak var headerStack: UIStackView!
+    
+    @IBAction func i1Button(_ sender: Any) {
+        if i1.alpha == 1{
+            UIView.animate(withDuration: 0.25, animations: {
+                self.i1.alpha=0;
+            })
+        }
+        else if i1.alpha == 0{
+            UIView.animate(withDuration: 0.25, animations: {
+                
+                self.i1.alpha=1;
+                self.i2.alpha=0;
+            })
+        }
+    }
+    
+    @IBOutlet weak var i1: UITextView!
+    
+    @IBOutlet weak var i2: UITextView!
+    
+    @IBAction func i2Button(_ sender: Any) {
+        if i2.alpha == 1{
+            UIView.animate(withDuration: 0.25, animations: {
+                self.i2.alpha=0;
+            })
+        }
+        else if i2.alpha == 0{
+            UIView.animate(withDuration: 0.25, animations: {
+                self.i2.alpha=1;
+                self.i1.alpha=0
+            })
+        }
+    }
     
     @IBOutlet weak var baseCurrency: UITextField!
-    @IBOutlet weak var mainActivityIndicator: UIActivityIndicatorView!
+    //@IBOutlet weak var mainActivityIndicator: UIActivityIndicatorView!
     
-    @IBOutlet weak var timeStamp1: UILabel!
+  
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        UIView.animate(withDuration: 0.25, animations: {
+            self.i1.alpha=0;
+        })
+        UIView.animate(withDuration: 0.25, animations: {
+            self.i2.alpha=0;
+        })
+        super.touchesBegan(touches, with: event)
+    }
+    
+ 
+    @IBOutlet weak var changeDate1: UITextField!
+    
+    @IBOutlet weak var changeDate2: UITextField!
+    
+    @IBOutlet weak var changeDate3: UITextField!
+    
+    @IBOutlet weak var timeStampC11: UILabel!
+    
+  
+    @IBOutlet weak var previousDate1: UILabel!
+
+    @IBOutlet weak var activityIndicator11: UIActivityIndicatorView!
+    
+    @IBOutlet weak var activityIndicator12: UIActivityIndicatorView!
+    
+    @IBOutlet weak var activityIndicator21: UIActivityIndicatorView!
+    
+    @IBOutlet weak var activityIndicator22: UIActivityIndicatorView!
+    
+    @IBOutlet weak var activityIndicator31: UIActivityIndicatorView!
+    
+    @IBOutlet weak var activityIndicator32: UIActivityIndicatorView!
+    
     @IBOutlet weak var currencyButton1: UIButton!
     @IBOutlet weak var currencyPicker1: UIPickerView!
     @IBOutlet weak var done1: UIButton!
     @IBOutlet weak var currencyLabel1: UILabel!
     @IBOutlet weak var stackView1: UIStackView!
-    @IBOutlet weak var currentValue1: UILabel!
+    
+    
+    @IBOutlet weak var previousValue1: UILabel!
     @IBOutlet weak var changePercent1: UIButton!
-    var activityIndicator1: UIActivityIndicatorView = UIActivityIndicatorView()
-    var activityIndicator2: UIActivityIndicatorView = UIActivityIndicatorView()
-    var activityIndicator3: UIActivityIndicatorView = UIActivityIndicatorView()
+   
     
     @IBAction func button1Pressed(_ sender: Any) {
+        dateFormatter.dateFormat = "MMM dd, yyyy"
+        previousDate1.text = dateFormatter.string(from: previousDay!)
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        date1 = dateFormatter.string(from: previousDay!)
         highlightCurrencyButtons(currencyButton1)
-        timeStamp1.isHidden=true
+        timeStampC11.isHidden=true
         currencyPicker1.isHidden=false
         currencyLabel1.isHidden = true
         done1.isHidden=false
@@ -75,76 +185,33 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
  
     @IBAction func done1Pressed(_ sender: Any) {
-        if (picker1Operatored){
-            picker1Operatored=false
-        if (selected1) && (baseSelected){
-           // timeStamp1.text = Date()
-            
-            setTime(timeStamp1)
-
-            
-            currencyPicker1.isHidden = true
-            deHighlightCurrencyButtons(currencyButton1)
-            let userData1: [userCurrencyData] = [
-                userCurrencyData(uCurr: currencyLabel1.text!, uBase: baseCurrency.text!),
-                userCurrencyData(uCurr: currencyLabel2.text!, uBase: baseCurrency.text!),
-                userCurrencyData(uCurr: currencyLabel3.text!, uBase: baseCurrency.text!)
-            ]
-            UserDefaults.standard.set(try? PropertyListEncoder().encode(userData1), forKey:"userCurrencyData")
-            currencyPicker1.isHidden = true
-            done1.isHidden=true
-            currencyLabel1.isHidden = false
-            stackView1.isHidden=false
-            base = baseCurrency.text!
-            currentValue1.text = "00.000"
-            self.fetchLiveData(self.base,self.currencyLabel1,self.currentValue1,self.changePercent1,self.activityIndicator1, self.stackView1)
-            setTime(timeStamp1)
- 
-        }
-        else{
-            currencyLabel1.isHidden = true
-            currentValue1.isHidden = true
-            changePercent1.isHidden = true
-            currencyPicker1.isHidden = true
-            done1.isHidden=true
-            currencyLabel1.text=""
-            stackView1.isHidden=false
-            deHighlightCurrencyButtons(currencyButton1)
-            let userData1: [userCurrencyData] = [
-                userCurrencyData(uCurr: currencyLabel1.text!, uBase: baseCurrency.text!),
-                userCurrencyData(uCurr: currencyLabel2.text!, uBase: baseCurrency.text!),
-                userCurrencyData(uCurr: currencyLabel3.text!, uBase: baseCurrency.text!)
-            ]
-            UserDefaults.standard.set(try? PropertyListEncoder().encode(userData1), forKey:"userCurrencyData")
-        }
-        }
-        else{
-            deHighlightCurrencyButtons(currencyButton1)
-            currencyPicker1.isHidden = true
-            done1.isHidden=true
-            currencyLabel1.isHidden = false
-            stackView1.isHidden=false
-            base = baseCurrency.text!
-            currentValue1.text = "00.000"
-            self.fetchLiveData(self.base,self.currencyLabel1,self.currentValue1,self.changePercent1,self.activityIndicator1, self.stackView1)
-            setTime(timeStamp1)
-        }
-        
-        
+        done1Pressed()
     }
     
-    @IBOutlet weak var timeStamp2: UILabel!
+    
+    
+    
+    @IBAction func changeDate2(_ sender: Any) {
+    }
+   
+    @IBOutlet weak var previousDate2: UILabel!
+    @IBOutlet weak var previousValue2: UILabel!
+    @IBOutlet weak var timeStampC21: UILabel!
     @IBOutlet weak var currencyButton2: UIButton!
     @IBOutlet weak var currencyPicker2: UIPickerView!
     @IBOutlet weak var done2: UIButton!
     @IBOutlet weak var currencyLabel2: UILabel!
     @IBOutlet weak var stackView2: UIStackView!
-    @IBOutlet weak var currentValue2: UILabel!
+   
     @IBOutlet weak var changePercent2: UIButton!
     
     @IBAction func button2Pressed(_ sender: Any) {
+        dateFormatter.dateFormat = "MMM dd, yyyy"
+        previousDate2.text = dateFormatter.string(from: previousDay!)
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        date2 = dateFormatter.string(from: previousDay!)
         highlightCurrencyButtons(currencyButton2)
-        timeStamp2.isHidden=true
+        timeStampC21.isHidden=true
         currencyPicker2.isHidden=false
         currencyLabel2.isHidden = true
         done2.isHidden=false
@@ -152,72 +219,36 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         currentValue2.isHidden=true
         changePercent2.isHidden=true
     }
+    
     @IBAction func done2Pressed(_ sender: Any) {
-        if (picker2Operatored){
-         picker2Operatored=false
-        if (selected2) && (baseSelected){
-            currencyPicker2.isHidden = true
-            deHighlightCurrencyButtons(currencyButton2)
-            let userData2: [userCurrencyData] = [
-                userCurrencyData(uCurr: currencyLabel1.text!, uBase: baseCurrency.text!),
-                userCurrencyData(uCurr: currencyLabel2.text!, uBase: baseCurrency.text!),
-                userCurrencyData(uCurr: currencyLabel3.text!, uBase: baseCurrency.text!)
-            ]
-            UserDefaults.standard.set(try? PropertyListEncoder().encode(userData2), forKey:"userCurrencyData")
-            currencyPicker2.isHidden = true
-            done2.isHidden=true
-            currencyLabel2.isHidden = false
-            stackView2.isHidden=false
-            base = baseCurrency.text!
-            currentValue2.text = "00.000"
-            self.fetchLiveData(self.base,self.currencyLabel2,self.currentValue2,self.changePercent2,self.activityIndicator2, self.stackView2)
-            setTime(timeStamp2)
-        }
-        else{
-            currencyLabel2.isHidden = true
-            currentValue2.isHidden = true
-            changePercent2.isHidden = true
-            currencyPicker2.isHidden = true
-            done2.isHidden=true
-            currencyLabel2.text=""
-            stackView2.isHidden=false
-            deHighlightCurrencyButtons(currencyButton2)
-            let userData2: [userCurrencyData] = [
-                userCurrencyData(uCurr: currencyLabel1.text!, uBase: baseCurrency.text!),
-                userCurrencyData(uCurr: currencyLabel2.text!, uBase: baseCurrency.text!),
-                userCurrencyData(uCurr: currencyLabel3.text!, uBase: baseCurrency.text!)
-            ]
-            UserDefaults.standard.set(try? PropertyListEncoder().encode(userData2), forKey:"userCurrencyData")
-        }
-        }
-        else{
-            deHighlightCurrencyButtons(currencyButton2)
-            currencyPicker2.isHidden = true
-            done2.isHidden=true
-            currencyLabel2.isHidden = false
-            stackView2.isHidden=false
-            base = baseCurrency.text!
-            currentValue2.text = "00.000"
-            self.fetchLiveData(self.base,self.currencyLabel2,self.currentValue2,self.changePercent2,self.activityIndicator2, self.stackView2)
-            setTime(timeStamp2)
-        }
-        
+        done2Pressed()
         
     }
     
-    @IBOutlet weak var timeStamp3: UILabel!
+   
+    
+    @IBOutlet weak var timeStampC31: UILabel!
+    @IBOutlet weak var changePercent3: UIButton!
+    @IBAction func changeDate3(_ sender: Any) {
+    }
+    @IBOutlet weak var previousDate3: UILabel!
+    @IBOutlet weak var previousValue3: UILabel!
+    
+    @IBOutlet weak var stackView3: UIStackView!
     @IBOutlet weak var currencyButton3: UIButton!
     @IBOutlet weak var currencyPicker3: UIPickerView!
     @IBOutlet weak var done3: UIButton!
     @IBOutlet weak var currencyLabel3: UILabel!
     
-    @IBOutlet weak var stackView3: UIStackView!
     
-    @IBOutlet weak var changePercent3: UIButton!
-    @IBOutlet weak var currentValue3: UILabel!
     @IBAction func button3Pressed(_ sender: Any) {
+        dateFormatter.dateFormat = "MMM dd, yyyy"
+        previousDate3.text = dateFormatter.string(from: previousDay!)
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        date3 = dateFormatter.string(from: previousDay!)
+        
         highlightCurrencyButtons(currencyButton3)
-        timeStamp3.isHidden=true
+        timeStampC31.isHidden=true
         currencyPicker3.isHidden=false
         currencyLabel3.isHidden = true
         done3.isHidden=false
@@ -226,233 +257,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         changePercent3.isHidden=true
     }
     @IBAction func done3Pressed(_ sender: Any) {
-        if (picker3Operatored){
-            picker3Operatored=false
-        if (selected3) && (baseSelected){
-            currencyPicker3.isHidden = true
-            deHighlightCurrencyButtons(currencyButton3)
-                let userData3: [userCurrencyData] = [
-                    userCurrencyData(uCurr: currencyLabel1.text!, uBase: baseCurrency.text!),
-                    userCurrencyData(uCurr: currencyLabel2.text!, uBase: baseCurrency.text!),
-                    userCurrencyData(uCurr: currencyLabel3.text!, uBase: baseCurrency.text!)
-                ]
-                UserDefaults.standard.set(try? PropertyListEncoder().encode(userData3), forKey:"userCurrencyData")
-                currencyPicker3.isHidden = true
-                done3.isHidden=true
-                currencyLabel3.isHidden = false
-                stackView3.isHidden=false
-                base = baseCurrency.text!
-                currentValue3.text = "00.000"
-                self.fetchLiveData(self.base,self.currencyLabel3,self.currentValue3,self.changePercent3,self.activityIndicator3, self.stackView3)
-               setTime(timeStamp3)
-        }
-        else{
-            currencyLabel3.isHidden = true
-            currentValue3.isHidden = true
-            changePercent3.isHidden = true
-            currencyPicker3.isHidden = true
-            done3.isHidden=true
-            currencyLabel3.text=""
-            stackView3.isHidden=false
-            deHighlightCurrencyButtons(currencyButton3)
-            let userData3: [userCurrencyData] = [
-                userCurrencyData(uCurr: currencyLabel1.text!, uBase: baseCurrency.text!),
-                userCurrencyData(uCurr: currencyLabel2.text!, uBase: baseCurrency.text!),
-                userCurrencyData(uCurr: currencyLabel3.text!, uBase: baseCurrency.text!)
-            ]
-            UserDefaults.standard.set(try? PropertyListEncoder().encode(userData3), forKey:"userCurrencyData")
-        }
-        }
-        else{
-            deHighlightCurrencyButtons(currencyButton3)
-            currencyPicker3.isHidden = true
-            done3.isHidden=true
-            currencyLabel3.isHidden = false
-            stackView3.isHidden=false
-            base = baseCurrency.text!
-            currentValue3.text = "00.000"
-            self.fetchLiveData(self.base,self.currencyLabel3,self.currentValue3,self.changePercent3,self.activityIndicator3, self.stackView3)
-            setTime(timeStamp3)
-        }
+        done3Pressed()
     }
     
-    var baseCurrencyData: [(currency: String, image: UIImage?)] = [("Select",UIImage(named: "add.png")),
-                                                                   ("AED",UIImage(named: "abkhazia.png")),
-                                                                   ("AFN",UIImage(named: "afghanistan.png")),
-                                                                   ("ALL",UIImage(named: "aland-islands.png")),
-                                                                   ("AMD",UIImage(named: "albania.png")),
-                                                                   ("ANG",UIImage(named: "algeria.png")),
-                                                                   ("AOA",UIImage(named: "american-samoa.png")),
-                                                                   ("ARS",UIImage(named: "andorra.png")),
-                                                                   ("AUD",UIImage(named: "aus.png")),
-                                                                   ("AWG",UIImage(named: "angola.png")),
-                                                                   ("INR",UIImage(named: "india.png")),
-                                                                   ("AZN",UIImage(named: "antigua-and-barbuda.png")),
-                                                                   ("BAM",UIImage(named: "bahamas.png")),
-                                                                   ("BBD",UIImage(named: "bahrain.png")),
-                                                                   ("BDT",UIImage(named: "balearic-islands.png")),
-                                                                   ("BGN",UIImage(named: "bangladesh.png")),
-                                                                  // ("BHD",UIImage(named: "bhd.png")),
-                                                                   //("BIF",UIImage(named: "bif.png")),
-                                                                   
-                                                                   
-        /*("BMD",UIImage(named: "BMD.png")),
-        ("BND",UIImage(named: "bhd.png")),
-        ("BOB",UIImage(named: "bhd.png")),
-        ("BRL",UIImage(named: "bhd.png")),
-        ("BSD",UIImage(named: "bhd.png")),
-        ("BTC",UIImage(named: "bhd.png")),
-        ("BTN",UIImage(named: "bhd.png")),
-        ("BWP",UIImage(named: "bhd.png")),
-        ("BYN",UIImage(named: "bhd.png")),
-        ("BYR",UIImage(named: "bhd.png")),
-        ("BZD",UIImage(named: "bhd.png")),
-        ("CAD",UIImage(named: "bhd.png")),
-        ("CDF",UIImage(named: "bhd.png")),
-        ("CHF",UIImage(named: "bhd.png")),
-        ("CLF",UIImage(named: "bhd.png")),
-        ("CLP",UIImage(named: "bhd.png")),
-        ("CNY",UIImage(named: "bhd.png")),
-        ("COP",UIImage(named: "bhd.png")),
-        ("CRC",UIImage(named: "bhd.png")),
-        ("CUC",UIImage(named: "bhd.png")),
-        ("CUP",UIImage(named: "bhd.png")),
-        ("CVE",UIImage(named: "bhd.png")),
-        ("CZK",UIImage(named: "bhd.png")),
-        ("DJF",UIImage(named: "bhd.png")),
-        ("DKK",UIImage(named: "bhd.png")),
-        ("DOP",UIImage(named: "bhd.png")),
-        ("DZD",UIImage(named: "bhd.png")),
-        ("EGP",UIImage(named: "bhd.png")),
-        ("ERN",UIImage(named: "bhd.png")),
-        ("ETB",UIImage(named: "bhd.png")),
-        ("EUR",UIImage(named: "bhd.png")),
-        ("FJD",UIImage(named: "bhd.png")),
-        ("FKP",UIImage(named: "bhd.png")),
-        ("GBP",UIImage(named: "bhd.png")),
-        ("GEL",UIImage(named: "bhd.png")),
-        ("GGP",UIImage(named: "bhd.png")),
-        ("GHS",UIImage(named: "bhd.png")),
-        ("GIP",UIImage(named: "bhd.png")),
-        ("GMD",UIImage(named: "bhd.png")),
-        ("GNF",UIImage(named: "bhd.png")),
-        ("GTQ",UIImage(named: "bhd.png")),
-        ("GYD",UIImage(named: "bhd.png")),
-        ("HKD",UIImage(named: "bhd.png")),
-        ("HNL",UIImage(named: "bhd.png")),
-        ("HRK",UIImage(named: "bhd.png")),
-        ("HTG",UIImage(named: "bhd.png")),
-        ("HUF",UIImage(named: "bhd.png")),
-        ("IDR",UIImage(named: "bhd.png")),
-        ("ILS",UIImage(named: "bhd.png")),
-        ("IMP",UIImage(named: "bhd.png")),
-        ("INR",UIImage(named: "bhd.png")),
-        ("IQD",UIImage(named: "bhd.png")),
-        ("IRR",UIImage(named: "bhd.png")),
-        ("ISK",UIImage(named: "bhd.png")),
-        ("JEP",UIImage(named: "bhd.png")),
-        ("JMD",UIImage(named: "bhd.png")),
-        ("JOD",UIImage(named: "bhd.png")),
-        ("JPY",UIImage(named: "bhd.png")),
-        ("KES",UIImage(named: "bhd.png")),
-        ("KGS",UIImage(named: "bhd.png")),
-        ("KHR",UIImage(named: "bhd.png")),
-        ("KMF",UIImage(named: "bhd.png")),
-        ("KPW",UIImage(named: "bhd.png")),
-        ("KRW",UIImage(named: "bhd.png")),
-        ("KWD",UIImage(named: "bhd.png")),
-        ("KYD",UIImage(named: "bhd.png")),
-        ("KZT",UIImage(named: "bhd.png")),
-        ("LAK",UIImage(named: "bhd.png")),
-        ("LBP",UIImage(named: "bhd.png")),
-        ("LKR",UIImage(named: "bhd.png")),
-        ("LRD",UIImage(named: "bhd.png")),
-        ("LSL",UIImage(named: "bhd.png")),
-        ("LTL",UIImage(named: "bhd.png")),
-        ("LVL",UIImage(named: "bhd.png")),
-        ("LYD",UIImage(named: "bhd.png")),
-        ("MAD",UIImage(named: "bhd.png")),
-        ("MDL",UIImage(named: "bhd.png")),
-        ("MGA",UIImage(named: "bhd.png")),
-        ("MKD",UIImage(named: "bhd.png")),
-        ("MMK",UIImage(named: "bhd.png")),
-        ("MNT",UIImage(named: "bhd.png")),
-        ("MOP",UIImage(named: "bhd.png")),
-        ("MRO",UIImage(named: "bhd.png")),
-        ("MUR",UIImage(named: "bhd.png")),
-        ("MVR",UIImage(named: "bhd.png")),
-        ("MWK",UIImage(named: "bhd.png")),
-        ("MXN",UIImage(named: "bhd.png")),
-        ("MYR",UIImage(named: "bhd.png")),
-        ("MZN",UIImage(named: "bhd.png")),
-        ("NAD",UIImage(named: "bhd.png")),
-        ("NGN",UIImage(named: "bhd.png")),
-        ("NIO",UIImage(named: "bhd.png")),
-        ("NOK",UIImage(named: "bhd.png")),
-        ("NPR",UIImage(named: "bhd.png")),
-        ("NZD",UIImage(named: "bhd.png")),
-        ("OMR",UIImage(named: "bhd.png")),
-        ("PAB",UIImage(named: "bhd.png")),
-        ("PEN",UIImage(named: "bhd.png")),
-        ("PGK",UIImage(named: "bhd.png")),
-        ("PHP",UIImage(named: "bhd.png")),
-        ("PKR",UIImage(named: "bhd.png")),
-        ("PLN",UIImage(named: "bhd.png")),
-        ("PYG",UIImage(named: "bhd.png")),
-        ("QAR",UIImage(named: "bhd.png")),
-        ("RON",UIImage(named: "bhd.png")),
-        ("RSD",UIImage(named: "bhd.png")),
-        ("RUB",UIImage(named: "bhd.png")),
-        ("RWF",UIImage(named: "bhd.png")),
-        ("SAR",UIImage(named: "bhd.png")),
-        ("SBD",UIImage(named: "bhd.png")),
-        ("SCR",UIImage(named: "bhd.png")),
-        ("SDG",UIImage(named: "bhd.png")),
-        ("SEK",UIImage(named: "bhd.png")),
-        ("SGD",UIImage(named: "bhd.png")),
-        ("SHP",UIImage(named: "bhd.png")),
-        ("SLL",UIImage(named: "bhd.png")),
-        ("SOS",UIImage(named: "bhd.png")),
-        ("SRD",UIImage(named: "bhd.png")),
-        ("STD",UIImage(named: "bhd.png")),
-        ("SVC",UIImage(named: "bhd.png")),
-        ("SYP",UIImage(named: "bhd.png")),
-        ("SZL",UIImage(named: "bhd.png")),
-        ("THB",UIImage(named: "bhd.png")),
-        ("TJS",UIImage(named: "bhd.png")),
-        ("TMT",UIImage(named: "bhd.png")),
-        ("TND",UIImage(named: "bhd.png")),
-        ("TOP",UIImage(named: "bhd.png")),
-        ("TRY",UIImage(named: "bhd.png")),
-        ("TTD",UIImage(named: "bhd.png")),
-        ("TWD",UIImage(named: "bhd.png")),
-        ("TZS",UIImage(named: "bhd.png")),
-        ("UAH",UIImage(named: "bhd.png")),
-        ("UGX",UIImage(named: "bhd.png")),
-        ("USD",UIImage(named: "bhd.png")),
-        ("UYU",UIImage(named: "bhd.png")),
-        ("UZS",UIImage(named: "bhd.png")),
-        ("VEF",UIImage(named: "bhd.png")),
-        ("VND",UIImage(named: "bhd.png")),
-        ("VUV",UIImage(named: "bhd.png")),
-        ("WST",UIImage(named: "bhd.png")),
-        ("XAF",UIImage(named: "bhd.png")),
-        ("XAG",UIImage(named: "bhd.png")),
-        ("XAU",UIImage(named: "bhd.png")),
-        ("XCD",UIImage(named: "bhd.png")),
-        ("XDR",UIImage(named: "bhd.png")),
-        ("XOF",UIImage(named: "bhd.png")),
-        ("XPF",UIImage(named: "bhd.png")),
-        ("YER",UIImage(named: "bhd.png")),
-        ("ZAR",UIImage(named: "bhd.png")),
-        ("ZMK",UIImage(named: "bhd.png")),
-        ("ZMW",UIImage(named: "bhd.png")),
-        ("ZWL",UIImage(named: "bhd.png")),*/
-        ("USD",UIImage(named: "bhd.png"))
-        ]
-            
+
     
     var currencyData: [(currency: String, image: UIImage?)] = [("Select",UIImage(named: "add.png")),
+                                                               ("AUD",UIImage(named: "aus.png")),
+                                                               ("INR",UIImage(named: "india.png")),
+                                                               ("USD",UIImage(named:"usa.png")),
         ("AED",UIImage(named: "abkhazia.png")),
         ("AFN",UIImage(named: "afghanistan.png")),
         ("ALL",UIImage(named: "aland-islands.png")),
@@ -460,49 +273,40 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         ("ANG",UIImage(named: "algeria.png")),
         ("AOA",UIImage(named: "american-samoa.png")),
         ("ARS",UIImage(named: "andorra.png")),
-        ("AUD",UIImage(named: "aus.png")),
         ("AWG",UIImage(named: "angola.png")),
-        ("INR",UIImage(named: "india.png")),
         ("AZN",UIImage(named: "antigua-and-barbuda.png")),
         ("BAM",UIImage(named: "bahamas.png")),
         ("BBD",UIImage(named: "bahrain.png")),
         ("BDT",UIImage(named: "balearic-islands.png")),
-        ("BGN",UIImage(named: "bangladesh.png")),
-       ("USD",UIImage(named:"usa.png"))]
+        ("BGN",UIImage(named: "bangladesh.png"))]
     
-    var currencyDataForUserDefaults: [String:UIImage?] = ["Select":UIImage(named: "add.png"),"INR":UIImage(named: "india.png"),"AUD":UIImage(named: "aus.png"),"USD":UIImage(named:"usa.png"),"AED":UIImage(named: "aus.png"),"AFN":UIImage(named: "aus.png"),"ALL":UIImage(named: "aus.png"),"AMD":UIImage(named: "aus.png"),"ANG":UIImage(named: "aus.png"),"AOA":UIImage(named: "aus.png"),"ARS":UIImage(named: "aus.png"),"AWG":UIImage(named: "aus.png"),"AZN":UIImage(named: "aus.png"),"BHD":UIImage(named: "aus.png")]
+
+  
     
+// View Didload
     
-   
-    func drawLine(_ x1: CGFloat,_ y1:CGFloat,_ x2:CGFloat,_ y2:CGFloat){
-        let linePath = UIBezierPath()
-        let line = CAShapeLayer()
-     
-        linePath.move(to: CGPoint(x: x1, y: y1))
-        linePath.addLine(to: CGPoint(x: x2, y:y2))
-        line.path = linePath.cgPath
-        line.strokeColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
-        line.lineWidth = 1
-        line.lineJoin = CAShapeLayerLineJoin.round
-        self.view.layer.addSublayer(line)
-        
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.9489398599, green: 0.949072659, blue: 0.948897779, alpha: 1)
-        toolBar.setItems([doneButton], animated: false)
-        toolBar.sizeToFit()
-        baseCurrency.inputAccessoryView = toolBar
+       // view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+         // view.backgroundColor = #colorLiteral(red: 0.9489398599, green: 0.949072659, blue: 0.948897779, alpha: 1)
+       
         viewsInitialiser()
-        baseCurrency.borderStyle = .none
-        drawLine(self.view.frame.minX+29,baseCurrencyHeading.frame.minY-5,self.view.frame.maxX-28,changeHeading.frame.minY-5)
-        drawLine(self.view.frame.minX+29,baseCurrencyHeading.frame.maxY+5,self.view.frame.maxX-28,changeHeading.frame.maxY+5)
+      
+        changeDate1.addTarget(self, action: #selector(showDatePicker1), for: .editingDidBegin)
+        changeDate2.addTarget(self, action: #selector(showDatePicker2), for: .editingDidBegin)
+        changeDate3.addTarget(self, action: #selector(showDatePicker3), for: .editingDidBegin)
      
+        changeBaseButton.addTarget(self, action: #selector(showBaseCurrencyPicker), for: .editingDidBegin)
+        baseCurrency.addTarget(self, action: #selector(showBaseCurrencyPicker), for: .editingDidBegin)
+        
+        baseCurrency.borderStyle = .none
+        
+ 
   
         self.loadUserData(){
                 (success9) in
                 if (success9){
-                    self.loadInitialValues()
+                   self.LoadValues()
                 }
         }
 
@@ -523,10 +327,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }else{
             currencyPicker3.selectRow(0, inComponent: 0, animated: true)
         }
-        
    
         if baseCurrency.text != ""{
-            baseCurrencyPicker.selectRow(baseCurrencyData.firstIndex(where: {$0.currency == baseCurrency.text})!, inComponent: 0, animated: true)
+            baseCurrencyPicker.selectRow(currencyData.firstIndex(where: {$0.currency == baseCurrency.text})!, inComponent: 0, animated: true)
         }else{
              baseCurrencyPicker.selectRow(0, inComponent: 0, animated: true)
         }
@@ -539,47 +342,151 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     
     
-    func loadInitialValues(){
-       
-        if (currencyLabel1.text!) == ""{
-            currencyLabel1.isHidden = true
+    
+    
+     func refreshNow() {
+      
+        refresh.isHidden = true
+        refreshActivityIndicator.startAnimating()
+          doneClicked()
+    }
+    
+    @objc func showBaseCurrencyPicker(){
+        currencyButton1.isEnabled = false
+        currencyButton2.isEnabled = false
+        currencyButton3.isEnabled = false
+        changeDate1.isEnabled = false
+        changeDate2.isEnabled = false
+        changeDate3.isEnabled = false
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        
+        
+        
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        
+     
+        
+        toolBar.setItems([cancelButton,spaceButton,doneButton], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        
+        
+        toolBar.barTintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        
+        baseCurrency.inputAccessoryView = toolBar
+        changeBaseButton.inputAccessoryView = toolBar
+        
+        baseCurrency.inputView = baseCurrencyPicker
+        changeBaseButton.inputView = baseCurrencyPicker
+        
+        
+    }
+    
+    
+    @objc func doneClicked(){
+        currencyButton1.isEnabled = true
+        currencyButton2.isEnabled = true
+        currencyButton3.isEnabled = true
+        changeDate1.isEnabled = true
+        changeDate2.isEnabled = true
+        changeDate3.isEnabled = true
+     
+        baseCurrency.endEditing(true)
+        changeBaseButton.endEditing(true)
+        enableCurrencyButtons()
+        baseValue1=baseCurrency.text!
+        baseValue2=baseCurrency.text!
+        baseValue3=baseCurrency.text!
+        let userData4: [userCurrencyData] = [
+            userCurrencyData(uCurr: currencyLabel1.text!, uBase: baseCurrency.text!),
+            userCurrencyData(uCurr: currencyLabel2.text!, uBase: baseCurrency.text!),
+            userCurrencyData(uCurr: currencyLabel3.text!, uBase: baseCurrency.text!)
+        ]
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(userData4), forKey:"userCurrencyData")
+        if (networkStatus.connectedToNetwork()){
+            LoadValues()
         }
         else{
-             let load1 = LoadInitialValues(base: self.baseValue1, currencyLabel: self.currencyLabel1.text!)
-             let (value1,percent1) = load1.fetchLiveData()
-             currentValue1.text = String(format:"%.3f",value1)
-             currencyLabel1.isHidden = false
-             self.formatButton(changePercent1, percent1)
-             print("Loaded: \(value1) and \(percent1)")
-             setTime(timeStamp1)
+            let alert = UIAlertController(title: "Network Error", message: "Please check your network and try again", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                switch action.style{
+                case .default:
+                    print("default")
+                    
+                case .cancel:
+                    print("cancel")
+                    
+                case .destructive:
+                    print("destructive")
+                    
+                }}))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+    }
+    
+    @objc func cancelClicked(){
+        currencyButton1.isEnabled = true
+        currencyButton2.isEnabled = true
+        currencyButton3.isEnabled = true
+        changeDate1.isEnabled = true
+        changeDate2.isEnabled = true
+        changeDate3.isEnabled = true
+        baseCurrency.endEditing(true)
+        changeBaseButton.endEditing(true)
+        
+    }
+    
+    
+    func LoadValues(){
+        if (networkStatus.connectedToNetwork()){
+        if (currencyLabel1.text!) == ""{
+            currencyLabel1.isHidden = true
+            previousDate1.isHidden = true
+            changeDate1.isHidden = true
+        }
+        else{
+            selected1=true
+            done1Pressed()
         }
         
         if (currencyLabel2.text!) == ""{
             currencyLabel2.isHidden = true
+            previousDate2.isHidden = true
+            changeDate2.isHidden = true
         }
         else{
-              print("This one: \(currencyLabel2.text!)")
-            let load2 = LoadInitialValues(base: self.baseValue2, currencyLabel: self.currencyLabel2.text!)
-            let (value2,percent2) = load2.fetchLiveData()
-            currentValue2.text = String(format:"%.3f",value2)
-            currencyLabel2.isHidden = false
-            self.formatButton(changePercent2, percent2)
-            print("Loaded: \(value2) and \(percent2)")
-            setTime(timeStamp2)
+            selected2=true
+            done2Pressed()
         }
         
         if (currencyLabel3.text!) == ""{
             currencyLabel3.isHidden = true
+            previousDate3.isHidden = true
+            changeDate3.isHidden = true
         }
         else{
-            print("This one: \(currencyLabel3.text!)")
-            let load3 = LoadInitialValues(base: self.baseValue3, currencyLabel: self.currencyLabel3.text!)
-            let (value3,percent3) = load3.fetchLiveData()
-            currentValue3.text = String(format:"%.3f",value3)
-            currencyLabel3.isHidden = false
-            self.formatButton(changePercent3, percent3)
-            print("Loaded: \(value3) and \(percent3)")
-            setTime(timeStamp3)
+            selected3=true
+            done3Pressed()
+        }
+        }
+        else{
+            let alert = UIAlertController(title: "Network Error", message: "Please check your network and try again", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                switch action.style{
+                case .default:
+                    print("default")
+                    
+                case .cancel:
+                    print("cancel")
+                    
+                case .destructive:
+                    print("destructive")
+                    
+                    
+                }}))
+            self.present(alert, animated: true, completion: nil)
         }
         
     }
@@ -593,21 +500,30 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                      if let uCurr1 = decodedData?[0].uCurr {
                         baseCurrency.text = decodedData?[0].uBase
                         baseValue1 = baseCurrency.text!
-                        baseCurrency.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                       // baseCurrency.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
                         currencyLabel1.text = uCurr1
                         if uCurr1 != ""{
-                            currencyButton1.setImage(currencyDataForUserDefaults[uCurr1]!, for: .normal)
+                            for i in 0..<currencyData.count{
+                                if uCurr1 == currencyData[i].currency{
+                                    currencyButton1.setImage(currencyData[i].image, for: .normal)
+                                }
+                            }
+                            
                         }
                         currencyButton1.isEnabled = true
                     }
                     if let uCurr2 = decodedData?[1].uCurr {
                         baseCurrency.text = decodedData?[1].uBase
                         baseValue2 = baseCurrency.text!
-                        baseCurrency.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                      //  baseCurrency.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
                         currencyLabel2.text = uCurr2
 
                         if uCurr2 != ""{
-                            currencyButton2.setImage(currencyDataForUserDefaults[uCurr2]!, for: .normal)
+                            for i in 0..<currencyData.count{
+                                if uCurr2 == currencyData[i].currency{
+                                    currencyButton2.setImage(currencyData[i].image, for: .normal)
+                                }
+                            }
                         }
                         currencyButton2.isEnabled = true
                     }
@@ -616,11 +532,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 
                         baseCurrency.text = decodedData?[2].uBase
                         baseValue3 = baseCurrency.text!
-                        baseCurrency.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                       // baseCurrency.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
                         currencyLabel3.text = uCurr3
 
                         if uCurr3 != ""{
-                            currencyButton3.setImage(currencyDataForUserDefaults[uCurr3]!, for: .normal)
+                            for i in 0..<currencyData.count{
+                                if uCurr3 == currencyData[i].currency{
+                                    currencyButton3.setImage(currencyData[i].image, for: .normal)
+                                }
+                            }
                         }
                         currencyButton3.isEnabled = true
                        success9 = true
@@ -636,36 +556,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         timeStamp.text = DateFormatter.localizedString(from: NSDate() as Date, dateStyle: DateFormatter.Style.medium, timeStyle: DateFormatter.Style.medium)
     }
     
-    func fetchLiveData(_ base: String,_ currencyLabel: UILabel,_ currentValue: UILabel?,_ changePercent:UIButton?,_ activityIndicator: UIActivityIndicatorView, _ stackView: UIStackView?){
-       
-        activityIndicator.center.y=stackView!.center.y
-        activityIndicator.center.x=currentValue!.center.x
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.style = UIActivityIndicatorView.Style.gray
-        
-        view.addSubview(activityIndicator)
-        activityIndicator.startAnimating()
-      //  UIApplication.shared.beginIgnoringInteractionEvents()
-        
-        fetchJasonOfYesterday(base,activityIndicator,currencyLabel.text!){ (success1) in
-            if (success1){
-                self.fetchJasonOfToday(base,activityIndicator,currencyLabel.text!){ (success2) in
-                    if (success2){
-                        
-                        self.calculateValueChange(currentValue,changePercent)
-                        DispatchQueue.main.async {
-                        activityIndicator.stopAnimating()
-                       // UIApplication.shared.endIgnoringInteractionEvents()
-                        currentValue!.isHidden=false
-                        changePercent!.isHidden=false
-                        }
-                    }
-                }
-            }
-        }
-        
-    }
-   
 
     
     
@@ -677,6 +567,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return currencyData.count
     }
     
+    public func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = currencyData[row].currency
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.font:UIFont(name: "Helvetica", size: 17.0)!,NSAttributedString.Key.foregroundColor:UIColor.white])
+        return myTitle
+    }
+    
+  
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if pickerView.tag == 1{
@@ -691,7 +588,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
             currencyButton1.setImage(currencyData[row].image!,for: .normal)
             currencyButton1.isHighlighted=false
-          //  doneButtonCheck(currencyLabel1,done1,currencyButton1)
+         
         }
         else if pickerView.tag == 2{
             currencyLabel2.text=currencyData[row].currency
@@ -705,7 +602,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
             currencyButton2.setImage(currencyData[row].image!,for: .normal)
             currencyButton2.isHighlighted=false
-           // doneButtonCheck(currencyLabel2,done2,currencyButton2)
+          
           
         }
         else if pickerView.tag == 3 {
@@ -720,18 +617,26 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
             currencyButton3.setImage(currencyData[row].image!,for: .normal)
             currencyButton3.isHighlighted=false
-            //doneButtonCheck(currencyLabel3,done3,currencyButton3)
+            
            
         }
         else if pickerView.tag == 4{
             
-            baseCurrency.text = baseCurrencyData[row].currency
+            baseCurrency.text = currencyData[row].currency
             if baseCurrency.text == "Select"{
-                baseSelected = false
+                doneButton.isEnabled=false
+                cancelButton.isEnabled=false
+                currencyButton1.isEnabled = false
+                currencyButton2.isEnabled = false
+                currencyButton3.isEnabled = false
                 
             }
             else{
-                baseSelected = true
+                doneButton.isEnabled=true
+                cancelButton.isEnabled=true
+                currencyButton1.isEnabled = true
+                currencyButton2.isEnabled = true
+                currencyButton3.isEnabled = true
             }
             
             
@@ -741,31 +646,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView.tag == 4{
-            return baseCurrencyData[row].currency
-        }
-        else{
             return currencyData[row].currency
-        }
     }
     
-    @objc func doneClicked(){
-        baseCurrency.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        baseCurrency.endEditing(true)
-        enableCurrencyButtons()
-        baseValue1=baseCurrency.text!
-        baseValue2=baseCurrency.text!
-        baseValue3=baseCurrency.text!
-        let userData4: [userCurrencyData] = [
-            userCurrencyData(uCurr: currencyLabel1.text!, uBase: baseCurrency.text!),
-            userCurrencyData(uCurr: currencyLabel2.text!, uBase: baseCurrency.text!),
-            userCurrencyData(uCurr: currencyLabel3.text!, uBase: baseCurrency.text!)
-        ]
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(userData4), forKey:"userCurrencyData")
-        //displayActivityIndicator(true)
-        loadInitialValues()
-      //  displayActivityIndicator(false)
-    }
+    
+ 
+    
+   
     
     func displayActivityIndicator(_ state: Bool){
         let activityIndicator = UIActivityIndicatorView()
@@ -791,22 +678,63 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         currencyPicker1.isHidden=true
         currencyPicker2.isHidden=true
         currencyPicker3.isHidden=true
-        changePercent1.isHidden=true
+        myDatePicker1.maximumDate = Date()
+        myDatePicker2.maximumDate = Date()
+        myDatePicker3.maximumDate = Date()
+        i1.alpha = 0
+        i2.alpha = 0
+        
+        i1.layer.cornerRadius = 5
+        i2.layer.cornerRadius = 5
+        doneButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        cancelButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        toolBar.barTintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        baseCurrencyPicker.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        myDatePicker1.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        myDatePicker2.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        myDatePicker3.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+      
+        baseCurrency.text = currencyData[1].currency
+        currentValue1.text = "0.0"
+        currentValue2.text = "0.0"
+        currentValue3.text = "0.0"
+        previousValue1.text = "0.0"
+        previousValue2.text = "0.0"
+        previousValue3.text = "0.0"
+        
         changePercent1.layer.cornerRadius = 5
         changePercent1.setTitle(" 0.00% ", for: .normal)
-        changePercent2.isHidden=true
+        changePercent1.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         changePercent2.layer.cornerRadius = 5
         changePercent2.setTitle(" 0.00% ", for: .normal)
-        changePercent3.isHidden=true
+        changePercent2.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+     
         changePercent3.layer.cornerRadius = 5
         changePercent3.setTitle(" 0.00% ", for: .normal)
-        timeStamp1.isHidden=true
-        timeStamp2.isHidden=true
-        timeStamp3.isHidden=true
+       changePercent3.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        dateFormatter.dateFormat = "MMM dd, yyyy"
+        prevDate = dateFormatter.string(from: previousDay!)
+        usleep(10000)
+        previousDate1.text = dateFormatter.string(from: previousDay!)
+        previousDate2.text = dateFormatter.string(from: previousDay!)
+        previousDate3.text = dateFormatter.string(from: previousDay!)
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        date1 = dateFormatter.string(from: previousDay!)
+        date2 = dateFormatter.string(from: previousDay!)
+        date3 = dateFormatter.string(from: previousDay!)
+        if baseCurrency.text == "Select"{
+            doneButton.isEnabled=false
+            cancelButton.isEnabled=false
+            currencyButton1.isEnabled = false
+            currencyButton2.isEnabled = false
+            currencyButton3.isEnabled = false
+            
+        }
+  
     }
     
     func enableCurrencyButtons(){
-        if baseCurrency.text != "Select Base Currency"{
+        if baseCurrency.text != "Select"{
             currencyButton1.isEnabled = true
             currencyButton2.isEnabled = true
             currencyButton3.isEnabled = true
@@ -819,112 +747,31 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
 
     
-    func fetchJasonOfYesterday(_ base:String,_ activityIndicator: UIActivityIndicatorView, _ curr:String,completion:@escaping (Bool) -> Void ){
-        var success1: Bool = false
-        let previousDay = Calendar.current.date(byAdding: .day, value: -1, to: Date())
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let yesterday = dateFormatter.string(from: previousDay!)
-        print(yesterday)
-        
-        let jsonURL = "https://apilayer.net/api/historical?access_key=7e4329ef9daa6adce5d7775a6719bcb4&date=\(yesterday)&source=\(base)&currencies=\(curr)"
-        
-        guard let url = URL(string: jsonURL) else {
-            return
-        }
-        
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else{
-                return
-            }
-            do{
-                let currencyValue = try
-                    JSONDecoder().decode(Currency.self, from: data)
-                for (key,value) in currencyValue.quotes{
-                    self.prevCurrencyName = key
-                    self.prevCurrencyValue = value
-                }
-                
-                print("Yesterday")
-                print("Previous Currency Name:\(self.prevCurrencyName), Previous Currency Value:\(self.prevCurrencyValue)")
-              
-                success1 = true
-                completion(success1)
-            } catch _{
-                print("Unable to fetch the data")
-                activityIndicator.stopAnimating()
-            }
-        }
-        task.resume()
-    }
-
-    
-    func fetchJasonOfToday(_ base: String,_ activityIndicator: UIActivityIndicatorView,_ curr:String,completion: @escaping (Bool)->Void){
-        var success2: Bool = false
-       
-       let jsonURL = "https://apilayer.net/api/live?access_key=7e4329ef9daa6adce5d7775a6719bcb4&source=\(base)&currencies=\(curr)"
-
-        guard let url = URL(string: jsonURL) else {
-            return
-        }
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else{
-                return
-            }
-            do{
-                let currencyValue = try
-                    JSONDecoder().decode(Currency.self, from: data)
-                for (key,value) in currencyValue.quotes{
-                     self.currentCurrencyName = key
-                     self.currentCurrencyValue = value
-                }
-                print("Today")
-                print("Current Currency Name:\(self.currentCurrencyName), Current Currency Value:\(self.currentCurrencyValue)")
-               
-                success2 = true
-                completion(success2)
-            } catch _{
-                print("Unable to fetch the data")
-                activityIndicator.stopAnimating()
-            }
-        }
-        task.resume()
-    }
-    
-    
-    func calculateValueChange(_ valueField: UILabel?, _ percentField: UIButton?){
-        DispatchQueue.main.sync {
-            valueField?.text=String(format: "%.3f",self.currentCurrencyValue)
-            let currPercentage = ((self.currentCurrencyValue - self.prevCurrencyValue ) / self.prevCurrencyValue) * 100
-            print("\(currPercentage)%")
-            percentField?.setTitle(String(format: "%.3f",currPercentage), for: .normal)
-            self.formatButton(percentField, currPercentage)
-            
-        }
-        
-    }
-    
+   
   
     
-    func formatButton(_ button: UIButton?, _ percentage: Float){
+    func formatButton(_ button: UIButton?, _ percentage: Float, _ timeStamp: UILabel?){
         button?.layer.cornerRadius = 5
         
         if percentage < 0 {
             button?.setTitle(" "+String(format: "%.2f", percentage)+"% "+" ", for: .normal)
             button?.layer.borderColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
             button?.layer.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+          //  timeStamp?.textColor = #colorLiteral(red: 1, green: 0.1483025253, blue: 0, alpha: 1)
             button?.isHidden=false
         }
         else if percentage >= 0.005{
             button?.setTitle(" +"+String(format: "%.2f", percentage)+"% "+" ", for: .normal)
             button?.layer.borderColor = #colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)
             button?.layer.backgroundColor = #colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)
+          //  timeStamp?.textColor = #colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)
             button?.isHidden=false
         }
         else{
             button?.setTitle(" "+String(format: "%.2f", percentage)+"% "+" ", for: .normal)
             button?.layer.borderColor = #colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)
             button?.layer.backgroundColor = #colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)
+           // timeStamp?.textColor = #colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)
             button?.isHidden=false
         }
     }
@@ -940,6 +787,607 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
+    
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+         // scrollView.frame.size.height = self.view.frame.size.height
+             //  self.scrollView.frame.origin.y -= keyboardSize.height + 40
+            //self.view.frame.size.height = self.view.frame.size.height
+            self.view.frame.origin.y -= keyboardSize.height
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if (self.view.frame.origin.y != 0) {
+             self.view.frame.origin.y = 0
+        }
+    }
+    
+    
+    
+    @objc func showDatePicker1(){
+        changeDate2.isEnabled = false
+        changeDate3.isEnabled = false
+        currencyButton1.isEnabled = false
+        currencyButton2.isEnabled = false
+        currencyButton3.isEnabled = false
+       // self.view.frame.origin.y -= myDatePicker1.frame.height
+        myDatePicker1.datePickerMode = .date
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+       
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: Selector(("doneDatePicker1")))
+
+        
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        
+        let cancel = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: Selector(("cancelDatePicker1")))
+        
+        toolBar.setItems([cancel,spaceButton,doneButton], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        
+        doneButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        cancel.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        toolBar.barTintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        let datePickerColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        myDatePicker1.setValue(datePickerColor, forKey: "textColor")
+        changeDate1.inputAccessoryView = toolBar
+        changeDate1.inputView = myDatePicker1
+       
+       
+    }
+     @objc func doneDatePicker1(){
+        changeDate2.isEnabled = true
+        changeDate3.isEnabled = true
+        currencyButton1.isEnabled = true
+        currencyButton2.isEnabled = true
+        currencyButton3.isEnabled = true
+            let myDateFormatter = DateFormatter()
+            myDateFormatter.dateFormat = "yyyy-MM-dd"
+            date1 = myDateFormatter.string(from: myDatePicker1.date)
+            myDateFormatter.dateFormat = "MMM dd, yyyy"
+            previousDate1.text = myDateFormatter.string(from: myDatePicker1.date)
+            changeDate1.resignFirstResponder()
+            done1Pressed()
+         //self.view.frame.origin.y = 0
+    }
+    
+    @objc func cancelDatePicker1(){
+        changeDate2.isEnabled = true
+        changeDate3.isEnabled = true
+        currencyButton1.isEnabled = true
+        currencyButton2.isEnabled = true
+        currencyButton3.isEnabled = true
+            changeDate1.resignFirstResponder()
+        // self.view.frame.origin.y = 0
+    }
+    
+    @objc func showDatePicker2(){
+        changeDate1.isEnabled = false
+        changeDate3.isEnabled = false
+        currencyButton1.isEnabled = false
+        currencyButton2.isEnabled = false
+        currencyButton3.isEnabled = false
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        myDatePicker2.datePickerMode = .date
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: Selector(("doneDatePicker2")))
+        
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        
+        let cancel = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: Selector(("cancelDatePicker2")))
+        
+        toolBar.setItems([cancel,spaceButton,doneButton], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        
+        doneButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        cancel.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        toolBar.barTintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        let datePickerColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        myDatePicker2.setValue(datePickerColor, forKey: "textColor")
+        changeDate2.inputAccessoryView = toolBar
+        changeDate2.inputView = myDatePicker2
+        
+        
+    }
+    @objc func doneDatePicker2(){
+        changeDate1.isEnabled = true
+        changeDate3.isEnabled = true
+        currencyButton1.isEnabled = true
+        currencyButton2.isEnabled = true
+        currencyButton3.isEnabled = true
+        let myDateFormatter = DateFormatter()
+        myDateFormatter.dateFormat = "yyyy-MM-dd"
+        date2 = myDateFormatter.string(from: myDatePicker2.date)
+        myDateFormatter.dateFormat = "MMM dd, yyyy"
+        previousDate2.text = myDateFormatter.string(from: myDatePicker2.date)
+        done2Pressed()
+        changeDate2.resignFirstResponder()
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func cancelDatePicker2(){
+        changeDate1.isEnabled = true
+        changeDate3.isEnabled = true
+        currencyButton1.isEnabled = true
+        currencyButton2.isEnabled = true
+        currencyButton3.isEnabled = true
+        changeDate2.resignFirstResponder()
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func showDatePicker3(){
+        changeDate1.isEnabled = false
+        changeDate2.isEnabled = false
+        currencyButton1.isEnabled = false
+        currencyButton2.isEnabled = false
+        currencyButton3.isEnabled = false
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        myDatePicker3.datePickerMode = .date
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: Selector(("doneDatePicker3")))
+        
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        
+        let cancel = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: Selector(("cancelDatePicker3")))
+        
+        toolBar.setItems([cancel,spaceButton,doneButton], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        
+        doneButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        cancel.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        toolBar.barTintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        let datePickerColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        myDatePicker3.setValue(datePickerColor, forKey: "textColor")
+        
+        changeDate3.inputAccessoryView = toolBar
+        changeDate3.inputView = myDatePicker3
+        
+    }
+    @objc func doneDatePicker3(){
+        changeDate1.isEnabled = true
+        changeDate2.isEnabled = true
+        currencyButton1.isEnabled = true
+        currencyButton2.isEnabled = true
+        currencyButton3.isEnabled = true
+        let myDateFormatter = DateFormatter()
+        myDateFormatter.dateFormat = "yyyy-MM-dd"
+        date3 = myDateFormatter.string(from: myDatePicker3.date)
+        myDateFormatter.dateFormat = "MMM dd, yyyy"
+        previousDate3.text = myDateFormatter.string(from: myDatePicker3.date)
+        done3Pressed()
+        changeDate3.resignFirstResponder()
+        NotificationCenter.default.removeObserver(self)
+       
+    }
+    
+    @objc func cancelDatePicker3(){
+        changeDate1.isEnabled = true
+        changeDate2.isEnabled = true
+        currencyButton1.isEnabled = true
+        currencyButton2.isEnabled = true
+        currencyButton3.isEnabled = true
+        changeDate3.resignFirstResponder()
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func done1Pressed(){
+//        if (picker1Operatored){
+//            picker1Operatored=false
+        
+            if (selected1){
+                
+               
+                activityIndicator11.startAnimating()
+                activityIndicator12.startAnimating()
+                
+                currencyPicker1.isHidden = true
+                deHighlightCurrencyButtons(currencyButton1)
+                let userData1: [userCurrencyData] = [
+                    userCurrencyData(uCurr: currencyLabel1.text!, uBase: baseCurrency.text!),
+                    userCurrencyData(uCurr: currencyLabel2.text!, uBase: baseCurrency.text!),
+                    userCurrencyData(uCurr: currencyLabel3.text!, uBase: baseCurrency.text!)
+                ]
+                UserDefaults.standard.set(try? PropertyListEncoder().encode(userData1), forKey:"userCurrencyData")
+                currencyPicker1.isHidden = true
+                done1.isHidden=true
+                currencyLabel1.isHidden = false
+                self.stackView1.isHidden=false
+                self.timeStampC11.isHidden=true
+                self.previousDate1.isHidden=true
+                self.changeDate1.isHidden = true
+                self.changePercent1.setTitle("--", for: .normal)
+                self.currentValue1.isHidden=true
+                previousValue1.isHidden = true
+                //timeStampC11.isHidden=true
+                usleep(100000)
+                if (networkStatus.connectedToNetwork()){
+                DispatchQueue.main.async {
+                    var cValue1: Float = 0.0
+                    var pValue1: Float = 0.0
+                    var cPercent1: Float = 0.0
+                    let loadCurrencyValue1 = LoadCurrencyValues(base: self.baseCurrency.text!, currencyLabel: self.currencyLabel1.text!, prevDate: self.date1)
+                    //(cValue1,pValue1,cPercent1) = loadCurrencyValue1.fetchLiveData()
+                    print(cValue1,pValue1,cPercent1)
+                    while (cValue1 == 0 || pValue1 == 0){
+                        (cValue1,pValue1,cPercent1) = loadCurrencyValue1.fetchLiveData()
+                    }
+                    self.currentValue1.text = String(format: "%.4f",cValue1)
+                    self.previousValue1.text = String(format: "%.4f",pValue1)
+                   // sleep(1)
+                    
+                    self.formatButton(self.changePercent1, cPercent1, self.timeStampC11)
+                    self.setTime(self.timeStampC11)
+                    self.previousDate1.isHidden=false
+                    self.changeDate1.isHidden=false
+                    self.currentValue1.isHidden=false
+                    self.previousValue1.isHidden=false
+                    self.activityIndicator11.stopAnimating()
+                    self.activityIndicator12.stopAnimating()
+                    self.refreshActivityIndicator.stopAnimating()
+                    self.refresh.isHidden=false
+                    
+                }
+                }
+                else{
+                    let alert = UIAlertController(title: "Network Error", message: "Please check your network and try again", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                        switch action.style{
+                        case .default:
+                            print("default")
+                            
+                        case .cancel:
+                            print("cancel")
+                            
+                        case .destructive:
+                            print("destructive")
+                            
+                            
+                        }}))
+                    self.activityIndicator11.stopAnimating()
+                    self.activityIndicator12.stopAnimating()
+                    self.refreshActivityIndicator.stopAnimating()
+                    self.refresh.isHidden=false
+                    self.present(alert, animated: true, completion: nil)
+                }
+                
+            }
+            else{
+                currentValue1.text = "0.0"
+                previousValue1.text = "0.0"
+                currencyLabel1.isHidden = true
+                currentValue1.isHidden = false
+                changePercent1.isHidden = true
+                currencyPicker1.isHidden = true
+                previousDate1.isHidden = true
+                changeDate1.isHidden = true
+                changePercent1.isHidden = false
+                changePercent1.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+                changePercent1.setTitle("0.0%", for: .normal)
+                previousValue1.isHidden = false
+                done1.isHidden=true
+                currencyLabel1.text=""
+                stackView1.isHidden=false
+                deHighlightCurrencyButtons(currencyButton1)
+                let userData1: [userCurrencyData] = [
+                    userCurrencyData(uCurr: currencyLabel1.text!, uBase: baseCurrency.text!),
+                    userCurrencyData(uCurr: currencyLabel2.text!, uBase: baseCurrency.text!),
+                    userCurrencyData(uCurr: currencyLabel3.text!, uBase: baseCurrency.text!)
+                ]
+                UserDefaults.standard.set(try? PropertyListEncoder().encode(userData1), forKey:"userCurrencyData")
+            }
+      //  }
+//        else{
+//            deHighlightCurrencyButtons(currencyButton1)
+//            currencyPicker1.isHidden = true
+//            done1.isHidden=true
+//            currencyLabel1.isHidden = false
+//            self.stackView1.isHidden=false
+//            self.currentValue1.isHidden=true
+//            self.previousValue1.isHidden=true
+//            usleep(100000)
+//            DispatchQueue.main.async {
+//                var cValue1: Float = 0.0
+//                var pValue1: Float = 0.0
+//                var cPercent1: Float = 0.0
+//                let loadCurrencyValue1 = LoadCurrencyValues(base: self.baseCurrency.text!, currencyLabel: self.currencyLabel1.text!, prevDate: self.date1)
+//                (cValue1,pValue1,cPercent1) = loadCurrencyValue1.fetchLiveData()
+//                print(cValue1,pValue1,cPercent1)
+//                while (cValue1 == 0 || pValue1 == 0){
+//                    (cValue1,pValue1,cPercent1) = loadCurrencyValue1.fetchLiveData()
+//                }
+//                self.currentValue1.text = String(format: "%.4f",cValue1)
+//                self.currentValue1.isHidden=false
+//                self.previousValue1.text = String(format: "%.4f",pValue1)
+//                self.formatButton(self.changePercent1, cPercent1)
+//                self.setTime(self.timeStampC11)
+//                self.currentValue1.isHidden=false
+//                self.previousValue1.isHidden=false
+//                self.activityIndicator11.stopAnimating()
+//                self.activityIndicator12.stopAnimating()
+//
+//            }
+//        }
+        
+    }
+    
+    
+    func done2Pressed(){
+//        if (picker2Operatored){
+//            picker2Operatored=false
+            if (selected2){
+             
+                activityIndicator21.startAnimating()
+                activityIndicator22.startAnimating()
+                
+                currencyPicker2.isHidden = true
+                deHighlightCurrencyButtons(currencyButton2)
+                let userData2: [userCurrencyData] = [
+                    userCurrencyData(uCurr: currencyLabel1.text!, uBase: baseCurrency.text!),
+                    userCurrencyData(uCurr: currencyLabel2.text!, uBase: baseCurrency.text!),
+                    userCurrencyData(uCurr: currencyLabel3.text!, uBase: baseCurrency.text!)
+                ]
+                UserDefaults.standard.set(try? PropertyListEncoder().encode(userData2), forKey:"userCurrencyData")
+                currencyPicker2.isHidden = true
+                done2.isHidden=true
+                currencyLabel2.isHidden = false
+                self.stackView2.isHidden=false
+                self.timeStampC21.isHidden=true
+                self.previousDate2.isHidden=true
+                self.changeDate2.isHidden = true
+               self.changePercent2.setTitle("--", for: .normal)
+                self.currentValue2.isHidden=true
+                previousValue2.isHidden=true
+                usleep(100000)
+                if (networkStatus.connectedToNetwork()){
+                DispatchQueue.main.async {
+                    var cValue2: Float = 0.0
+                    var pValue2: Float = 0.0
+                    var cPercent2: Float = 0.0
+                    let loadCurrencyValue2 = LoadCurrencyValues(base: self.baseCurrency.text!, currencyLabel: self.currencyLabel2.text!, prevDate: self.date2)
+                    //(cValue2,pValue2,cPercent2) = loadCurrencyValue2.fetchLiveData()
+                    print(cValue2,pValue2,cPercent2)
+                    while (cValue2 == 0 || pValue2 == 0){
+                        (cValue2,pValue2,cPercent2) = loadCurrencyValue2.fetchLiveData()
+                    }
+                    self.currentValue2.text = String(format: "%.4f",cValue2)
+                    self.previousValue2.text = String(format: "%.4f",pValue2)
+                    self.formatButton(self.changePercent2, cPercent2, self.timeStampC21)
+                    self.setTime(self.timeStampC21)
+                    self.previousDate2.isHidden=false
+                    self.changeDate2.isHidden=false
+                    self.currentValue2.isHidden=false
+                    self.previousValue2.isHidden=false
+                    self.activityIndicator21.stopAnimating()
+                    self.activityIndicator22.stopAnimating()
+                    self.refreshActivityIndicator.stopAnimating()
+                    self.refresh.isHidden=false
+                    
+                }
+                }
+                else{
+                    let alert = UIAlertController(title: "Network Error", message: "Please check your network and try again", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                        switch action.style{
+                        case .default:
+                            print("default")
+                            
+                        case .cancel:
+                            print("cancel")
+                            
+                        case .destructive:
+                            print("destructive")
+                            
+                            
+                        }}))
+                    self.activityIndicator21.stopAnimating()
+                    self.activityIndicator22.stopAnimating()
+                    self.refreshActivityIndicator.stopAnimating()
+                    self.refresh.isHidden=false
+                    self.present(alert, animated: true, completion: nil)
+                }
+                
+            }
+                
+            else{
+                currentValue2.text = "0.0"
+                previousValue2.text = "0.0"
+                currencyLabel2.isHidden = true
+                currentValue2.isHidden = false
+                changePercent2.isHidden = true
+                currencyPicker2.isHidden = true
+                done2.isHidden=true
+                currencyLabel2.text=""
+                previousDate2.isHidden = true
+                changeDate2.isHidden = true
+                changePercent2.isHidden = false
+                changePercent2.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+                changePercent2.setTitle("0.0%", for: .normal)
+                previousValue2.isHidden = false
+                stackView2.isHidden=false
+                deHighlightCurrencyButtons(currencyButton2)
+                let userData2: [userCurrencyData] = [
+                    userCurrencyData(uCurr: currencyLabel1.text!, uBase: baseCurrency.text!),
+                    userCurrencyData(uCurr: currencyLabel2.text!, uBase: baseCurrency.text!),
+                    userCurrencyData(uCurr: currencyLabel3.text!, uBase: baseCurrency.text!)
+                ]
+                UserDefaults.standard.set(try? PropertyListEncoder().encode(userData2), forKey:"userCurrencyData")
+            }
+      //  }
+//        else{
+//            deHighlightCurrencyButtons(currencyButton2)
+//            currencyPicker2.isHidden = true
+//            done2.isHidden=true
+//            currencyLabel2.isHidden = false
+//            self.stackView2.isHidden=false
+//            self.currentValue2.isHidden=true
+//            self.previousValue2.isHidden=true
+//            usleep(100000)
+//            DispatchQueue.main.async {
+//                var cValue2: Float = 0.0
+//                var pValue2: Float = 0.0
+//                var cPercent2: Float = 0.0
+//                let loadCurrencyValue2 = LoadCurrencyValues(base: self.baseCurrency.text!, currencyLabel: self.currencyLabel2.text!, prevDate: self.date2)
+//                (cValue2,pValue2,cPercent2) = loadCurrencyValue2.fetchLiveData()
+//                print(cValue2,pValue2,cPercent2)
+//                while (cValue2 == 0 || pValue2 == 0){
+//                    (cValue2,pValue2,cPercent2) = loadCurrencyValue2.fetchLiveData()
+//                }
+//                self.currentValue2.text = String(format: "%.4f",cValue2)
+//                self.currentValue2.isHidden=false
+//                self.previousValue2.text = String(format: "%.4f",pValue2)
+//                self.formatButton(self.changePercent2, cPercent2)
+//                self.setTime(self.timeStampC21)
+//                self.currentValue2.isHidden=false
+//                self.previousValue2.isHidden=false
+//                self.activityIndicator21.stopAnimating()
+//                self.activityIndicator22.stopAnimating()
+//
+//            }
+//        }
+    }
+    
+    func done3Pressed(){
+//        if (picker3Operatored){
+//            picker3Operatored=false
+            if (selected3){
+                activityIndicator31.startAnimating()
+                activityIndicator32.startAnimating()
+                
+                currencyPicker3.isHidden = true
+                deHighlightCurrencyButtons(currencyButton3)
+                let userData3: [userCurrencyData] = [
+                    userCurrencyData(uCurr: currencyLabel1.text!, uBase: baseCurrency.text!),
+                    userCurrencyData(uCurr: currencyLabel2.text!, uBase: baseCurrency.text!),
+                    userCurrencyData(uCurr: currencyLabel3.text!, uBase: baseCurrency.text!)
+                ]
+                UserDefaults.standard.set(try? PropertyListEncoder().encode(userData3), forKey:"userCurrencyData")
+                currencyPicker3.isHidden = true
+                done3.isHidden=true
+                currencyLabel3.isHidden = false
+                self.stackView3.isHidden=false
+                self.timeStampC31.isHidden=true
+                self.previousDate3.isHidden=true
+                self.changeDate3.isHidden=true
+               self.changePercent3.setTitle("--", for: .normal)
+                self.currentValue3.isHidden=true
+                previousValue3.isHidden=true
+                usleep(100000)
+                if (networkStatus.connectedToNetwork()){
+                DispatchQueue.main.async {
+                    var cValue3: Float = 0.0
+                    var pValue3: Float = 0.0
+                    var cPercent3: Float = 0.0
+                    let loadCurrencyValue3 = LoadCurrencyValues(base: self.baseCurrency.text!, currencyLabel: self.currencyLabel3.text!, prevDate: self.date3)
+                   // (cValue3,pValue3,cPercent3) = loadCurrencyValue3.fetchLiveData()
+                    print(cValue3,pValue3,cPercent3)
+                    while (cValue3 == 0 || pValue3 == 0){
+                        (cValue3,pValue3,cPercent3) = loadCurrencyValue3.fetchLiveData()
+                    }
+                    self.currentValue3.text = String(format: "%.4f",cValue3)
+                    self.previousValue3.text = String(format: "%.4f",pValue3)
+                    self.formatButton(self.changePercent3, cPercent3, self.timeStampC31)
+                    self.setTime(self.timeStampC31)
+                    self.previousDate3.isHidden=false
+                    self.changeDate3.isHidden=false
+                    self.currentValue3.isHidden=false
+                    self.previousValue3.isHidden=false
+                    self.activityIndicator31.stopAnimating()
+                    self.activityIndicator32.stopAnimating()
+                    self.refreshActivityIndicator.stopAnimating()
+                    self.refresh.isHidden=false
+                    
+                }
+                }
+                else{
+                    let alert = UIAlertController(title: "Network Error", message: "Please check your network and try again", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                        switch action.style{
+                        case .default:
+                            print("default")
+                            
+                        case .cancel:
+                            print("cancel")
+                            
+                        case .destructive:
+                            print("destructive")
+                            
+                            
+                        }}))
+                    self.activityIndicator31.stopAnimating()
+                    self.activityIndicator32.stopAnimating()
+                    self.refreshActivityIndicator.stopAnimating()
+                    self.refresh.isHidden=false
+                    self.present(alert, animated: true, completion: nil)
+                }
+               
+            }
+            else{
+                currentValue3.text = "0.0"
+                previousValue3.text = "0.0"
+                currencyLabel3.isHidden = true
+                currentValue3.isHidden = false
+                changePercent3.isHidden = true
+                currencyPicker3.isHidden = true
+                done3.isHidden=true
+                currencyLabel3.text=""
+                previousDate3.isHidden = true
+                changeDate3.isHidden = true
+                previousValue3.isHidden = false
+                changePercent3.isHidden = false
+                changePercent3.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+                changePercent3.setTitle("0.0%", for: .normal)
+                stackView3.isHidden=false
+                deHighlightCurrencyButtons(currencyButton3)
+                let userData3: [userCurrencyData] = [
+                    userCurrencyData(uCurr: currencyLabel1.text!, uBase: baseCurrency.text!),
+                    userCurrencyData(uCurr: currencyLabel2.text!, uBase: baseCurrency.text!),
+                    userCurrencyData(uCurr: currencyLabel3.text!, uBase: baseCurrency.text!)
+                ]
+                UserDefaults.standard.set(try? PropertyListEncoder().encode(userData3), forKey:"userCurrencyData")
+            }
+//        }
+//        else{
+//            deHighlightCurrencyButtons(currencyButton3)
+//            currencyPicker3.isHidden = true
+//            done3.isHidden=true
+//            currencyLabel3.isHidden = false
+//            self.stackView3.isHidden=false
+//            self.currentValue3.isHidden=true
+//            self.previousValue3.isHidden=true
+//            usleep(100000)
+//            DispatchQueue.main.async {
+//                var cValue3: Float = 0.0
+//                var pValue3: Float = 0.0
+//                var cPercent3: Float = 0.0
+//                let loadCurrencyValue3 = LoadCurrencyValues(base: self.baseCurrency.text!, currencyLabel: self.currencyLabel3.text!, prevDate: self.date3)
+//                (cValue3,pValue3,cPercent3) = loadCurrencyValue3.fetchLiveData()
+//                print(cValue3,pValue3,cPercent3)
+//                while (cValue3 == 0 || pValue3 == 0){
+//                    (cValue3,pValue3,cPercent3) = loadCurrencyValue3.fetchLiveData()
+//                }
+//                self.currentValue3.text = String(format: "%.4f",cValue3)
+//                self.currentValue3.isHidden=false
+//                self.previousValue3.text = String(format: "%.4f",pValue3)
+//                self.formatButton(self.changePercent3, cPercent3)
+//                self.setTime(self.timeStampC31)
+//                self.currentValue3.isHidden=false
+//                self.previousValue3.isHidden=false
+//                self.activityIndicator31.stopAnimating()
+//                self.activityIndicator32.stopAnimating()
+//
+//            }
+//        }
+    }
 }
 
 

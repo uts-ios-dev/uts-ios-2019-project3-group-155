@@ -37,6 +37,7 @@ class CurrencyConvertor: UIViewController, UIPickerViewDelegate, UIPickerViewDat
    
     
 var currentCurrencyValue = Float(1)
+var previousCurrencyValue = Float(1)
 var percent = Float(0)
 var convertedValue = Float(0)
     
@@ -119,6 +120,10 @@ var convertedValue = Float(0)
     }
     
     var currencyData: [(currency: String, image: UIImage?)] = [("Select",UIImage(named: "add.png")),
+                                                               ("AUD",UIImage(named: "aus.png")),
+                                                               ("INR",UIImage(named: "india.png")),
+                                                               ("USD",UIImage(named:"usa.png")),
+                                                               
                                                                ("AED",UIImage(named: "abkhazia.png")),
                                                                ("AFN",UIImage(named: "afghanistan.png")),
                                                                ("ALL",UIImage(named: "aland-islands.png")),
@@ -126,15 +131,14 @@ var convertedValue = Float(0)
                                                                ("ANG",UIImage(named: "algeria.png")),
                                                                ("AOA",UIImage(named: "american-samoa.png")),
                                                                ("ARS",UIImage(named: "andorra.png")),
-                                                               ("AUD",UIImage(named: "aus.png")),
                                                                ("AWG",UIImage(named: "angola.png")),
-                                                            ("INR",UIImage(named: "india.png")),
                                                                ("AZN",UIImage(named: "antigua-and-barbuda.png")),
                                                                ("BAM",UIImage(named: "bahamas.png")),
                                                                ("BBD",UIImage(named: "bahrain.png")),
                                                                ("BDT",UIImage(named: "balearic-islands.png")),
                                                                ("BGN",UIImage(named: "bangladesh.png")),
-                                                               ("BHD",UIImage(named: "bhd.png")),("BIF",UIImage(named: "bif.png")),("USD",UIImage(named:"usa.png"))]
+                                                               ("BHD",UIImage(named: "bhd.png")),
+                                                               ("BIF",UIImage(named: "bif.png"))]
     
     
     
@@ -209,10 +213,13 @@ var convertedValue = Float(0)
     
     func fetchValue()
     {
-        
-       
-            let load1 = LoadInitialValues(base: self.currencyLabel1.text!, currencyLabel: self.currencyLabel2.text!)
-            (self.currentCurrencyValue,self.percent) = load1.fetchLiveData()
+        let day = Calendar.current.date(byAdding: .day, value: 0, to: Date())
+        let dateFormatter = DateFormatter()
+         dateFormatter.dateFormat = "yyyy-MM-dd"
+        let Date = dateFormatter.string(from: day!)
+
+            let load1 = LoadCurrencyValues(base: self.currencyLabel1.text!, currencyLabel: self.currencyLabel2.text!, prevDate: Date )
+            (self.currentCurrencyValue,self.previousCurrencyValue,self.percent) = load1.fetchLiveData()
            
         
         sleep(1)
@@ -220,14 +227,5 @@ var convertedValue = Float(0)
         self.currencyField2.text = String(Float(currencyField1!.text!)! * self.currentCurrencyValue)
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
