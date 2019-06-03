@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
       return false
     }
-
+  
     @IBAction func CurrencyConvertor(_ sender: Any) {
         view.addSubview(homePageActivityIndicator)
         self.displayActivityIndicator(true)
@@ -88,12 +88,21 @@ class LoginViewController: UIViewController {
        
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.navigationBar.barStyle = .black
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
       myWatchListButton.layer.borderColor = #colorLiteral(red: 0.003920819145, green: 0.003922065254, blue: 0.003920426592, alpha: 1)
         myWatchListButton.layer.borderWidth = 7
         currencyConvertorButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         currencyConvertorButton.layer.borderWidth = 7
+        
+        myWatchListButton.layer.cornerRadius=myWatchListButton.frame.size.height/2
+        //myWatchListButton.clipsToBounds=true
+        currencyConvertorButton.layer.cornerRadius=currencyConvertorButton.frame.size.height/2
+       // currencyConvertorButton.clipsToBounds=true
       
     }
     

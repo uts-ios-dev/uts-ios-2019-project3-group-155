@@ -267,6 +267,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                                                                ("INR",UIImage(named: "india.png")),
                                                                ("USD",UIImage(named:"usa.png")),
         ("AED",UIImage(named: "abkhazia.png")),
+        
         ("AFN",UIImage(named: "afghanistan.png")),
         ("ALL",UIImage(named: "aland-islands.png")),
         ("AMD",UIImage(named: "albania.png")),
@@ -283,26 +284,22 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
   
     
-// View Didload
+    // View Didload
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.navigationBar.barStyle = .black
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-         // view.backgroundColor = #colorLiteral(red: 0.9489398599, green: 0.949072659, blue: 0.948897779, alpha: 1)
-       
+    
         viewsInitialiser()
       
         changeDate1.addTarget(self, action: #selector(showDatePicker1), for: .editingDidBegin)
         changeDate2.addTarget(self, action: #selector(showDatePicker2), for: .editingDidBegin)
         changeDate3.addTarget(self, action: #selector(showDatePicker3), for: .editingDidBegin)
-     
         changeBaseButton.addTarget(self, action: #selector(showBaseCurrencyPicker), for: .editingDidBegin)
         baseCurrency.addTarget(self, action: #selector(showBaseCurrencyPicker), for: .editingDidBegin)
         
-        baseCurrency.borderStyle = .none
-        
- 
-  
         self.loadUserData(){
                 (success9) in
                 if (success9){
@@ -361,7 +358,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         
-        
+        refresh.isEnabled=false
         
         
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
@@ -391,7 +388,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         changeDate1.isEnabled = true
         changeDate2.isEnabled = true
         changeDate3.isEnabled = true
-     
+        refresh.isEnabled=true
         baseCurrency.endEditing(true)
         changeBaseButton.endEditing(true)
         enableCurrencyButtons()
@@ -435,6 +432,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         changeDate3.isEnabled = true
         baseCurrency.endEditing(true)
         changeBaseButton.endEditing(true)
+        refresh.isEnabled=true
         
     }
     
@@ -445,6 +443,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             currencyLabel1.isHidden = true
             previousDate1.isHidden = true
             changeDate1.isHidden = true
+           
         }
         else{
             selected1=true
@@ -486,7 +485,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     
                     
                 }}))
+             refreshActivityIndicator.stopAnimating()
             self.present(alert, animated: true, completion: nil)
+            
         }
         
     }
@@ -678,6 +679,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         currencyPicker1.isHidden=true
         currencyPicker2.isHidden=true
         currencyPicker3.isHidden=true
+        previousDate1.isHidden=true
+        previousDate2.isHidden=true
+        previousDate3.isHidden=true
+        changeDate1.isHidden=true
+        changeDate2.isHidden=true
+        changeDate3.isHidden=true
+        
         myDatePicker1.maximumDate = Date()
         myDatePicker2.maximumDate = Date()
         myDatePicker3.maximumDate = Date()
@@ -701,6 +709,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         previousValue1.text = "0.0"
         previousValue2.text = "0.0"
         previousValue3.text = "0.0"
+        
+        baseCurrency.borderStyle = .none
         
         changePercent1.layer.cornerRadius = 5
         changePercent1.setTitle(" 0.00% ", for: .normal)
@@ -1006,6 +1016,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.previousDate1.isHidden=true
                 self.changeDate1.isHidden = true
                 self.changePercent1.setTitle("--", for: .normal)
+                changePercent1.isHidden=false
                 self.currentValue1.isHidden=true
                 previousValue1.isHidden = true
                 //timeStampC11.isHidden=true
@@ -1084,6 +1095,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     userCurrencyData(uCurr: currencyLabel3.text!, uBase: baseCurrency.text!)
                 ]
                 UserDefaults.standard.set(try? PropertyListEncoder().encode(userData1), forKey:"userCurrencyData")
+                self.activityIndicator11.stopAnimating()
+                self.activityIndicator12.stopAnimating()
+                self.refreshActivityIndicator.stopAnimating()
+                self.refresh.isHidden=false
             }
       //  }
 //        else{
@@ -1145,6 +1160,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.previousDate2.isHidden=true
                 self.changeDate2.isHidden = true
                self.changePercent2.setTitle("--", for: .normal)
+                changePercent2.isHidden=false
                 self.currentValue2.isHidden=true
                 previousValue2.isHidden=true
                 usleep(100000)
@@ -1221,6 +1237,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     userCurrencyData(uCurr: currencyLabel3.text!, uBase: baseCurrency.text!)
                 ]
                 UserDefaults.standard.set(try? PropertyListEncoder().encode(userData2), forKey:"userCurrencyData")
+                self.activityIndicator11.stopAnimating()
+                self.activityIndicator12.stopAnimating()
+                self.refreshActivityIndicator.stopAnimating()
+                self.refresh.isHidden=false
             }
       //  }
 //        else{
@@ -1279,6 +1299,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.previousDate3.isHidden=true
                 self.changeDate3.isHidden=true
                self.changePercent3.setTitle("--", for: .normal)
+                changePercent3.isHidden=false
                 self.currentValue3.isHidden=true
                 previousValue3.isHidden=true
                 usleep(100000)
@@ -1354,6 +1375,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     userCurrencyData(uCurr: currencyLabel3.text!, uBase: baseCurrency.text!)
                 ]
                 UserDefaults.standard.set(try? PropertyListEncoder().encode(userData3), forKey:"userCurrencyData")
+                self.activityIndicator11.stopAnimating()
+                self.activityIndicator12.stopAnimating()
+                self.refreshActivityIndicator.stopAnimating()
+                self.refresh.isHidden=false
             }
 //        }
 //        else{

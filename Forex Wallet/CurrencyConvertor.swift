@@ -150,7 +150,26 @@ var convertedValue = Float(0)
         currencyField2.text = String(Float(currencyField1!.text!)! * self.currentCurrencyValue)
         self.currencyField1.becomeFirstResponder()
         currencyField1.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            // scrollView.frame.size.height = self.view.frame.size.height
+            //  self.scrollView.frame.origin.y -= keyboardSize.height + 40
+            //self.view.frame.size.height = self.view.frame.size.height
+            self.view.frame.origin.y -= keyboardSize.height
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if (self.view.frame.origin.y != 0) {
+            self.view.frame.origin.y = 0
+        }
+    }
+    
     
     @objc func textFieldChanged(){
         do{
