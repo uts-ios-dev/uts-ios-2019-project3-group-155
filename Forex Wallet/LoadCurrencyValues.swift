@@ -31,9 +31,6 @@ class LoadCurrencyValues{
     
     func fetchLiveData()->(Float,Float,Float){
         
-        
-        
-     
             self.fetchJasonOfHistory(self.base,self.currencyLabel,self.prevDate){ (success1) in
                 if (success1){
                     self.fetchJasonOfToday(self.base,self.currencyLabel){ (success2) in
@@ -48,9 +45,6 @@ class LoadCurrencyValues{
                 }
             }
       
-       
-       
-        
       sleep(2)
         
       return (self.currentCurrencyValue,self.prevCurrencyValue,self.percent)

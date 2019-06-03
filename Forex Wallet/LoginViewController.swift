@@ -13,8 +13,9 @@ class LoginViewController: UIViewController {
 
     let networkStatus = CheckNetwork()
     
-    let homePageActivityIndicator = UIActivityIndicatorView()
+   // let homePageActivityIndicator = UIActivityIndicatorView()
     
+    @IBOutlet weak var homePageActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var myWatchListButton: UIButton!
     @IBOutlet weak var currencyConvertorButton: UIButton!
     
@@ -23,7 +24,7 @@ class LoginViewController: UIViewController {
     }
   
     @IBAction func CurrencyConvertor(_ sender: Any) {
-        view.addSubview(homePageActivityIndicator)
+        
         self.displayActivityIndicator(true)
         usleep(100000)
         if (networkStatus.connectedToNetwork()) {
@@ -56,7 +57,7 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func myCurrenciesButton(_ sender: Any) {
-        view.addSubview(homePageActivityIndicator)
+       
        self.displayActivityIndicator(true)
        usleep(100000)
         if (networkStatus.connectedToNetwork()){
@@ -99,6 +100,7 @@ class LoginViewController: UIViewController {
         currencyConvertorButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         currencyConvertorButton.layer.borderWidth = 7
         
+        
         myWatchListButton.layer.cornerRadius=myWatchListButton.frame.size.height/2
         //myWatchListButton.clipsToBounds=true
         currencyConvertorButton.layer.cornerRadius=currencyConvertorButton.frame.size.height/2
@@ -108,10 +110,6 @@ class LoginViewController: UIViewController {
     
     func displayActivityIndicator(_ state: Bool){
         if (state){
-            homePageActivityIndicator.center.y = self.view.center.y+40
-            homePageActivityIndicator.center.x = self.view.center.x
-            homePageActivityIndicator.style = .white
-            homePageActivityIndicator.hidesWhenStopped = true
             homePageActivityIndicator.startAnimating()
         }else{
             homePageActivityIndicator.stopAnimating()

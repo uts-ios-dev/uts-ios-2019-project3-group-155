@@ -413,6 +413,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
      func refreshNow() {
       
         refresh.isHidden = true
+        refresh.isEnabled = false
         refreshActivityIndicator.startAnimating()
           doneClicked()
     }
@@ -487,6 +488,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     print("destructive")
                     
                 }}))
+            refreshActivityIndicator.stopAnimating()
+            refresh.isHidden=false
+            refresh.isEnabled = true
             self.present(alert, animated: true, completion: nil)
         }
         
@@ -555,6 +559,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     
                 }}))
              refreshActivityIndicator.stopAnimating()
+            refresh.isHidden=false
+              refresh.isEnabled = true
             self.present(alert, animated: true, completion: nil)
             
         }
@@ -570,7 +576,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                      if let uCurr1 = decodedData?[0].uCurr {
                         baseCurrency.text = decodedData?[0].uBase
                         baseValue1 = baseCurrency.text!
-                       // baseCurrency.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                      
                         currencyLabel1.text = uCurr1
                         if uCurr1 != ""{
                             for i in 0..<currencyData.count{
@@ -585,7 +591,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     if let uCurr2 = decodedData?[1].uCurr {
                         baseCurrency.text = decodedData?[1].uBase
                         baseValue2 = baseCurrency.text!
-                      //  baseCurrency.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                     
                         currencyLabel2.text = uCurr2
 
                         if uCurr2 != ""{
@@ -602,7 +608,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 
                         baseCurrency.text = decodedData?[2].uBase
                         baseValue3 = baseCurrency.text!
-                       // baseCurrency.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                      
                         currencyLabel3.text = uCurr3
 
                         if uCurr3 != ""{
@@ -836,21 +842,21 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             button?.setTitle(" "+String(format: "%.2f", percentage)+"% "+" ", for: .normal)
             button?.layer.borderColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
             button?.layer.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-          //  timeStamp?.textColor = #colorLiteral(red: 1, green: 0.1483025253, blue: 0, alpha: 1)
+          
             button?.isHidden=false
         }
         else if percentage >= 0.005{
             button?.setTitle(" +"+String(format: "%.2f", percentage)+"% "+" ", for: .normal)
             button?.layer.borderColor = #colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)
             button?.layer.backgroundColor = #colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)
-          //  timeStamp?.textColor = #colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)
+        
             button?.isHidden=false
         }
         else{
             button?.setTitle(" "+String(format: "%.2f", percentage)+"% "+" ", for: .normal)
             button?.layer.borderColor = #colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)
             button?.layer.backgroundColor = #colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)
-           // timeStamp?.textColor = #colorLiteral(red: 0.3084011078, green: 0.5618229508, blue: 0, alpha: 1)
+           
             button?.isHidden=false
         }
     }
@@ -870,9 +876,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-         // scrollView.frame.size.height = self.view.frame.size.height
-             //  self.scrollView.frame.origin.y -= keyboardSize.height + 40
-            //self.view.frame.size.height = self.view.frame.size.height
+        
             self.view.frame.origin.y -= keyboardSize.height
         }
     }
@@ -891,7 +895,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         currencyButton1.isEnabled = false
         currencyButton2.isEnabled = false
         currencyButton3.isEnabled = false
-       // self.view.frame.origin.y -= myDatePicker1.frame.height
+       
         myDatePicker1.datePickerMode = .date
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -929,7 +933,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             previousDate1.text = myDateFormatter.string(from: myDatePicker1.date)
             changeDate1.resignFirstResponder()
             done1Pressed()
-         //self.view.frame.origin.y = 0
+        
     }
     
     @objc func cancelDatePicker1(){
@@ -939,7 +943,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         currencyButton2.isEnabled = true
         currencyButton3.isEnabled = true
             changeDate1.resignFirstResponder()
-        // self.view.frame.origin.y = 0
+        
     }
     
     @objc func showDatePicker2(){
@@ -1060,9 +1064,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func done1Pressed(){
-//        if (picker1Operatored){
-//            picker1Operatored=false
-        
+
             if (selected1){
                 
                
@@ -1084,11 +1086,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.timeStampC11.isHidden=true
                 self.previousDate1.isHidden=true
                 self.changeDate1.isHidden = true
-                self.changePercent1.setTitle("--", for: .normal)
+                self.changePercent1.setTitle("---  ", for: .normal)
                 changePercent1.isHidden=false
                 self.currentValue1.isHidden=true
                 previousValue1.isHidden = true
-                //timeStampC11.isHidden=true
+               
                 usleep(100000)
                 if (networkStatus.connectedToNetwork()){
                 DispatchQueue.main.async {
@@ -1103,7 +1105,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     }
                     self.currentValue1.text = String(format: "%.4f",cValue1)
                     self.previousValue1.text = String(format: "%.4f",pValue1)
-                   // sleep(1)
+                  
                     
                     self.formatButton(self.changePercent1, cPercent1, self.timeStampC11)
                     self.setTime(self.timeStampC11)
@@ -1115,6 +1117,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     self.activityIndicator12.stopAnimating()
                     self.refreshActivityIndicator.stopAnimating()
                     self.refresh.isHidden=false
+                    self.refresh.isEnabled = true
                     
                 }
                 }
@@ -1138,6 +1141,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     self.refreshActivityIndicator.stopAnimating()
                     self.refresh.isHidden=false
                     self.present(alert, animated: true, completion: nil)
+                     self.refresh.isEnabled = true
                 }
                 
             }
@@ -1168,46 +1172,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.activityIndicator12.stopAnimating()
                 self.refreshActivityIndicator.stopAnimating()
                 self.refresh.isHidden=false
+                 self.refresh.isEnabled = true
             }
-      //  }
-//        else{
-//            deHighlightCurrencyButtons(currencyButton1)
-//            currencyPicker1.isHidden = true
-//            done1.isHidden=true
-//            currencyLabel1.isHidden = false
-//            self.stackView1.isHidden=false
-//            self.currentValue1.isHidden=true
-//            self.previousValue1.isHidden=true
-//            usleep(100000)
-//            DispatchQueue.main.async {
-//                var cValue1: Float = 0.0
-//                var pValue1: Float = 0.0
-//                var cPercent1: Float = 0.0
-//                let loadCurrencyValue1 = LoadCurrencyValues(base: self.baseCurrency.text!, currencyLabel: self.currencyLabel1.text!, prevDate: self.date1)
-//                (cValue1,pValue1,cPercent1) = loadCurrencyValue1.fetchLiveData()
-//                print(cValue1,pValue1,cPercent1)
-//                while (cValue1 == 0 || pValue1 == 0){
-//                    (cValue1,pValue1,cPercent1) = loadCurrencyValue1.fetchLiveData()
-//                }
-//                self.currentValue1.text = String(format: "%.4f",cValue1)
-//                self.currentValue1.isHidden=false
-//                self.previousValue1.text = String(format: "%.4f",pValue1)
-//                self.formatButton(self.changePercent1, cPercent1)
-//                self.setTime(self.timeStampC11)
-//                self.currentValue1.isHidden=false
-//                self.previousValue1.isHidden=false
-//                self.activityIndicator11.stopAnimating()
-//                self.activityIndicator12.stopAnimating()
-//
-//            }
-//        }
+ 
         
     }
     
     
     func done2Pressed(){
-//        if (picker2Operatored){
-//            picker2Operatored=false
+
             if (selected2){
              
                 activityIndicator21.startAnimating()
@@ -1228,7 +1201,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.timeStampC21.isHidden=true
                 self.previousDate2.isHidden=true
                 self.changeDate2.isHidden = true
-               self.changePercent2.setTitle("--", for: .normal)
+               self.changePercent2.setTitle("---  ", for: .normal)
                 changePercent2.isHidden=false
                 self.currentValue2.isHidden=true
                 previousValue2.isHidden=true
@@ -1255,7 +1228,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     self.activityIndicator22.stopAnimating()
                     self.refreshActivityIndicator.stopAnimating()
                     self.refresh.isHidden=false
-                    
+                     self.refresh.isEnabled = true
                 }
                 }
                 else{
@@ -1278,6 +1251,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     self.refreshActivityIndicator.stopAnimating()
                     self.refresh.isHidden=false
                     self.present(alert, animated: true, completion: nil)
+                     self.refresh.isEnabled = true
                 }
                 
             }
@@ -1309,44 +1283,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.activityIndicator12.stopAnimating()
                 self.refreshActivityIndicator.stopAnimating()
                 self.refresh.isHidden=false
+                 self.refresh.isEnabled = true
             }
-      //  }
-//        else{
-//            deHighlightCurrencyButtons(currencyButton2)
-//            currencyPicker2.isHidden = true
-//            done2.isHidden=true
-//            currencyLabel2.isHidden = false
-//            self.stackView2.isHidden=false
-//            self.currentValue2.isHidden=true
-//            self.previousValue2.isHidden=true
-//            usleep(100000)
-//            DispatchQueue.main.async {
-//                var cValue2: Float = 0.0
-//                var pValue2: Float = 0.0
-//                var cPercent2: Float = 0.0
-//                let loadCurrencyValue2 = LoadCurrencyValues(base: self.baseCurrency.text!, currencyLabel: self.currencyLabel2.text!, prevDate: self.date2)
-//                (cValue2,pValue2,cPercent2) = loadCurrencyValue2.fetchLiveData()
-//                print(cValue2,pValue2,cPercent2)
-//                while (cValue2 == 0 || pValue2 == 0){
-//                    (cValue2,pValue2,cPercent2) = loadCurrencyValue2.fetchLiveData()
-//                }
-//                self.currentValue2.text = String(format: "%.4f",cValue2)
-//                self.currentValue2.isHidden=false
-//                self.previousValue2.text = String(format: "%.4f",pValue2)
-//                self.formatButton(self.changePercent2, cPercent2)
-//                self.setTime(self.timeStampC21)
-//                self.currentValue2.isHidden=false
-//                self.previousValue2.isHidden=false
-//                self.activityIndicator21.stopAnimating()
-//                self.activityIndicator22.stopAnimating()
-//
-//            }
-//        }
+
     }
     
     func done3Pressed(){
-//        if (picker3Operatored){
-//            picker3Operatored=false
+
             if (selected3){
                 activityIndicator31.startAnimating()
                 activityIndicator32.startAnimating()
@@ -1366,7 +1309,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.timeStampC31.isHidden=true
                 self.previousDate3.isHidden=true
                 self.changeDate3.isHidden=true
-               self.changePercent3.setTitle("--", for: .normal)
+               self.changePercent3.setTitle("---  ", for: .normal)
                 changePercent3.isHidden=false
                 self.currentValue3.isHidden=true
                 previousValue3.isHidden=true
@@ -1393,6 +1336,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     self.activityIndicator32.stopAnimating()
                     self.refreshActivityIndicator.stopAnimating()
                     self.refresh.isHidden=false
+                     self.refresh.isEnabled = true
                     
                 }
                 }
@@ -1415,6 +1359,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     self.activityIndicator32.stopAnimating()
                     self.refreshActivityIndicator.stopAnimating()
                     self.refresh.isHidden=false
+                     self.refresh.isEnabled = true
                     self.present(alert, animated: true, completion: nil)
                 }
                
@@ -1446,39 +1391,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.activityIndicator12.stopAnimating()
                 self.refreshActivityIndicator.stopAnimating()
                 self.refresh.isHidden=false
+                 self.refresh.isEnabled = true
             }
-//        }
-//        else{
-//            deHighlightCurrencyButtons(currencyButton3)
-//            currencyPicker3.isHidden = true
-//            done3.isHidden=true
-//            currencyLabel3.isHidden = false
-//            self.stackView3.isHidden=false
-//            self.currentValue3.isHidden=true
-//            self.previousValue3.isHidden=true
-//            usleep(100000)
-//            DispatchQueue.main.async {
-//                var cValue3: Float = 0.0
-//                var pValue3: Float = 0.0
-//                var cPercent3: Float = 0.0
-//                let loadCurrencyValue3 = LoadCurrencyValues(base: self.baseCurrency.text!, currencyLabel: self.currencyLabel3.text!, prevDate: self.date3)
-//                (cValue3,pValue3,cPercent3) = loadCurrencyValue3.fetchLiveData()
-//                print(cValue3,pValue3,cPercent3)
-//                while (cValue3 == 0 || pValue3 == 0){
-//                    (cValue3,pValue3,cPercent3) = loadCurrencyValue3.fetchLiveData()
-//                }
-//                self.currentValue3.text = String(format: "%.4f",cValue3)
-//                self.currentValue3.isHidden=false
-//                self.previousValue3.text = String(format: "%.4f",pValue3)
-//                self.formatButton(self.changePercent3, cPercent3)
-//                self.setTime(self.timeStampC31)
-//                self.currentValue3.isHidden=false
-//                self.previousValue3.isHidden=false
-//                self.activityIndicator31.stopAnimating()
-//                self.activityIndicator32.stopAnimating()
-//
-//            }
-//        }
+
     }
 }
 
