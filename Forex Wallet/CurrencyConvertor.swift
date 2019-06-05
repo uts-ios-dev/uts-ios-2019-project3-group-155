@@ -8,9 +8,9 @@
 
 import UIKit
 
-enum error: Error{
-    case nilError
-}
+//enum error: Error{
+//    case nilError
+//}
 extension UITextField {
     func addDoneCancelToolbar(onDone: (target: Any, action: Selector)? = nil, onCancel: (target: Any, action: Selector)? = nil) {
         let onCancel = onCancel ?? (target: self, action: #selector(cancelButtonTapped))

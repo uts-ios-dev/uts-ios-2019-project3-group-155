@@ -8,7 +8,7 @@
 
 
 import UIKit
-
+import QuartzCore
 struct Currency: Codable{
     var source: String = ""
     var quotes: [String:Float] = ["":0.0]
@@ -18,15 +18,31 @@ struct userCurrencyData: Codable {
     var uCurr: String
     var uBase: String
 }
+enum error: Error{
+    case nilError
+}
 
+extension UITextField{
+    @IBInspectable var placeHolderColor: UIColor? {
+        get {
+            return self.placeHolderColor
+        }
+        set {
+            self.attributedPlaceholder = NSAttributedString(string:self.placeholder != nil ? self.placeholder! : "", attributes:[NSAttributedString.Key.foregroundColor: newValue!])
+        }
+    }
+}
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIGestureRecognizerDelegate{
     
+    @IBOutlet weak var baseAmount: UITextField!
     @IBAction func dropDownArrow(_ sender: Any) {
         baseCurrencyPicker.isHidden=false
     }
     
-   let networkStatus = CheckNetwork()
+    
+    
+    let networkStatus = CheckNetwork()
     
     let previousDay = Calendar.current.date(byAdding: .day, value: -1, to: Date())
     let dateFormatter = DateFormatter()
@@ -53,7 +69,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         refreshNow()
     }
     
+    @IBOutlet weak var convertedAmount1: UILabel!
     
+    @IBOutlet weak var sampleBox: UILabel!
     @IBOutlet weak var refreshActivityIndicator: UIActivityIndicatorView!
     
     var myText = UITextField()
@@ -62,6 +80,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var toolBar = UIToolbar()
     var doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(doneClicked))
     var cancelButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(cancelClicked))
+    
+    var doneButton_Currency = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(doneClicked_Currency))
+    
+    var cancelButton_Currency = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(cancelClicked_Currency))
+    
+   
+     let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+     var toolBar_Currency = UIToolbar()
+    
     var base: String = ""
     var selected: Bool = false
     var selected1: Bool = false
@@ -362,7 +389,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         super.viewDidLoad()
     
         viewsInitialiser()
-      
+        baseAmount.layer.cornerRadius = baseAmount.frame.size.height/2
+        convertedAmount1.layer.masksToBounds=true
+        convertedAmount1.layer.cornerRadius = 9
+       
+        baseAmount.addTarget(self, action: #selector(showBaseCurrencyAmount), for: .editingChanged)
         changeDate1.addTarget(self, action: #selector(showDatePicker1), for: .editingDidBegin)
         changeDate2.addTarget(self, action: #selector(showDatePicker2), for: .editingDidBegin)
         changeDate3.addTarget(self, action: #selector(showDatePicker3), for: .editingDidBegin)
@@ -430,24 +461,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         refresh.isEnabled=false
         
-        
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        
-     
-        
         toolBar.setItems([cancelButton,spaceButton,doneButton], animated: true)
         toolBar.isUserInteractionEnabled = true
         
-        
         toolBar.barTintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-        
         baseCurrency.inputAccessoryView = toolBar
         changeBaseButton.inputAccessoryView = toolBar
-        
         baseCurrency.inputView = baseCurrencyPicker
         changeBaseButton.inputView = baseCurrencyPicker
-        
-        
     }
     
     
@@ -493,6 +514,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             refresh.isEnabled = true
             self.present(alert, animated: true, completion: nil)
         }
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         
     }
     
@@ -505,6 +527,57 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         changeDate3.isEnabled = true
         baseCurrency.endEditing(true)
         changeBaseButton.endEditing(true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        refresh.isEnabled=true
+        
+    }
+    
+    
+    @objc func showBaseCurrencyAmount(){
+        do{
+            try assignValue()
+        }catch let error{
+        print("\(error)")
+            convertedAmount1.text = "0.0"
+        }
+    }
+    
+    func assignValue() throws{
+        if baseAmount.text != ""  {
+            convertedAmount1.text =  String(Float(baseAmount!.text!)! * Float(currentValue1!.text!)!)
+            print(convertedAmount1.text!)
+        }
+        else{
+            throw error.nilError
+        }
+    }
+    
+    @objc func doneClicked_Currency(){
+        currencyButton1.isEnabled = true
+        currencyButton2.isEnabled = true
+        currencyButton3.isEnabled = true
+        changeDate1.isEnabled = true
+        changeDate2.isEnabled = true
+        changeDate3.isEnabled = true
+        baseCurrency.endEditing(true)
+       baseAmount.endEditing(true)
+       // self.navigationController?.hidesBarsWhenKeyboardAppears=false
+     //   self.navigationController?.isNavigationBarHidden=false
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        refresh.isEnabled=true
+        
+    }
+    
+    @objc func cancelClicked_Currency(){
+        currencyButton1.isEnabled = true
+        currencyButton2.isEnabled = true
+        currencyButton3.isEnabled = true
+        changeDate1.isEnabled = true
+        changeDate2.isEnabled = true
+        changeDate3.isEnabled = true
+        baseCurrency.endEditing(true)
+        baseAmount.endEditing(true)
+         self.navigationController?.setNavigationBarHidden(false, animated: true)
         refresh.isEnabled=true
         
     }
@@ -726,7 +799,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     
- 
+    
     
    
     
@@ -815,6 +888,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             currencyButton3.isEnabled = false
             
         }
+        
+        toolBar_Currency.setItems([cancelButton_Currency,spaceButton,doneButton_Currency], animated: true)
+        toolBar_Currency.tintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        toolBar_Currency.sizeToFit()
+        toolBar_Currency.isUserInteractionEnabled = true
+        baseAmount.inputAccessoryView=toolBar_Currency
+        
+        
+        
   
     }
     
@@ -1086,7 +1168,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.timeStampC11.isHidden=true
                 self.previousDate1.isHidden=true
                 self.changeDate1.isHidden = true
-                self.changePercent1.setTitle("---  ", for: .normal)
+               // self.changePercent1.setTitle("---  ", for: .normal)
+                
                 changePercent1.isHidden=false
                 self.currentValue1.isHidden=true
                 previousValue1.isHidden = true
@@ -1201,7 +1284,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.timeStampC21.isHidden=true
                 self.previousDate2.isHidden=true
                 self.changeDate2.isHidden = true
-               self.changePercent2.setTitle("---  ", for: .normal)
+               //self.changePercent2.setTitle("---  ", for: .normal)
                 changePercent2.isHidden=false
                 self.currentValue2.isHidden=true
                 previousValue2.isHidden=true
@@ -1309,7 +1392,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.timeStampC31.isHidden=true
                 self.previousDate3.isHidden=true
                 self.changeDate3.isHidden=true
-               self.changePercent3.setTitle("---  ", for: .normal)
+               //self.changePercent3.setTitle("---  ", for: .normal)
                 changePercent3.isHidden=false
                 self.currentValue3.isHidden=true
                 previousValue3.isHidden=true
