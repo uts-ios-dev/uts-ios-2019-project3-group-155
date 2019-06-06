@@ -49,6 +49,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var prevDate = ""
     
     
+    @IBOutlet weak var stack1Gap: NSLayoutConstraint!
+    
+    @IBOutlet weak var stack2Gap: NSLayoutConstraint!
+    
+    
+    @IBOutlet weak var stack3Gap: NSLayoutConstraint!
+    
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var baseCurrencyHeading: UILabel!
@@ -69,8 +76,27 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         refreshNow()
     }
     
+    
+    @IBOutlet weak var stack1PrevDateConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var stack1CurrentDateConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var stack2PrevDateConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var stack2CurrentDateConstraint: NSLayoutConstraint!
+    
+    
+    @IBOutlet weak var stack3PrevDateConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var stack3CurrentDateConstraint: NSLayoutConstraint!
+    
+    
+    
     @IBOutlet weak var convertedAmount1: UILabel!
     
+    @IBOutlet weak var convertedAmount2: UILabel!
+    
+    @IBOutlet weak var convertedAmount3: UILabel!
     @IBOutlet weak var sampleBox: UILabel!
     @IBOutlet weak var refreshActivityIndicator: UIActivityIndicatorView!
     
@@ -385,15 +411,25 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         navigationController?.navigationBar.barStyle = .black
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
         viewsInitialiser()
         baseAmount.layer.cornerRadius = baseAmount.frame.size.height/2
         convertedAmount1.layer.masksToBounds=true
-        convertedAmount1.layer.cornerRadius = 9
+        convertedAmount1.layer.cornerRadius = convertedAmount1.frame.size.height/2
+        convertedAmount2.layer.masksToBounds=true
+        convertedAmount2.layer.cornerRadius = convertedAmount2.frame.size.height/2
+        convertedAmount3.layer.masksToBounds=true
+        convertedAmount3.layer.cornerRadius = convertedAmount3.frame.size.height/2
        
-        baseAmount.addTarget(self, action: #selector(showBaseCurrencyAmount), for: .editingChanged)
+        baseAmount.addTarget(self, action: #selector(currencyConversion), for: .editingChanged)
+        baseAmount.addTarget(self, action: #selector(initialiseConversion), for: .editingDidBegin)
+        
         changeDate1.addTarget(self, action: #selector(showDatePicker1), for: .editingDidBegin)
         changeDate2.addTarget(self, action: #selector(showDatePicker2), for: .editingDidBegin)
         changeDate3.addTarget(self, action: #selector(showDatePicker3), for: .editingDidBegin)
@@ -516,6 +552,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         
+        
     }
     
     @objc func cancelClicked(){
@@ -533,19 +570,34 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     
-    @objc func showBaseCurrencyAmount(){
+    @objc func currencyConversion(){
+       
         do{
             try assignValue()
         }catch let error{
         print("\(error)")
-            convertedAmount1.text = "0.0"
+            convertedAmount1.text = "0.0" + "  " + currencyLabel1.text!
+            convertedAmount2.text = "0.0" + "  " + currencyLabel2.text!
+            convertedAmount3.text = "0.0" + "  " + currencyLabel3.text!
         }
+    }
+    
+    @objc func initialiseConversion(){
+        changeDate1.isEnabled=false
+        changeDate2.isEnabled=false
+        changeDate3.isEnabled=false
+        currencyButton1.isEnabled=false
+        currencyButton2.isEnabled=false
+        currencyButton3.isEnabled=false
     }
     
     func assignValue() throws{
         if baseAmount.text != ""  {
-            convertedAmount1.text =  String(Float(baseAmount!.text!)! * Float(currentValue1!.text!)!)
+            convertedAmount1.text =  String(format: "%0.3f", Float(baseAmount!.text!)! * Float(currentValue1!.text!)!) + "  " + currencyLabel1.text!
             print(convertedAmount1.text!)
+            convertedAmount2.text =  String(format: "%0.3f", Float(baseAmount!.text!)! * Float(currentValue2!.text!)!) + "  " + currencyLabel2.text!
+            convertedAmount3.text =  String(format: "%0.3f", Float(baseAmount!.text!)! * Float(currentValue3!.text!)!) + "  " + currencyLabel3.text!
+            
         }
         else{
             throw error.nilError
@@ -589,6 +641,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             currencyLabel1.isHidden = true
             previousDate1.isHidden = true
             changeDate1.isHidden = true
+            stack1PrevDateConstraint.constant=0
+            stack1CurrentDateConstraint.constant=0
            
         }
         else{
@@ -600,6 +654,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             currencyLabel2.isHidden = true
             previousDate2.isHidden = true
             changeDate2.isHidden = true
+            stack2PrevDateConstraint.constant=0
+            stack2CurrentDateConstraint.constant=0
         }
         else{
             selected2=true
@@ -610,6 +666,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             currencyLabel3.isHidden = true
             previousDate3.isHidden = true
             changeDate3.isHidden = true
+            stack3PrevDateConstraint.constant=0
+            stack3CurrentDateConstraint.constant=0
         }
         else{
             selected3=true
@@ -842,8 +900,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         i1.layer.cornerRadius = 5
         i2.layer.cornerRadius = 5
-        doneButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        cancelButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+//        doneButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+//        cancelButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         toolBar.barTintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         baseCurrencyPicker.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         myDatePicker1.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
@@ -857,7 +915,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         previousValue1.text = "0.0"
         previousValue2.text = "0.0"
         previousValue3.text = "0.0"
-        
+        convertedAmount1.text = "0.0" + "  " + currencyLabel1.text!
+        convertedAmount2.text = "0.0" + "  " + currencyLabel2.text!
+        convertedAmount3.text = "0.0" + "  " + currencyLabel3.text!
         baseCurrency.borderStyle = .none
         
         changePercent1.layer.cornerRadius = 5
@@ -992,9 +1052,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         toolBar.setItems([cancel,spaceButton,doneButton], animated: true)
         toolBar.isUserInteractionEnabled = true
         
-        doneButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        cancel.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        toolBar.barTintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+//        doneButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+//        cancel.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        toolBar.tintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         let datePickerColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         myDatePicker1.setValue(datePickerColor, forKey: "textColor")
         changeDate1.inputAccessoryView = toolBar
@@ -1015,6 +1075,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             previousDate1.text = myDateFormatter.string(from: myDatePicker1.date)
             changeDate1.resignFirstResponder()
             done1Pressed()
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         
     }
     
@@ -1025,6 +1086,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         currencyButton2.isEnabled = true
         currencyButton3.isEnabled = true
             changeDate1.resignFirstResponder()
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         
     }
     
@@ -1051,9 +1113,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         toolBar.setItems([cancel,spaceButton,doneButton], animated: true)
         toolBar.isUserInteractionEnabled = true
         
-        doneButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        cancel.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        toolBar.barTintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+//        doneButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+//        cancel.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        toolBar.tintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         let datePickerColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         myDatePicker2.setValue(datePickerColor, forKey: "textColor")
         changeDate2.inputAccessoryView = toolBar
@@ -1075,6 +1137,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         done2Pressed()
         changeDate2.resignFirstResponder()
         NotificationCenter.default.removeObserver(self)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     @objc func cancelDatePicker2(){
@@ -1085,6 +1148,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         currencyButton3.isEnabled = true
         changeDate2.resignFirstResponder()
         NotificationCenter.default.removeObserver(self)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     @objc func showDatePicker3(){
@@ -1108,9 +1172,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         toolBar.setItems([cancel,spaceButton,doneButton], animated: true)
         toolBar.isUserInteractionEnabled = true
         
-        doneButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        cancel.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        toolBar.barTintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+//        doneButton.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+//        cancel.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        toolBar.tintColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         let datePickerColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         myDatePicker3.setValue(datePickerColor, forKey: "textColor")
         
@@ -1132,6 +1196,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         done3Pressed()
         changeDate3.resignFirstResponder()
         NotificationCenter.default.removeObserver(self)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
        
     }
     
@@ -1143,6 +1208,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         currencyButton3.isEnabled = true
         changeDate3.resignFirstResponder()
         NotificationCenter.default.removeObserver(self)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func done1Pressed(){
@@ -1169,11 +1235,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.previousDate1.isHidden=true
                 self.changeDate1.isHidden = true
                // self.changePercent1.setTitle("---  ", for: .normal)
-                
+                self.convertedAmount1.text = "0.0"
                 changePercent1.isHidden=false
                 self.currentValue1.isHidden=true
                 previousValue1.isHidden = true
-               
+                stack1PrevDateConstraint.constant=0
+                stack1CurrentDateConstraint.constant=0
                 usleep(100000)
                 if (networkStatus.connectedToNetwork()){
                 DispatchQueue.main.async {
@@ -1188,6 +1255,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     }
                     self.currentValue1.text = String(format: "%.4f",cValue1)
                     self.previousValue1.text = String(format: "%.4f",pValue1)
+                    usleep(500000)
+                    self.currencyConversion()
                   
                     
                     self.formatButton(self.changePercent1, cPercent1, self.timeStampC11)
@@ -1196,6 +1265,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     self.changeDate1.isHidden=false
                     self.currentValue1.isHidden=false
                     self.previousValue1.isHidden=false
+                    self.stack1PrevDateConstraint.constant=17
+                    self.stack1CurrentDateConstraint.constant=17
                     self.activityIndicator11.stopAnimating()
                     self.activityIndicator12.stopAnimating()
                     self.refreshActivityIndicator.stopAnimating()
@@ -1235,8 +1306,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 currentValue1.isHidden = false
                 changePercent1.isHidden = true
                 currencyPicker1.isHidden = true
+                timeStampC11.isHidden=true
                 previousDate1.isHidden = true
                 changeDate1.isHidden = true
+                stack1PrevDateConstraint.constant=0
+                stack1CurrentDateConstraint.constant=0
                 changePercent1.isHidden = false
                 changePercent1.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
                 changePercent1.setTitle("0.0%", for: .normal)
@@ -1256,6 +1330,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.refreshActivityIndicator.stopAnimating()
                 self.refresh.isHidden=false
                  self.refresh.isEnabled = true
+                usleep(500000)
+                self.currencyConversion()
             }
  
         
@@ -1283,8 +1359,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.stackView2.isHidden=false
                 self.timeStampC21.isHidden=true
                 self.previousDate2.isHidden=true
+                stack2PrevDateConstraint.constant=0
+                stack2CurrentDateConstraint.constant=0
                 self.changeDate2.isHidden = true
                //self.changePercent2.setTitle("---  ", for: .normal)
+                 self.convertedAmount2.text = "0.0"
                 changePercent2.isHidden=false
                 self.currentValue2.isHidden=true
                 previousValue2.isHidden=true
@@ -1301,12 +1380,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     }
                     self.currentValue2.text = String(format: "%.4f",cValue2)
                     self.previousValue2.text = String(format: "%.4f",pValue2)
+                    usleep(500000)
+                    self.currencyConversion()
                     self.formatButton(self.changePercent2, cPercent2, self.timeStampC21)
                     self.setTime(self.timeStampC21)
                     self.previousDate2.isHidden=false
                     self.changeDate2.isHidden=false
                     self.currentValue2.isHidden=false
                     self.previousValue2.isHidden=false
+                    self.stack2PrevDateConstraint.constant=17
+                    self.stack2CurrentDateConstraint.constant=17
+                    
+         
                     self.activityIndicator21.stopAnimating()
                     self.activityIndicator22.stopAnimating()
                     self.refreshActivityIndicator.stopAnimating()
@@ -1350,6 +1435,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 currencyLabel2.text=""
                 previousDate2.isHidden = true
                 changeDate2.isHidden = true
+                stack2PrevDateConstraint.constant=0
+                stack2CurrentDateConstraint.constant=0
                 changePercent2.isHidden = false
                 changePercent2.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
                 changePercent2.setTitle("0.0%", for: .normal)
@@ -1367,6 +1454,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.refreshActivityIndicator.stopAnimating()
                 self.refresh.isHidden=false
                  self.refresh.isEnabled = true
+                usleep(500000)
+                self.currencyConversion()
             }
 
     }
@@ -1391,8 +1480,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.stackView3.isHidden=false
                 self.timeStampC31.isHidden=true
                 self.previousDate3.isHidden=true
+                stack3PrevDateConstraint.constant=0
+                stack3CurrentDateConstraint.constant=0
                 self.changeDate3.isHidden=true
                //self.changePercent3.setTitle("---  ", for: .normal)
+                 self.convertedAmount3.text = "0.0"
                 changePercent3.isHidden=false
                 self.currentValue3.isHidden=true
                 previousValue3.isHidden=true
@@ -1409,12 +1501,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     }
                     self.currentValue3.text = String(format: "%.4f",cValue3)
                     self.previousValue3.text = String(format: "%.4f",pValue3)
+                    usleep(500000)
+                    self.currencyConversion()
                     self.formatButton(self.changePercent3, cPercent3, self.timeStampC31)
                     self.setTime(self.timeStampC31)
                     self.previousDate3.isHidden=false
                     self.changeDate3.isHidden=false
                     self.currentValue3.isHidden=false
                     self.previousValue3.isHidden=false
+                    self.stack3PrevDateConstraint.constant=17
+                    self.stack3CurrentDateConstraint.constant=17
                     self.activityIndicator31.stopAnimating()
                     self.activityIndicator32.stopAnimating()
                     self.refreshActivityIndicator.stopAnimating()
@@ -1459,6 +1555,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 previousDate3.isHidden = true
                 changeDate3.isHidden = true
                 previousValue3.isHidden = false
+                stack3PrevDateConstraint.constant=0
+                stack3CurrentDateConstraint.constant=0
                 changePercent3.isHidden = false
                 changePercent3.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
                 changePercent3.setTitle("0.0%", for: .normal)
@@ -1475,6 +1573,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.refreshActivityIndicator.stopAnimating()
                 self.refresh.isHidden=false
                  self.refresh.isEnabled = true
+                usleep(500000)
+                self.currencyConversion()
             }
 
     }
