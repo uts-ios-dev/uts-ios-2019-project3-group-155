@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE012E59229EAD8F002FF558 /* CurrencyConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE012E58229EAD8F002FF558 /* CurrencyConvertor.swift */; };
 		DE012E5F229EC6DD002FF558 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = DE012E5E229EC6DD002FF558 /* info.png */; };
 		DE012E61229ECA2F002FF558 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DE012E60229ECA2F002FF558 /* arrow.png */; };
-		DE0AC709229B94AD0009D006 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AC708229B94AD0009D006 /* LoginViewController.swift */; };
-		DE107E0922A40C1C0089B934 /* FaceIDAndTouchIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE107E0822A40C1C0089B934 /* FaceIDAndTouchIDViewController.swift */; };
 		DE22EE8322951EC4006EB604 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = DE22EE8222951EC4006EB604 /* add.png */; };
 		DE30880D2292D3B40051A3E1 /* usa.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3088092292D3B40051A3E1 /* usa.png */; };
 		DE30880F2292D3B40051A3E1 /* india.png in Resources */ = {isa = PBXBuildFile; fileRef = DE30880B2292D3B40051A3E1 /* india.png */; };
 		DE3088102292D3B40051A3E1 /* aus.png in Resources */ = {isa = PBXBuildFile; fileRef = DE30880C2292D3B40051A3E1 /* aus.png */; };
+		DE41D6CC22A8DD3200E7FD5D /* app-icon 1024X1024.png in Resources */ = {isa = PBXBuildFile; fileRef = DE41D6CB22A8DD3200E7FD5D /* app-icon 1024X1024.png */; };
+		DE41D6CE22A8DFB700E7FD5D /* App name.png in Resources */ = {isa = PBXBuildFile; fileRef = DE41D6CD22A8DFB700E7FD5D /* App name.png */; };
+		DE41D6D122A8E34B00E7FD5D /* App name -orange.png in Resources */ = {isa = PBXBuildFile; fileRef = DE41D6CF22A8E34B00E7FD5D /* App name -orange.png */; };
+		DE41D6D222A8E34B00E7FD5D /* App name white.png in Resources */ = {isa = PBXBuildFile; fileRef = DE41D6D022A8E34B00E7FD5D /* App name white.png */; };
 		DEC8675C2291538700F2B9D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8675B2291538700F2B9D7 /* AppDelegate.swift */; };
 		DEC8675E2291538700F2B9D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC8675D2291538700F2B9D7 /* ViewController.swift */; };
 		DEC867612291538700F2B9D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC8675F2291538700F2B9D7 /* Main.storyboard */; };
@@ -309,15 +310,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DE012E58229EAD8F002FF558 /* CurrencyConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConvertor.swift; sourceTree = "<group>"; };
 		DE012E5E229EC6DD002FF558 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info.png; path = Pictures/info.png; sourceTree = SOURCE_ROOT; };
 		DE012E60229ECA2F002FF558 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow.png; path = Pictures/arrow.png; sourceTree = SOURCE_ROOT; };
-		DE0AC708229B94AD0009D006 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		DE107E0822A40C1C0089B934 /* FaceIDAndTouchIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIDAndTouchIDViewController.swift; sourceTree = "<group>"; };
 		DE22EE8222951EC4006EB604 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = Pictures/add.png; sourceTree = SOURCE_ROOT; };
 		DE3088092292D3B40051A3E1 /* usa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = usa.png; path = Pictures/usa.png; sourceTree = SOURCE_ROOT; };
 		DE30880B2292D3B40051A3E1 /* india.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = india.png; path = Pictures/india.png; sourceTree = SOURCE_ROOT; };
 		DE30880C2292D3B40051A3E1 /* aus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = aus.png; path = Pictures/aus.png; sourceTree = SOURCE_ROOT; };
+		DE41D6CB22A8DD3200E7FD5D /* app-icon 1024X1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-icon 1024X1024.png"; path = "Pictures/app-icon 1024X1024.png"; sourceTree = SOURCE_ROOT; };
+		DE41D6CD22A8DFB700E7FD5D /* App name.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "App name.png"; path = "Pictures/App name.png"; sourceTree = SOURCE_ROOT; };
+		DE41D6CF22A8E34B00E7FD5D /* App name -orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "App name -orange.png"; path = "Pictures/App name -orange.png"; sourceTree = SOURCE_ROOT; };
+		DE41D6D022A8E34B00E7FD5D /* App name white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "App name white.png"; path = "Pictures/App name white.png"; sourceTree = SOURCE_ROOT; };
 		DEC867582291538700F2B9D7 /* Forex Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Forex Wallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC8675B2291538700F2B9D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC8675D2291538700F2B9D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -627,6 +629,10 @@
 		DE3088082292D3980051A3E1 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				DE41D6CF22A8E34B00E7FD5D /* App name -orange.png */,
+				DE41D6D022A8E34B00E7FD5D /* App name white.png */,
+				DE41D6CD22A8DFB700E7FD5D /* App name.png */,
+				DE41D6CB22A8DD3200E7FD5D /* app-icon 1024X1024.png */,
 				DEDF1C3A22A4FBFB00825F76 /* refresh-grey2.png */,
 				DEDF1C3622A4F49800825F76 /* refresh-grey.png */,
 				DEDF1C3722A4F49800825F76 /* refresh-red.png */,
@@ -929,10 +935,7 @@
 				DEDF1C3422A4EBF500825F76 /* CheckNetwork.swift */,
 				DEFD90A4229A8A1100A68D6D /* LoadCurrencyValues.swift */,
 				DEC8675D2291538700F2B9D7 /* ViewController.swift */,
-				DE012E58229EAD8F002FF558 /* CurrencyConvertor.swift */,
-				DE0AC708229B94AD0009D006 /* LoginViewController.swift */,
 				DEC8675F2291538700F2B9D7 /* Main.storyboard */,
-				DE107E0822A40C1C0089B934 /* FaceIDAndTouchIDViewController.swift */,
 				DEC867622291538800F2B9D7 /* Assets.xcassets */,
 				DEC867642291538800F2B9D7 /* LaunchScreen.storyboard */,
 				DEC867672291538900F2B9D7 /* Info.plist */,
@@ -1150,6 +1153,7 @@
 				DEF6CBB1229FB99F00459E98 /* bahrain.png in Resources */,
 				DEF6CC5E229FB99F00459E98 /* madeira.png in Resources */,
 				DEF6CBD0229FB99F00459E98 /* solomon-islands.png in Resources */,
+				DE41D6CC22A8DD3200E7FD5D /* app-icon 1024X1024.png in Resources */,
 				DEF6CC0C229FB99F00459E98 /* slovakia.png in Resources */,
 				DEF6CB9D229FB99F00459E98 /* moldova.png in Resources */,
 				DEF6CC2D229FB99F00459E98 /* panama.png in Resources */,
@@ -1327,6 +1331,8 @@
 				DEF6CC54229FB99F00459E98 /* kuwait.png in Resources */,
 				DEF6CC39229FB99F00459E98 /* taiwan.png in Resources */,
 				DEF6CB78229FB99F00459E98 /* swaziland.png in Resources */,
+				DE41D6D222A8E34B00E7FD5D /* App name white.png in Resources */,
+				DE41D6D122A8E34B00E7FD5D /* App name -orange.png in Resources */,
 				DEF6CB99229FB99F00459E98 /* canary-islands.png in Resources */,
 				DEF6CBEB229FB99F00459E98 /* eritrea.png in Resources */,
 				DEF6CBFE229FB99F00459E98 /* macao.png in Resources */,
@@ -1335,6 +1341,7 @@
 				DEF6CBC8229FB99F00459E98 /* canada.png in Resources */,
 				DEF6CC06229FB99F00459E98 /* ossetia.png in Resources */,
 				DEF6CBF8229FB99F00459E98 /* basque-country.png in Resources */,
+				DE41D6CE22A8DFB700E7FD5D /* App name.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1360,10 +1367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEDF1C3522A4EBF500825F76 /* CheckNetwork.swift in Sources */,
-				DE012E59229EAD8F002FF558 /* CurrencyConvertor.swift in Sources */,
-				DE0AC709229B94AD0009D006 /* LoginViewController.swift in Sources */,
 				DEC8675E2291538700F2B9D7 /* ViewController.swift in Sources */,
-				DE107E0922A40C1C0089B934 /* FaceIDAndTouchIDViewController.swift in Sources */,
 				DEC8675C2291538700F2B9D7 /* AppDelegate.swift in Sources */,
 				DEFD90A5229A8A1100A68D6D /* LoadCurrencyValues.swift in Sources */,
 			);

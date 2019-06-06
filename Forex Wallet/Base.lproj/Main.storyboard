@@ -962,21 +962,17 @@
                             <constraint firstItem="6z4-M2-dvJ" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.18" id="glQ-yN-uyY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TFD-uB-9lV" secondAttribute="trailing" id="guc-ux-gKq"/>
                             <constraint firstItem="Llp-Q6-smf" firstAttribute="top" secondItem="Rsp-bq-caB" secondAttribute="bottom" constant="8" id="guy-AD-h6B"/>
-                            <constraint firstItem="PaF-5L-0Gu" firstAttribute="centerY" secondItem="kHf-fe-21z" secondAttribute="centerY" constant="5" id="hMd-AJ-ZRS"/>
                             <constraint firstItem="6z4-M2-dvJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="2" id="hSw-WX-ReL"/>
                             <constraint firstItem="PaF-5L-0Gu" firstAttribute="trailing" secondItem="gL1-iM-I8G" secondAttribute="trailing" constant="15" id="hmN-1V-Fbf"/>
                             <constraint firstItem="kHf-fe-21z" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.18" id="kPp-yE-jzb"/>
                             <constraint firstItem="BnT-tv-pwJ" firstAttribute="centerY" secondItem="7he-VM-IcG" secondAttribute="centerY" id="klq-9P-nOk"/>
                             <constraint firstItem="QaN-nv-grb" firstAttribute="bottom" secondItem="Xwv-yk-tGm" secondAttribute="bottom" constant="-12" id="l2R-aw-RXd"/>
-                            <constraint firstItem="PaF-5L-0Gu" firstAttribute="top" secondItem="WZ4-CU-Sdb" secondAttribute="bottom" constant="35" id="lbl-kV-eZi"/>
                             <constraint firstItem="IMi-zy-7ja" firstAttribute="width" secondItem="udZ-se-P4t" secondAttribute="width" id="mHZ-KZ-wKj"/>
                             <constraint firstItem="uhn-XA-joG" firstAttribute="top" secondItem="kHf-fe-21z" secondAttribute="bottom" constant="10" id="nRp-DK-1aQ"/>
                             <constraint firstItem="Xwv-yk-tGm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nut-cB-HUr"/>
                             <constraint firstItem="3aI-eb-U7i" firstAttribute="top" secondItem="6z4-M2-dvJ" secondAttribute="bottom" constant="10" id="pWl-jF-az4"/>
                             <constraint firstItem="Xwv-yk-tGm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="poQ-O0-hEO"/>
-                            <constraint firstItem="7he-VM-IcG" firstAttribute="centerY" secondItem="6GM-B3-VGy" secondAttribute="centerY" constant="5" id="q0R-1y-D8w"/>
                             <constraint firstItem="gg8-9R-0kw" firstAttribute="top" secondItem="6GM-B3-VGy" secondAttribute="bottom" constant="10" id="qMG-6N-fo3"/>
-                            <constraint firstItem="TFD-uB-9lV" firstAttribute="centerY" secondItem="6z4-M2-dvJ" secondAttribute="centerY" constant="5" id="qwg-sg-yva"/>
                             <constraint firstItem="6z4-M2-dvJ" firstAttribute="top" secondItem="TFD-uB-9lV" secondAttribute="top" id="rPj-Fz-Rbk"/>
                             <constraint firstItem="gg8-9R-0kw" firstAttribute="centerX" secondItem="6GM-B3-VGy" secondAttribute="centerX" id="ryO-fj-VcZ"/>
                             <constraint firstItem="Ipo-TD-FJt" firstAttribute="centerY" secondItem="tzi-R2-oJC" secondAttribute="centerY" id="tQz-4Y-LFR"/>
@@ -984,8 +980,6 @@
                             <constraint firstItem="kHf-fe-21z" firstAttribute="top" secondItem="urR-wM-NH4" secondAttribute="bottom" constant="30" id="uwh-Bz-hrp"/>
                             <constraint firstItem="Koy-eu-8Vz" firstAttribute="trailing" secondItem="ktu-D0-L3U" secondAttribute="trailing" id="vX5-cB-mGE"/>
                             <constraint firstItem="WZ4-CU-Sdb" firstAttribute="height" secondItem="TFD-uB-9lV" secondAttribute="height" constant="20" id="xTf-2y-C0L"/>
-                            <constraint firstItem="7he-VM-IcG" firstAttribute="top" secondItem="Kra-7j-y4f" secondAttribute="bottom" constant="35" id="yJQ-oe-QsB"/>
-                            <constraint firstItem="TFD-uB-9lV" firstAttribute="top" secondItem="Xwv-yk-tGm" secondAttribute="bottom" constant="35" id="yli-HS-jtu"/>
                             <constraint firstItem="9cM-X1-uyX" firstAttribute="top" secondItem="7he-VM-IcG" secondAttribute="top" id="yvH-gA-pLj"/>
                             <constraint firstItem="7aS-0R-85P" firstAttribute="trailing" secondItem="Xwv-yk-tGm" secondAttribute="trailing" id="ywz-Xc-AUS"/>
                             <constraint firstItem="IMi-zy-7ja" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zuQ-1d-uJd"/>
@@ -994,14 +988,6 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="IMi-zy-7ja"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="qwg-sg-yva"/>
-                                <exclude reference="yli-HS-jtu"/>
-                                <exclude reference="hMd-AJ-ZRS"/>
-                                <exclude reference="lbl-kV-eZi"/>
-                                <exclude reference="q0R-1y-D8w"/>
-                                <exclude reference="yJQ-oe-QsB"/>
                             </mask>
                         </variation>
                     </view>
@@ -1054,13 +1040,10 @@
                         <outlet property="refresh" destination="tzi-R2-oJC" id="NYa-mb-orb"/>
                         <outlet property="refreshActivityIndicator" destination="Ipo-TD-FJt" id="93a-4w-4Lv"/>
                         <outlet property="stack1CurrentDateConstraint" destination="wrg-2c-dsQ" id="Tvb-nR-3OD"/>
-                        <outlet property="stack1Gap" destination="yli-HS-jtu" id="PiX-SJ-Rjg"/>
                         <outlet property="stack1PrevDateConstraint" destination="CdV-Ha-9yY" id="Klu-mn-xX9"/>
                         <outlet property="stack2CurrentDateConstraint" destination="PrV-O9-JhG" id="Y8G-LK-xsD"/>
-                        <outlet property="stack2Gap" destination="lbl-kV-eZi" id="8Tb-b3-fc8"/>
                         <outlet property="stack2PrevDateConstraint" destination="amL-8m-le7" id="0Gv-WW-NiZ"/>
                         <outlet property="stack3CurrentDateConstraint" destination="Htr-ds-zEK" id="HZk-Zl-HXg"/>
-                        <outlet property="stack3Gap" destination="yJQ-oe-QsB" id="Jqe-09-Z9t"/>
                         <outlet property="stack3PrevDateConstraint" destination="u82-mg-URQ" id="MuH-PT-CcF"/>
                         <outlet property="stackView1" destination="TFD-uB-9lV" id="OXG-GI-aCe"/>
                         <outlet property="stackView2" destination="PaF-5L-0Gu" id="Uo5-eG-mRF"/>
