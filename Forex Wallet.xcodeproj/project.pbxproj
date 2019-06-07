@@ -1029,13 +1029,16 @@
 				TargetAttributes = {
 					DEC867572291538700F2B9D7 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					DEC8676B2291538900F2B9D7 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = DEC867572291538700F2B9D7;
 					};
 					DEC867762291538900F2B9D7 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = DEC867572291538700F2B9D7;
 					};
 				};

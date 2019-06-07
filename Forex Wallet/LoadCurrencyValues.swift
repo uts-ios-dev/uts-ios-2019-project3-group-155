@@ -19,9 +19,6 @@ class LoadCurrencyValues{
     var currencyLabel: String
     var prevDate: String
    
-    
-    
-    
     init(base: String,currencyLabel: String,prevDate: String) {
         self.base = base
         self.currencyLabel = currencyLabel
@@ -57,7 +54,7 @@ class LoadCurrencyValues{
         var success1: Bool = false
         print("Base: \(base) Currency: \(curr) pDate: \(pDate)")
         let jsonURL = "https://apilayer.net/api/historical?access_key=7e4329ef9daa6adce5d7775a6719bcb4&date=\(pDate)&source=\(base)&currencies=\(curr)"
-        print(jsonURL)
+        //print(jsonURL)
         guard let url = URL(string: jsonURL) else {
             return
         }
@@ -74,7 +71,7 @@ class LoadCurrencyValues{
                     self.prevCurrencyValue = value
                 }
                 
-                print("Yesterday")
+                //print("Yesterday")
                 print("Previous Currency Name:\(self.prevCurrencyName), Previous Currency Value:\(self.prevCurrencyValue)")
                 
                 success1 = true
@@ -106,7 +103,7 @@ class LoadCurrencyValues{
                     self.currentCurrencyName = key
                     self.currentCurrencyValue = value
                 }
-                print("Today")
+               // print("Today")
                 print("Current Currency Name:\(self.currentCurrencyName), Current Currency Value:\(self.currentCurrencyValue)")
                 
                 success2 = true
@@ -127,7 +124,6 @@ class LoadCurrencyValues{
             print("\(self.percent)%")
         success3 = true
         completion(success3)
- 
         
     }
     

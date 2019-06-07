@@ -18,7 +18,7 @@ struct userCurrencyData: Codable {
     var uBase: String
 }
 enum error: Error{
-    case nilError
+    case currencyConversionFieldEmpty
 }
 
 extension UITextField{
@@ -591,7 +591,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             
         }
         else{
-            throw error.nilError
+            throw error.currencyConversionFieldEmpty
         }
     }
     
@@ -876,7 +876,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         i1.layer.cornerRadius = 5
         i2.layer.cornerRadius = 5
         
-        
+        stack1PrevDateConstraint.constant=0
+        stack1CurrentDateConstraint.constant=0
+        stack2PrevDateConstraint.constant=0
+        stack2CurrentDateConstraint.constant=0
+        stack3PrevDateConstraint.constant=0
+        stack3CurrentDateConstraint.constant=0
         
         myDatePicker1.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         myDatePicker2.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
@@ -903,7 +908,23 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         convertedAmount1.text = "0.0" + "  " + currencyLabel1.text!
         convertedAmount2.text = "0.0" + "  " + currencyLabel2.text!
         convertedAmount3.text = "0.0" + "  " + currencyLabel3.text!
-       
+        
+        // set minimum date
+        let calendar = Calendar(identifier: .gregorian)
+        
+        let currentDate = Date()
+        var components = DateComponents()
+        components.calendar = calendar
+        
+        components.year = -20
+        components.month = 12
+        
+        let minDate = calendar.date(byAdding: components, to: currentDate)!
+        myDatePicker1.minimumDate = minDate
+        myDatePicker2.minimumDate = minDate
+        myDatePicker3.minimumDate = minDate
+        
+      
         
         changePercent1.layer.cornerRadius = 5
         changePercent1.setTitle(" 0.00% ", for: .normal)
